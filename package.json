@@ -20,7 +20,6 @@
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-postcss": "^6.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
-    "gatsby-source-wordpress": "^7.13.1",
     "gatsby-transformer-sharp": "^5.13.0",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
