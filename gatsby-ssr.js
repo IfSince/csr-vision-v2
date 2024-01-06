@@ -1,4 +1,4 @@
-export const onRenderBody = ({setHeadComponents}) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link rel="preload" href="/fonts/overpass/Overpass-VariableFont_wght.ttf" as="font" crossOrigin="anonymous" type="font/ttf" key="Overpass VariableFont"/>,
     <link rel="preload" href="/fonts/undotted/Undotted-Regular.woff2" as="font" crossOrigin="anonymous" type="font/woff2" key="Undotted Regular"/>,
@@ -6,3 +6,5 @@ export const onRenderBody = ({setHeadComponents}) => {
     <link rel="preload" href="/fonts/undotted/Undotted-Black.woff2" as="font" crossOrigin="anonymous" type="font/woff2" key="Undotted Black"/>,
   ])
 }
+
+export { wrapPageElement } from './gatsby-shared.js'
