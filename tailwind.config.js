@@ -8,20 +8,20 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      fontFamily: {
-        'overpass': ['Overpass', ...defaultTheme.fontFamily.sans],
-        'undotted': ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
+    colors: {
+      transparent: 'transparent',
+      white: '#FAF9F6',
+      black: '#1F1F21',
+      green: {
+        500: '#417C5E',
+        800: '#335645',
       },
     },
-    colors: {
-      'transparent': 'transparent',
-      'white': '#FAF9F6',
-      'black': '#1F1F21',
-      'green': {
-        '500': '#417C5E',
-        '800': '#335645',
-      }
+    extend: {
+      fontFamily: {
+        overpass: ['Overpass', ...defaultTheme.fontFamily.sans],
+        undotted: ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],
