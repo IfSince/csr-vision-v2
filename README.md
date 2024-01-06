@@ -1,6 +1,6 @@
 ## csr vision v2
 
-###  **Development.**
+###  **Development**
 
 Clone repository, navigate into the site’s directory and start it up.
 
@@ -9,6 +9,8 @@ gatsby develop
 ``` 
 
 Site is now running at http://localhost:8000.
+
+To introspect the gatsby graphql schema, install the GraphQL Plugin and run the introspection query inside graphql.config.yml.
 
 
 ###  **Build**
