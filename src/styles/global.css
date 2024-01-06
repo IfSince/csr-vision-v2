@@ -35,6 +35,10 @@
 }
 
 @layer base {
+  body {
+    @apply font-overpass;
+  }
+
   img, picture, svg, video {
     display: block;
     max-width: 100%;
