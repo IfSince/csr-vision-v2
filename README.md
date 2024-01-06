@@ -16,7 +16,7 @@ Site is now running at http://localhost:8000.
 To test your changes in a productive environment run
 
 ```shell
-gatsby build
+gatsby build && gatsby serve
 ```
 
 ## Links
