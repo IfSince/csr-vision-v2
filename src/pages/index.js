@@ -1,3 +1,5 @@
+import { SeoHead } from '../components/seo-head.js'
+
 const IndexPage = () => {
   return (
     <div>Test</div>
@@ -6,4 +8,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <SeoHead title="designing responsibility"/>
