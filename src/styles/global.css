@@ -35,12 +35,43 @@
 }
 
 @layer base {
+  html {
+    --white: #FAF9F6;
+    --black: #1F1F21;
+    --green-500: #417C5E;
+    --green-800: #335645;
+  }
+
+  html, .dark {
+    --clr-primary: var(--black);
+    --clr-secondary: var(--white);
+    --clr-accent: var(--green-500);
+  }
+
+  html, .light {
+    --clr-primary: var(--white);
+    --clr-secondary: var(--black);
+    --clr-accent: var(--green-800);
+  }
+
   body {
-    @apply font-overpass;
+    text-rendering: optimizeSpeed;
+
+    @apply font-overpass bg-primary text-secondary;
   }
 
   img, picture, svg, video {
     display: block;
     max-width: 100%;
+  }
+}
+
+@layer utilities {
+  .horizontal-spacing {
+    @apply px-[4vw] md:px-[5vw] lg:px-[6vw];
+  }
+
+  .text-heading-1 {
+    @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted;
   }
 }
