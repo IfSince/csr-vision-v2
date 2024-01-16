@@ -74,4 +74,8 @@
   .text-heading-1 {
     @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted;
   }
+
+  .hero-origin {
+    transform-origin: 0 100%;
+  }
 }

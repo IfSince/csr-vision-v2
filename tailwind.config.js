@@ -10,11 +10,11 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      white: 'var(--white)',
-      black: 'var(--black)',
+      white: '#FAF9F6',
+      black: ' #1F1F21',
       green: {
-        500: 'var(--green-500)',
-        800: 'var(--green-800)',
+        500: '#417C5E',
+        800: '#335645',
       },
       primary: 'var(--clr-primary, #FAF9F6)',
       secondary: 'var(--clr-secondary, #1F1F21)',

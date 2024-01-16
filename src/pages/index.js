@@ -1,5 +1,6 @@
 import { SeoHead } from '../components/seo-head.js'
 import { HeroLayout } from '../components/layout/hero/hero-layout.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 
 const IndexPage = () => {
   return (
@@ -7,13 +8,13 @@ const IndexPage = () => {
       <main>
         <HeroLayout>
           <span className="text-heading-1 *:block">
-            <span className="text-accent">csr</span>
-            <span className="pl-[1ch]">vision</span>
+            <HeroTextReveal className="text-accent">csr test</HeroTextReveal>
+            <HeroTextReveal className="pl-[1ch]">vision</HeroTextReveal>
           </span>
 
           <span className="text-heading-1 *:block *:text-right">
-            <span>designing</span>
-            <span className="text-accent">responsibility</span>
+            <HeroTextReveal>designing</HeroTextReveal>
+            <HeroTextReveal className="text-accent">responsibility</HeroTextReveal>
           </span>
         </HeroLayout>
       </main>
