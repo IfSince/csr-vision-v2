@@ -30,6 +30,7 @@ module.exports = {
   },
   jsxRuntime: 'automatic',
   plugins: [
+    'gatsby-adapter-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
