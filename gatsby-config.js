@@ -28,6 +28,9 @@ module.exports = {
     image: metadata.icon,
     keywords: 'Design, Nachhaltigkeit, Komplexitätsreduktion',
   },
+  flags: {
+    DEV_SSR: true,
+  },
   jsxRuntime: 'automatic',
   plugins: [
     'gatsby-adapter-netlify',
@@ -61,7 +64,6 @@ module.exports = {
         icon: metadata.icon,
       },
     },
-    'gatsby-plugin-offline',
 
     /* ---------- SEO ---------- */
     'gatsby-plugin-sitemap',
