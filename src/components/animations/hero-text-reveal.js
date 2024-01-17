@@ -15,7 +15,7 @@ const variants = {
   },
 }
 
-const renderLetter = (letter, index) =>
+const renderCharacter = (letter, index) =>
   <m.span key={ `${ letter }${ index }` }
           className="inline-block hero-origin"
           initial="initial"
@@ -39,7 +39,7 @@ export const HeroTextReveal = ({ children, className }) => {
         words.map((word, index) =>
           <span key={ `${ word }${ index }` }>
             {
-              word.split('').map(renderLetter)
+              word.split('').map(renderCharacter)
             }
             {
               (index + 1 < words.length) && <>&nbsp;</>

@@ -8,7 +8,7 @@ const IndexPage = () => {
       <main>
         <HeroLayout>
           <span className="text-heading-1 *:block">
-            <HeroTextReveal className="text-accent">csr test</HeroTextReveal>
+            <HeroTextReveal className="text-accent">csr</HeroTextReveal>
             <HeroTextReveal className="pl-[1ch]">vision</HeroTextReveal>
           </span>
 

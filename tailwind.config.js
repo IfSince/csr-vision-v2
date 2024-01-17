@@ -27,6 +27,7 @@ module.exports = {
       },
       fontSize: {
         'h1': 'clamp(3.375rem, 11vw, 11.25rem)', // 54px - 180px
+        'h2': 'clamp(54px, 10vw, 121px)' // 54px - 121px
       },
       minHeight: {
         'hero': 'min(100vh, 1080px)',
