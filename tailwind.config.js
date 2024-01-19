@@ -32,6 +32,10 @@ module.exports = {
       minHeight: {
         'hero': 'min(100vh, 1080px)',
       },
+      padding: {
+        'hero-max': 'max(160px, 15vh)',
+        'hero-min': 'max(50px, 10vh)',
+      },
       screens: {
         '4xl': '2200px',
       },
