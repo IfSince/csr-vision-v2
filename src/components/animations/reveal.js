@@ -4,7 +4,7 @@ import { m } from 'framer-motion'
 const variants = {
   initial: {
     y: '120%',
-    opacity: 0,
+    opacity: 0.5,
   },
   enter: i => ({
     y: 0,
@@ -13,7 +13,7 @@ const variants = {
   }),
   exit: i => ({
     y: '120%',
-    opacity: 0,
+    opacity: 0.5,
     transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: i[1] },
   }),
 }

@@ -1,52 +1,24 @@
-import { m } from 'framer-motion'
+import { Reveal } from './reveal.js'
 
-const variants = {
-  initial: {
-    opacity: 0,
-    y: 1100,
-    rotate: 45,
-    scale: 6,
-  },
-  revealed: {
-    opacity: 1,
-    y: 0,
-    rotate: 0,
-    scale: 1,
-  },
-}
+const renderRow = (text, delay) => {
+  const words = text.split(' ')
 
-const renderCharacter = (letter, index) =>
-  <m.span key={ `${ letter }${ index }` }
-          className="inline-block hero-origin"
-          initial="initial"
-          animate="revealed"
-          variants={ variants }
-          transition={ {
-            delay: 0.5,
-            duration: 0.75,
-            type: 'tween',
-            ease: [.14, .65, .13, .99],
-            rotate: { delay: 0.6, duration: 0.65, ease: [.14, .65, .13, .99] },
-          } }
-  >{ letter }</m.span>
-
-export const HeroTextReveal = ({ children, className }) => {
-  const words = children.split(' ')
-
-  return (
-    <span className={ className }>
+  return words.map((word, index) =>
+    <Reveal className="inline-block"
+            key={ `${ word }${ index }` }
+            custom={ [index * 0.075 + delay, index * 0.01] }
+            animate="enter">
+      { word }
       {
-        words.map((word, index) =>
-          <span key={ `${ word }${ index }` }>
-            {
-              word.split('').map(renderCharacter)
-            }
-            {
-              (index + 1 < words.length) && <>&nbsp;</>
-            }
-          </span>,
-        )
+        (index + 1 < words.length) && <>&nbsp;</>
       }
-    </span>
+    </Reveal>,
   )
 }
+
+export const HeroTextReveal = ({ children, className= '', delay = 0 }) =>
+  <span className={ `block clip-path ${className}` }>
+    {
+      renderRow(children, delay)
+    }
+  </span>

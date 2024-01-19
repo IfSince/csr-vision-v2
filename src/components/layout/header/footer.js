@@ -19,7 +19,7 @@ export const Footer = ({ isActive }) =>
           <ul>
             {
               linkGroup.map(({ title, href }) =>
-                <li className="overflow-hidden" key={ title }>
+                <li className="clip-path" key={ title }>
                   <Reveal className="block"
                           custom={ [0.6, 0] }
                           animate={ isActive ? 'enter' : 'exit' }>

@@ -11,7 +11,7 @@ export const Body = ({ isActive, links, selectedLink, setSelectedLink, toggleAct
           <Link activeClassName="text-accent"
                 to={ href }
                 onClick={ toggleActive }>
-            <m.span className="flex overflow-hidden pr-[0.2em]"
+            <m.span className="flex clip-path pr-[0.2em]"
                     variants={ characterHover }
                     animate={ selectedLink.isActive && selectedLink.index !== index ? 'others' : 'hovered' }
                     onMouseEnter={ () => setSelectedLink({ isActive: true, index }) }
