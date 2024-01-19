@@ -11,14 +11,14 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       white: '#FAF9F6',
-      black: ' #1F1F21',
+      black: '#1F1F21',
       green: {
         500: '#417C5E',
         800: '#335645',
       },
-      primary: 'var(--clr-primary, #FAF9F6)',
-      secondary: 'var(--clr-secondary, #1F1F21)',
-      accent: 'var(--clr-accent, #335645)',
+      primary: 'rgb(var(--clr-primary, 250 249 246) / <alpha-value>)',
+      secondary: 'rgb(var(--clr-secondary, 31 31 33) / <alpha-value>)',
+      accent: 'rgb(var(--clr-accent, 51 86 69) / <alpha-value>)',
     },
     extend: {
       fontFamily: {
