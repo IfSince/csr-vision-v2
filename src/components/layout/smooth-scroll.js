@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { m, useScroll, useSpring, useTransform } from 'framer-motion'
-import { useShouldAnimate } from '../../hooks/use-should-animate.js'
+import { useIsMobile } from '../../hooks/use-is-mobile.js'
 
 export const SmoothScroll = ({ children }) => {
-  const { shouldAnimate } = useShouldAnimate({ isMobile: true, prefersReducedMotion: true })
+  const isMobile = useIsMobile()
 
   const scrollRef = useRef(null)
   const [height, setHeight] = useState(0)
@@ -14,22 +14,22 @@ export const SmoothScroll = ({ children }) => {
   const spring = useSpring(transform, { damping: 15, mass: 0.2, stiffness: 70 })
 
   useEffect(() => {
-    if (shouldAnimate) {
+    if (!isMobile) {
       const resizeObserver = new ResizeObserver(resizePageHeight)
       scrollRef && resizeObserver?.observe(scrollRef.current)
       return () => resizeObserver.disconnect()
     }
-  }, [scrollRef, resizePageHeight, shouldAnimate])
+  }, [scrollRef, resizePageHeight, isMobile])
 
   return (
     <>
       <m.div ref={ scrollRef }
              style={ { y: spring } }
-             className={ `will-change-transform ${ shouldAnimate ? 'fixed top-0 left-0 w-full overflow-hidden' : '!translate-y-0 !transition-none' }` }>
+             className={ `will-change-transform ${ !isMobile ? 'fixed top-0 left-0 w-full overflow-hidden' : '!translate-y-0 !transition-none' }` }>
         { children }
       </m.div>
       <div style={ { height } }
-           className={ `${ shouldAnimate ? 'block' : 'hidden' }` }/>
+           className={ `${ !isMobile ? 'block' : 'hidden' }` }/>
     </>
   )
 }

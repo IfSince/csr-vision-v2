@@ -1,6 +1,8 @@
 import { SeoHead } from '../../components/seo-head.js'
 import { HeroLayout } from '../../components/layout/hero/hero-layout.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
+import { TitledSection } from '../../components/layout/titled-section/titled-section.js'
+import { ProjectList } from '../../components/projects/project-list.js'
 
 const ProjectsPage = () => {
   return (
@@ -17,13 +19,18 @@ const ProjectsPage = () => {
               <HeroTextReveal delay={ 1.5 } className="text-accent">sustainable</HeroTextReveal>
               <HeroTextReveal delay={ 1.65 } className="pl-[1ch]">projects</HeroTextReveal>
             </span>
-        </span>
+          </span>
         </HeroLayout>
-      </main>
 
-      <div className="flex h-screen items-center justify-center">Projects</div>
-      <div className="flex h-screen items-center justify-center">Projects</div>
-      <div className="flex h-screen items-center justify-center">Projects</div>
+        <TitledSection
+          title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+          <ProjectList/>
+        </TitledSection>
+
+        <TitledSection
+          title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+        </TitledSection>
+      </main>
     </>
   )
 }

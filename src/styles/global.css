@@ -79,6 +79,14 @@
     @apply lowercase font-undotted text-h2 leading-[0.9em] tracking-[-0.045em];
   }
 
+  .text-heading-3 {
+    @apply tracking-tight text-h3 leading-[1.05em] dark:font-normal;
+  }
+
+  .text-heading-4 {
+    @apply tracking-tight text-h4 leading-[1.25em] dark:font-normal;
+  }
+
   .clip-path {
     clip-path: polygon(0% -5%, 0% 105%, 100% 105%, 100% -5%);
   }

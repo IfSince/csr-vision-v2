@@ -3,8 +3,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    `./src/pages/**/*.{js,jsx,ts,tsx}`,
-    `./src/components/**/*.{js,jsx,ts,tsx}`,
+    `./src/pages/**/*.{js,jsx}`,
+    `./src/components/**/*.{js,jsx}`,
+    './src/hooks/**/*.{js,jsx}',
   ],
   darkMode: 'class',
   theme: {
@@ -26,15 +27,17 @@ module.exports = {
         undotted: ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        'h1': 'clamp(3.375rem, 11vw, 11.25rem)', // 54px - 180px
-        'h2': 'clamp(54px, 10vw, 121px)' // 54px - 121px
+        'h1': 'clamp(4rem, 11vw, 11.25rem)', // 64px - 180px
+        'h2': 'clamp(3.375rem, 10vw, 7.5rem)', // 54px - 120px
+        'h3': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
+        'h4': 'clamp(1.5rem, 3vw, 1.875rem)', // 24px - 30px
       },
       minHeight: {
-        'hero': 'min(100vh, 1080px)',
+        'hero': 'min(100vh, 67.5rem)',
       },
       padding: {
-        'hero-max': 'max(160px, 15vh)',
-        'hero-min': 'max(50px, 10vh)',
+        'hero-max': 'max(10rem, 15vh)',
+        'hero-min': 'max(5.75rem, 25vh)',
       },
       screens: {
         '4xl': '2200px',

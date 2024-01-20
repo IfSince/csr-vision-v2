@@ -1,4 +1,3 @@
-import { useShouldAnimate } from '../../hooks/use-should-animate.js'
 import { m } from 'framer-motion'
 
 const variants = {
@@ -35,15 +34,10 @@ const variantsReducedMotion = {
   },
 }
 
-export const Reveal = ({ children, ...attributes }) => {
-  const { shouldAnimate } = useShouldAnimate({ prefersReducedMotion: true })
-
-  return (
-    <m.span variants={ shouldAnimate ? variants : variantsReducedMotion }
-            initial="initial"
-            custom={ [0, 0] }
-            { ...attributes }>
-      { children }
-    </m.span>
-  )
-}
+export const Reveal = ({ children, ...attributes }) =>
+  <m.span variants={ variants }
+          initial="initial"
+          custom={ [0, 0] }
+          { ...attributes }>
+    { children }
+  </m.span>
