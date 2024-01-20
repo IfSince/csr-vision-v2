@@ -27,7 +27,7 @@ export const renderTitle = (text) => {
 export const TitledSection = ({ title, children }) => {
   return (
     <section className="mt-32 sm:mt-40 md:mt-48">
-      <div className="mb-12 max-w-[350px] horizontal-spacing sm:max-w-lg md:mb-20 md:max-w-xl lg:max-w-3xl xl:max-w-6xl">
+      <div className="mb-14 max-w-[350px] horizontal-spacing sm:mb-16 sm:max-w-lg md:mb-20 md:max-w-xl lg:max-w-3xl xl:max-w-6xl">
         <p className="text-heading-3">
           {
             renderTitle(title)

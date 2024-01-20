@@ -17,23 +17,6 @@ const variants = {
   }),
 }
 
-const variantsReducedMotion = {
-  initial: {
-    y: 0,
-    opacity: 0,
-  },
-  enter: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.4 },
-  },
-  exit: {
-    y: 0,
-    opacity: 0,
-    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
-  },
-}
-
 export const Reveal = ({ children, ...attributes }) =>
   <m.span variants={ variants }
           initial="initial"

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import { useIsMobile } from '../../hooks/use-is-mobile.js'
 import { m } from 'framer-motion'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const variants = {
   initial: {
@@ -13,7 +14,7 @@ const variants = {
   },
 }
 
-export const Project = ({ index, project: { category, title, href, image }, setModal }) => {
+export const Project = ({ index, project: { category, title, slug, image, image_alt }, setModal }) => {
   const isMobile = useIsMobile()
 
   return (
@@ -24,9 +25,9 @@ export const Project = ({ index, project: { category, title, href, image }, setM
           viewport={ { once: true, margin: '0px 0px -50px 0px' } }
           transition={ { duration: 1, ease: [.3, .67, .32, .96] } }>
       <Link className="block py-5 horizontal-spacing"
-            to={ `/projects/${ href }` }
-            onMouseEnter={ () => setModal({ active: true, index }) }
-            onMouseLeave={ () => setModal({ active: false, index }) }>
+            to={ `/projects/${ slug }` }
+            onMouseEnter={ () => setModal(index) }
+            onMouseLeave={ () => setModal(index) }>
         <div className="grid w-full items-start justify-between md:grid-cols-3 lg:grid-cols-10 *:lg:row-start-1 min-h-20">
           <div className="row-start-2 h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-3">
             <div className="flex items-center gap-4 mb-2.5">
@@ -44,8 +45,8 @@ export const Project = ({ index, project: { category, title, href, image }, setM
             <div className="mb-6 flex justify-end lg:mb-0">
               {
                 isMobile &&
-                <div className="max-w-sm">
-                  { image }
+                <div className="max-h-80 max-w-sm">
+                  <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
                 </div>
               }
             </div>

@@ -47,11 +47,19 @@ module.exports = {
       },
     },
     /* ---------- File System ---------- */
+    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: './src/images/',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${ __dirname }/projects`,
       },
     },
 
