@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, m } from 'framer-motion'
 import { useMousePosition } from './use-mouse-position.js'
 
@@ -11,7 +11,7 @@ const DEFAULT_STYLES = {
 
 export const useCursor = () => {
   const [transition, setTransition] = useState({})
-  const [styles, setStyles] = useState(DEFAULT_STYLES)
+  const [styles, setStyles] = useState({ ...DEFAULT_STYLES, width: 0, height: 0 })
   const [element, setElement] = useState(DEFAULT_ELEMENT)
 
   const mouse = useMousePosition()
@@ -44,6 +44,20 @@ export const useCursor = () => {
         { element }
       </AnimatePresence>
     </m.div>
+
+
+  const handleMouseLeave = () => setStyles({ width: 0, height: 0 })
+  const handleMouseEnter = () => setStyles(current => current.width === 0 && current.height === 0 ? DEFAULT_STYLES : current)
+
+  useEffect(() => {
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave)
+    document.documentElement.addEventListener('mouseenter', handleMouseEnter)
+
+    return () => {
+      document.documentElement.removeEventListener('mouseleave', () => handleMouseLeave)
+      document.documentElement.removeEventListener('mouseenter', () => handleMouseEnter)
+    }
+  }, [])
 
   return [cursorElement, update, reset]
 }
