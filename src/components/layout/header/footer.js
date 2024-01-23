@@ -7,7 +7,7 @@ const links = [
   ],
   [
     { title: 'Datenschutz', href: '/privacy' },
-    { title: 'Geschäftsbedingungen', href: '/terms-and-conditions' },
+    { title: 'Impressum', href: '/imprint' },
   ],
 ]
 

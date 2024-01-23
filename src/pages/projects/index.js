@@ -1,10 +1,10 @@
 import { SeoHead } from '../../components/seo-head.js'
 import { HeroLayout } from '../../components/layout/hero/hero-layout.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { TitledSection } from '../../components/layout/titled-section/titled-section.js'
 import { ProjectList } from '../../components/projects/project-list.js'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
+import { Section } from '../../components/layout/titled-section/section.js'
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allMdx.nodes.map(({ id, frontmatter }) => ({
@@ -15,33 +15,27 @@ const ProjectsPage = ({ data }) => {
     image_alt: frontmatter.image_alt,
     image: getImage(frontmatter.image),
   }))
-  
+
   return (
     <>
-      <main>
-        <HeroLayout>
+      <HeroLayout>
           <span className="text-heading-1">
-            <HeroTextReveal delay={ 0.75 }>take a look</HeroTextReveal>
-            <HeroTextReveal delay={ 1 } className="pl-[2ch]">at our</HeroTextReveal>
+            <HeroTextReveal>take a look</HeroTextReveal>
+            <HeroTextReveal className="pl-[2ch]">at our</HeroTextReveal>
           </span>
 
-          <span className="flex justify-end text-heading-1">
-            <span>
-              <HeroTextReveal delay={ 1.5 } className="text-accent">sustainable</HeroTextReveal>
-              <HeroTextReveal delay={ 1.65 } className="pl-[1ch]">projects</HeroTextReveal>
-            </span>
+        <span className="flex justify-end text-heading-1">
+          <span>
+            <HeroTextReveal className="text-accent">sustainable</HeroTextReveal>
+            <HeroTextReveal className="pl-[1ch]">projects</HeroTextReveal>
           </span>
-        </HeroLayout>
+        </span>
+      </HeroLayout>
 
-        <TitledSection
-          title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
-          <ProjectList projects={ projects }/>
-        </TitledSection>
-
-        <TitledSection
-          title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
-        </TitledSection>
-      </main>
+      <Section
+        title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+        <ProjectList projects={ projects }/>
+      </Section>
     </>
   )
 }

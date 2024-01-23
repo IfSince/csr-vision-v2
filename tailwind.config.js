@@ -33,13 +33,14 @@ module.exports = {
         'h4': 'clamp(1.5rem, 3vw, 1.875rem)', // 24px - 30px
       },
       minHeight: {
-        'hero': 'min(100vh, 67.5rem)',
+        'hero': 'min(100vh, 67.5rem)', // 1080px
       },
       padding: {
         'hero-max': 'max(10rem, 15vh)',
         'hero-min': 'max(5.75rem, 25vh)',
       },
       screens: {
+        'xs': '520px',
         '4xl': '2200px',
       },
     },

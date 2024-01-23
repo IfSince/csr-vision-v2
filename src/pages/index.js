@@ -8,13 +8,13 @@ const IndexPage = () => {
       <main>
         <HeroLayout>
           <span className="text-heading-1">
-            <HeroTextReveal delay={ 0.75 } className="text-accent">csr</HeroTextReveal>
-            <HeroTextReveal delay={ 1 } className="pl-[1ch]">vision</HeroTextReveal>
+            <HeroTextReveal className="text-accent">csr</HeroTextReveal>
+            <HeroTextReveal className="pl-[1ch]">vision</HeroTextReveal>
           </span>
 
           <span className="text-heading-1 *:text-right">
-            <HeroTextReveal delay={ 1.5 }>designing</HeroTextReveal>
-            <HeroTextReveal delay={ 1.75 } className="text-accent">responsibility</HeroTextReveal>
+            <HeroTextReveal>designing</HeroTextReveal>
+            <HeroTextReveal className="text-accent">responsibility</HeroTextReveal>
           </span>
         </HeroLayout>
       </main>
