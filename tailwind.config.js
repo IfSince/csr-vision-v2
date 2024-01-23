@@ -43,6 +43,10 @@ module.exports = {
         'xs': '520px',
         '4xl': '2200px',
       },
+      gridTemplateColumns: {
+//        'layout': '[full-width-start] var(--horizontal-spacing) [content-start] 1fr [content-end] var(--horizontal-spacing) [full-width-end]',
+        'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(10, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
+      },
     },
   },
   plugins: [],

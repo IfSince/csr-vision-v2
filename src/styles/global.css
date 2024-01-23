@@ -40,6 +40,10 @@
     --black: 31 31 33;
     --green-500: 65 124 94;
     --green-800: 51 86 69;
+
+    --horizontal-spacing: 4vw;
+
+    @apply md:[--horizontal-spacing:5vw] lg:[--horizontal-spacing:6vw];
   }
 
   html, .dark {
@@ -63,6 +67,10 @@
   img, picture, svg, video {
     display: block;
     max-width: 100%;
+  }
+
+  .grid-cols-layout > * {
+    grid-column: content;
   }
 }
 

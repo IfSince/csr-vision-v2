@@ -19,10 +19,10 @@ const ProjectsPage = ({ data }) => {
   return (
     <>
       <HeroLayout>
-          <span className="text-heading-1">
-            <HeroTextReveal>take a look</HeroTextReveal>
-            <HeroTextReveal className="pl-[2ch]">at our</HeroTextReveal>
-          </span>
+        <span className="text-heading-1">
+          <HeroTextReveal>take a look</HeroTextReveal>
+          <HeroTextReveal className="pl-[2ch]">at our</HeroTextReveal>
+        </span>
 
         <span className="flex justify-end text-heading-1">
           <span>
