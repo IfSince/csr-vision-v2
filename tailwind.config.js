@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -30,7 +31,7 @@ module.exports = {
         'h1': 'clamp(4rem, 11vw, 11.25rem)', // 64px - 180px
         'h2': 'clamp(3.375rem, 10vw, 7.5rem)', // 54px - 120px
         'h3': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
-        'h4': 'clamp(1.5rem, 3vw, 1.875rem)', // 24px - 30px
+        'h4': 'clamp(1.25rem, 3vw, 1.875rem)', // 20px - 30px
       },
       minHeight: {
         'hero': 'min(100vh, 67.5rem)', // 1080px
@@ -44,8 +45,11 @@ module.exports = {
         '4xl': '2200px',
       },
       gridTemplateColumns: {
-//        'layout': '[full-width-start] var(--horizontal-spacing) [content-start] 1fr [content-end] var(--horizontal-spacing) [full-width-end]',
-        'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(10, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
+        'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
+      },
+      gridColumn: {
+        'full-width': 'full-width',
+        'content': 'content',
       },
     },
   },

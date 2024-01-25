@@ -1,10 +1,10 @@
 import { SeoHead } from '../../components/seo-head.js'
-import { HeroLayout } from '../../components/layout/hero/hero-layout.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
 import { ProjectList } from '../../components/projects/project-list.js'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
-import { Section } from '../../components/layout/titled-section/section.js'
+import { Section } from '../../components/layout/section/section.js'
+import { SectionTitle } from '../../components/layout/section/section-title.js'
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allMdx.nodes.map(({ id, frontmatter }) => ({
@@ -18,22 +18,23 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <>
-      <HeroLayout>
-        <span className="text-heading-1">
+      <section className="pt-hero-min md:pt-hero-max lg:min-h-hero">
+        <h1 className="grid">
           <HeroTextReveal>take a look</HeroTextReveal>
-          <HeroTextReveal className="pl-[2ch]">at our</HeroTextReveal>
-        </span>
+          <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">at our</HeroTextReveal>
 
-        <span className="flex justify-end text-heading-1">
-          <span>
+          <span className="justify-self-end">
             <HeroTextReveal className="text-accent">sustainable</HeroTextReveal>
             <HeroTextReveal className="pl-[1ch]">projects</HeroTextReveal>
           </span>
-        </span>
-      </HeroLayout>
+        </h1>
+      </section>
 
-      <Section
-        title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+      <Section>
+        <SectionTitle>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua.
+        </SectionTitle>
         <ProjectList projects={ projects }/>
       </Section>
     </>

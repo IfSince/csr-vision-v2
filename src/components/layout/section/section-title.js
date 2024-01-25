@@ -1,7 +1,7 @@
 import { m } from 'framer-motion'
 import { Reveal } from '../../animations/reveal.js'
 
-const renderTitle = (text) => {
+const renderTitle = text => {
   const words = text.split(' ')
 
   return (
@@ -24,18 +24,17 @@ const renderTitle = (text) => {
   )
 }
 
-export const SectionReversed = ({ title, children }) => {
+export const SectionTitle = ({ align = 'left', children }) => {
+  const alignmentClasses = {
+    left: '',
+    center: 'md:col-start-5',
+    right: 'justify-self-end',
+  }
   return (
-    <section className="mt-32 sm:mt-40 md:mt-48">
-      <div className="mb-14 grid grid-cols-12 horizontal-spacing sm:mb-16 md:mb-20">
-        <p className="col-start-2 col-end-13 text-heading-3 xs:col-start-5 xl:col-start-6 2xl:col-start-7 4xl:col-start-8">
-          {
-            renderTitle(title)
-          }
-        </p>
-      </div>
-      { children }
-    </section>
+    <h3 className={ `mb-14 max-w-sm text-heading-3 sm:mb-16 md:mb-20 md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl ${ alignmentClasses[align] }` }>
+      {
+        renderTitle(children)
+      }
+    </h3>
   )
-
 }

@@ -1,23 +1,18 @@
 import { SeoHead } from '../components/seo-head.js'
-import { HeroLayout } from '../components/layout/hero/hero-layout.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 
 const IndexPage = () => {
   return (
     <>
-      <main>
-        <HeroLayout>
-          <span className="text-heading-1">
-            <HeroTextReveal className="text-accent">csr</HeroTextReveal>
-            <HeroTextReveal className="pl-[1ch]">vision</HeroTextReveal>
-          </span>
+      <section className="pt-hero-min md:pt-hero-max lg:min-h-hero">
+        <h1 className="grid text-heading-1">
+          <HeroTextReveal>csr</HeroTextReveal>
+          <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">vision</HeroTextReveal>
 
-          <span className="text-heading-1 *:text-right">
-            <HeroTextReveal>designing</HeroTextReveal>
-            <HeroTextReveal className="text-accent">responsibility</HeroTextReveal>
-          </span>
-        </HeroLayout>
-      </main>
+          <HeroTextReveal className="justify-self-end">designing</HeroTextReveal>
+          <HeroTextReveal className="justify-self-end text-accent">responsibility</HeroTextReveal>
+        </h1>
+      </section>
       <div className="flex h-screen items-center justify-center">Index</div>
     </>
   )

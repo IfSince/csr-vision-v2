@@ -15,7 +15,7 @@ export const ProjectList = ({ projects }) => {
   }
 
   return (
-    <ul className="flex w-full flex-col items-center justify-center"
+    <ul className="flex w-full flex-col items-center justify-center col-full-width"
         role="none"
         onMouseLeave={ resetCursor }>
       {

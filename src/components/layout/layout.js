@@ -11,7 +11,7 @@ export const Layout = ({ children, path }) =>
       <SmoothScroll>
         <AnimatePresence mode="wait">
           <PageTransition key={ path }>
-            <main>
+            <main className="grid grid-cols-layout">
               { children }
             </main>
           </PageTransition>
