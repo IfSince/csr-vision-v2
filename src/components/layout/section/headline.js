@@ -1,1 +1,1 @@
-export const Headline = () => <hr className="mb-4 col-full-width border-secondary/50 md:mb-6 xl:mb-8"/>
+export const Headline = () => <hr className="mb-4 col-full-width border-secondary/20 md:mb-6 xl:mb-8"/>

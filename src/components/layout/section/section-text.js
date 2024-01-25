@@ -31,7 +31,7 @@ export const SectionText = ({ align = 'left', children }) => {
   }
 
   return (
-    <p className={ `sm:mt-6 lg:mt-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }>
+    <p className={ `mb-6 sm:my-6 lg:my-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }>
       {
         renderText(children)
       }

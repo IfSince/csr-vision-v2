@@ -92,7 +92,7 @@
   }
 
   .text-heading-4 {
-    @apply tracking-tight text-h4 leading-[1.25em] dark:font-normal;
+    @apply tracking-tight text-h4 leading-[1.3em];
   }
 
   .clip-path {

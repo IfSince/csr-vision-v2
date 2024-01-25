@@ -26,9 +26,15 @@ const OurVisionPage = () => {
         </SectionTitle>
 
         <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people, and the next generation.
-          To ensure we are acting on this mission, we have developed a sustainability strategy that aligns with the UN's Sustainable Development Goals.
-          We are committed to developing and upholding sustainable practices.
+          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
+          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
+          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
+          practices because we believe that the built environment Plays an important role in achieving these goals,
+          and we want to encourage others within our industry to do the same.
+        </SectionText>
+
+        <SectionText align="right">
+          The Autex Sustainability report details our mission and vision, our sustainability strategy, and our five sustainability pillars.
         </SectionText>
       </Section>
     </>

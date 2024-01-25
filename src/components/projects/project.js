@@ -18,7 +18,7 @@ export const Project = ({ index, project: { category, title, slug, image, image_
   const isMobile = useIsMobile()
 
   return (
-    <m.li className="w-full border-b transition-colors duration-300 border-secondary/50 group first:border-t"
+    <m.li className="w-full border-b border-secondary/20 group first:border-t"
           variants={ variants }
           initial="initial"
           whileInView="animate"
@@ -31,7 +31,7 @@ export const Project = ({ index, project: { category, title, slug, image, image_
         <div className="grid w-full items-start justify-between md:grid-cols-3 lg:grid-cols-10 *:lg:row-start-1 min-h-20">
           <div className="row-start-2 h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-3">
             <div className="flex items-center gap-4 mb-2.5">
-              <div className="hidden lg:block mb-1 h-4 w-4 rounded-full border transition-colors duration-500 border-secondary/50
+              <div className="hidden lg:block mb-1 h-4 w-4 rounded-full border transition-colors duration-500 border-secondary/20
                               group-hover:bg-secondary group-hover:border-secondary dark:border-2"></div>
               <span className="font-medium">{ category }</span>
             </div>
