@@ -5,7 +5,7 @@ const IndexPage = () => {
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max lg:min-h-hero">
-        <h1 className="grid text-heading-1">
+        <h1 className="grid">
           <HeroTextReveal>csr</HeroTextReveal>
           <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">vision</HeroTextReveal>
 

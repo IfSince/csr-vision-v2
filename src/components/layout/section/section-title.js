@@ -31,10 +31,10 @@ export const SectionTitle = ({ align = 'left', children }) => {
     right: 'justify-self-end',
   }
   return (
-    <h3 className={ `mb-14 max-w-sm text-heading-3 sm:mb-16 md:mb-20 md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl ${ alignmentClasses[align] }` }>
+    <p className={ `mb-14 max-w-sm text-heading-3 sm:mb-16 md:mb-20 md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl ${ alignmentClasses[align] }` }>
       {
         renderTitle(children)
       }
-    </h3>
+    </p>
   )
 }

@@ -69,6 +69,10 @@
     max-width: 100%;
   }
 
+  h1 {
+    @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted
+  }
+
   .grid-cols-layout > * {
     grid-column: content;
   }
@@ -79,16 +83,12 @@
     @apply px-[4vw] md:px-[5vw] lg:px-[6vw];
   }
 
-  .text-heading-1 {
-    @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted;
-  }
-
   .text-heading-2 {
     @apply lowercase font-undotted text-h2 leading-[0.9em] tracking-[-0.045em];
   }
 
   .text-heading-3 {
-    @apply tracking-tight text-h3 leading-[1.05em] dark:font-normal;
+    @apply font-medium tracking-tighter text-h3 leading-[1.05em] dark:font-normal;
   }
 
   .text-heading-4 {

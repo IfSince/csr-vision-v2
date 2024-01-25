@@ -32,7 +32,7 @@ export const Project = ({ index, project: { category, title, slug, image, image_
           <div className="row-start-2 h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-3">
             <div className="flex items-center gap-4 mb-2.5">
               <div className="hidden lg:block mb-1 h-4 w-4 rounded-full border transition-colors duration-500 border-secondary/50
-                          group-hover:bg-secondary group-hover:border-secondary dark:border-2"></div>
+                              group-hover:bg-secondary group-hover:border-secondary dark:border-2"></div>
               <span className="font-medium">{ category }</span>
             </div>
           </div>

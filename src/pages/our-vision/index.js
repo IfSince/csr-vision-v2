@@ -3,6 +3,8 @@ import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
 import { Section } from '../../components/layout/section/section.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
+import { Headline } from '../../components/layout/section/headline.js'
+import { SectionHeading } from '../../components/layout/section/section-heading.js'
 
 const OurVisionPage = () => {
   return (
@@ -15,7 +17,8 @@ const OurVisionPage = () => {
       </section>
 
       <Section>
-        <p className="w-fit lg:col-[content-start/span_2]">Section 2</p>
+        <Headline/>
+        <SectionHeading>our mission</SectionHeading>
 
         <SectionTitle align="center">
           Lorem ipsum dolor sit amet, conset sadipscing elitr, sed diam non eirmod tempor invidunt ut labore et
