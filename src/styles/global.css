@@ -44,6 +44,8 @@
     --horizontal-spacing: 4vw;
 
     @apply md:[--horizontal-spacing:5vw] lg:[--horizontal-spacing:6vw] 4xl:[--horizontal-spacing:8vw];
+
+    overflow-x: hidden
   }
 
   html, .dark {

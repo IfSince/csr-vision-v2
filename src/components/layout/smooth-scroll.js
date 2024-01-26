@@ -25,7 +25,7 @@ export const SmoothScroll = ({ children }) => {
     <>
       <m.div ref={ scrollRef }
              style={ { y: spring } }
-             className={ `will-change-transform ${ !isMobile ? 'fixed top-0 left-0 w-full overflow-hidden' : '!translate-y-0 !transition-none' }` }>
+             className={ `w-screen will-change-transform ${ !isMobile ? 'fixed top-0 left-0 overflow-hidden' : '!translate-y-0 !transition-none' }` }>
         { children }
       </m.div>
       <div style={ { height } }
