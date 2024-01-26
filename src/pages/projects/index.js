@@ -18,7 +18,7 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <>
-      <section className="pt-hero-min md:pt-hero-max lg:min-h-hero">
+      <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
           <HeroTextReveal>take a look</HeroTextReveal>
           <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">at our</HeroTextReveal>

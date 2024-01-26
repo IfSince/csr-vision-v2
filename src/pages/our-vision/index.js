@@ -21,8 +21,7 @@ const OurVisionPage = () => {
         <SectionHeading>our mission</SectionHeading>
 
         <SectionTitle align="center">
-          Lorem ipsum dolor sit amet, conset sadipscing elitr, sed diam non eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, conset sadipscing elitr, sed diam nonumy eirmod tempor.
         </SectionTitle>
 
         <SectionText align="right">

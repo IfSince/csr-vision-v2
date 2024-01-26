@@ -27,11 +27,11 @@ const renderText = text => {
 export const SectionText = ({ align = 'left', children }) => {
   const alignmentClasses = {
     left: '',
-    right: 'justify-self-end',
+    right: 'justify-self-end lg:col-start-4',
   }
 
   return (
-    <p className={ `mb-6 sm:my-6 lg:my-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }>
+    <p className={ `mb-6 lg:mb-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }>
       {
         renderText(children)
       }

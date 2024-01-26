@@ -43,7 +43,7 @@
 
     --horizontal-spacing: 4vw;
 
-    @apply md:[--horizontal-spacing:5vw] lg:[--horizontal-spacing:6vw];
+    @apply md:[--horizontal-spacing:5vw] lg:[--horizontal-spacing:6vw] 4xl:[--horizontal-spacing:8vw];
   }
 
   html, .dark {
@@ -80,7 +80,7 @@
 
 @layer utilities {
   .horizontal-spacing {
-    @apply px-[4vw] md:px-[5vw] lg:px-[6vw];
+    @apply px-[var(--horizontal-spacing)];
   }
 
   .text-heading-2 {
