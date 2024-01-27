@@ -2,28 +2,14 @@ import { Link } from 'gatsby'
 import { useIsMobile } from '../../hooks/use-is-mobile.js'
 import { m } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
-
-const variants = {
-  initial: {
-    opacity: 0,
-    y: '75%',
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
-}
+import { scrollRevealConfig } from '../../animation.config.js'
 
 export const Project = ({ index, project: { category, title, slug, image, image_alt }, setModal }) => {
   const isMobile = useIsMobile()
 
   return (
     <m.li className="w-full border-b border-secondary/20 group first:border-t"
-          variants={ variants }
-          initial="initial"
-          whileInView="animate"
-          viewport={ { once: true, margin: '0px 0px -50px 0px' } }
-          transition={ { duration: 1, ease: [.3, .67, .32, .96] } }>
+          { ...scrollRevealConfig(0.15) }>
       <Link className="block py-5 horizontal-spacing"
             to={ `/projects/${ slug }` }
             onMouseEnter={ () => setModal(index) }
