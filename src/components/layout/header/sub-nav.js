@@ -2,15 +2,14 @@ import { Reveal } from '../../animations/reveal.js'
 import { DefaultLink } from '../../common/default-link.js'
 import { getOtherLinks, getSocialLinks } from '../../../links.js'
 
-export const Footer = ({ isActive }) =>
+export const SubNav = ({ isActive }) =>
   <div className="mt-28 flex flex-wrap items-end justify-between gap-x-2 gap-y-6 text-sm xl:text-base">
     <ul>
       {
         getSocialLinks().map(({ to, title }) =>
           <li className="clip-path-overflow" key={ title }>
-            <Reveal className="block"
-                    custom={ [0.6, 0] }
-                    animate={ isActive ? 'enter' : 'exit' }>
+            <Reveal animate={ isActive ? 'enter' : 'exit' }
+                    custom={ [0.6, 0] }>
               <DefaultLink to={ to }>{ title }</DefaultLink>
             </Reveal>
           </li>,
@@ -23,17 +22,15 @@ export const Footer = ({ isActive }) =>
         {
           getOtherLinks().map(({ to, title }) =>
             <Reveal key={ title }
-                    className="block"
-                    custom={ [0.6, 0] }
-                    animate={ isActive ? 'enter' : 'exit' }>
+                    animate={ isActive ? 'enter' : 'exit' }
+                    custom={ [0.6, 0] }>
               <DefaultLink to={ to }>{ title }</DefaultLink>
             </Reveal>)
         }
       </li>
       <li className="clip-path-overflow">
-        <Reveal className="block"
-                custom={ [0.6, 0] }
-                animate={ isActive ? 'enter' : 'exit' }>
+        <Reveal animate={ isActive ? 'enter' : 'exit' }
+                custom={ [0.6, 0] }>
           © 2024 csr vision
         </Reveal>
       </li>

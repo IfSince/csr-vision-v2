@@ -19,6 +19,7 @@ const variants = {
 
 export const Reveal = ({ children, ...attributes }) =>
   <m.span variants={ variants }
+          className="block"
           initial="initial"
           custom={ [0, 0] }
           { ...attributes }>

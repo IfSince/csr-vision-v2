@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { m } from 'framer-motion'
 import { height } from './animation.config.js'
-import { Body } from './body.js'
-import { Footer } from './footer.js'
+import { MainNav } from './main-nav.js'
+import { SubNav } from './sub-nav.js'
 
 export const Nav = ({ isActive, toggleActive }) => {
   const [selectedLink, setSelectedLink] = useState({ isActive: false, index: 0 })
@@ -13,8 +13,8 @@ export const Nav = ({ isActive, toggleActive }) => {
            animate={ isActive ? 'enter' : 'exit' }
            className="absolute top-0 left-0 -z-10 w-full overflow-hidden horizontal-spacing bg-primary">
       <nav className="mt-32 mb-6 sm:mt-40 sm:mb-10 4xl:mt-48">
-        <Body isActive={ isActive } selectedLink={ selectedLink } setSelectedLink={ setSelectedLink } toggleActive={ toggleActive }/>
-        <Footer isActive={ isActive }/>
+        <MainNav isActive={ isActive } selectedLink={ selectedLink } setSelectedLink={ setSelectedLink } toggleActive={ toggleActive }/>
+        <SubNav isActive={ isActive }/>
       </nav>
     </m.div>
   )
