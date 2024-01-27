@@ -1,12 +1,10 @@
 import { Link } from 'gatsby'
+import { RowHover } from '../../animations/row-hover.js'
 
 export const FooterLink = ({ to = '', title }) =>
-  <li className="relative group">
-    <Link className="block border-b py-4 transition-colors duration-[400ms] horizontal-spacing border-secondary/20 hover:text-primary lg:px-8"
+  <RowHover Tag="li">
+    <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
           to={ to }>
       { title }
     </Link>
-
-    <div
-      className="absolute top-0 left-0 -z-10 h-full w-full duration-[400ms] bg-secondary clip-path-bg-hidden transition-[clip-path] group-hover:clip-path-bg-open"/>
-  </li>
+  </RowHover>

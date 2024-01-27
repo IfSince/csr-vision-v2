@@ -18,7 +18,7 @@ export const Footer = () =>
 
     <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-heading-4 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
       {
-        getPageLinks().map(link => <FooterLink { ...link }/>)
+        getPageLinks().map(link => <FooterLink { ...link } key={ link.title }/>)
       }
     </ul>
 
@@ -32,7 +32,7 @@ export const Footer = () =>
     <ul className="flex flex-wrap items-end justify-between gap-x-8 gap-y-16 pb-8 border-secondary/20 horizontal-spacing lg:gap-y-0 lg:border-l lg:pl-8">
       <li className="flex grow justify-between gap-x-2 max-w-2xs">
         {
-          getOtherLinks().map(({ to, title }) => <DefaultLink to={ to }>{ title }</DefaultLink>)
+          getOtherLinks().map(({ to, title }) => <DefaultLink to={ to } key={ title }>{ title }</DefaultLink>)
         }
       </li>
       <li>© 2024 csr vision</li>

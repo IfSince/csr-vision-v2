@@ -2,16 +2,6 @@ import { Reveal } from '../../animations/reveal.js'
 import { DefaultLink } from '../../common/default-link.js'
 import { getOtherLinks, getSocialLinks } from '../../../links.js'
 
-const links = [
-  [
-    { title: 'Presse', href: '/press' },
-  ],
-  [
-    { title: 'Datenschutz', href: '/privacy' },
-    { title: 'Impressum', href: '/imprint' },
-  ],
-]
-
 export const Footer = ({ isActive }) =>
   <div className="mt-28 flex flex-wrap items-end justify-between gap-x-2 gap-y-6 text-sm xl:text-base">
     <ul>
@@ -32,7 +22,8 @@ export const Footer = ({ isActive }) =>
       <li className="flex justify-between gap-x-2 clip-path-overflow max-w-2xs">
         {
           getOtherLinks().map(({ to, title }) =>
-            <Reveal className="block"
+            <Reveal key={ title }
+                    className="block"
                     custom={ [0.6, 0] }
                     animate={ isActive ? 'enter' : 'exit' }>
               <DefaultLink to={ to }>{ title }</DefaultLink>
