@@ -11,7 +11,7 @@ const DEFAULT_STYLES = {
 
 export const useCursor = () => {
   const [transition, setTransition] = useState({})
-  const [styles, setStyles] = useState({ ...DEFAULT_STYLES, width: 0, height: 0 })
+  const [styles, setStyles] = useState({ ...DEFAULT_STYLES })
   const [element, setElement] = useState(DEFAULT_ELEMENT)
 
   const mouse = useMousePosition()

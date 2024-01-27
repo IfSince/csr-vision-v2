@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 
 export const useMousePosition = () => {
   const mouse = {
-    x: useMotionValue(0),
-    y: useMotionValue(0),
+    x: useMotionValue(-50),
+    y: useMotionValue(-50),
   }
 
   const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 }
