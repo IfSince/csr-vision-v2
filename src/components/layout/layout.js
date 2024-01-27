@@ -3,6 +3,7 @@ import { SmoothScroll } from './smooth-scroll.js'
 import { Header } from './header/header.js'
 import { PageTransition } from '../common/page-transition/page-transition.js'
 import { CursorProvider } from '../../providers/cursor-provider.js'
+import { Footer } from './footer/footer.js'
 
 export const Layout = ({ children, path }) =>
   <LazyMotion features={ domAnimation } strict>
@@ -16,6 +17,7 @@ export const Layout = ({ children, path }) =>
             </main>
           </PageTransition>
         </AnimatePresence>
+        <Footer/>
       </SmoothScroll>
     </CursorProvider>
   </LazyMotion>

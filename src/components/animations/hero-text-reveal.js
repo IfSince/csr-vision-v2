@@ -17,7 +17,7 @@ const renderRow = (text, delay) => {
 }
 
 export const HeroTextReveal = ({ children, className= '', delay = 0 }) =>
-  <span className={ `block clip-path ${className}` }>
+  <span className={ `block clip-path-overflow ${ className }` }>
     {
       renderRow(children, delay)
     }

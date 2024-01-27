@@ -95,7 +95,15 @@
     @apply tracking-tight text-h4 leading-[1.3em];
   }
 
-  .clip-path {
+  .clip-path-overflow {
     clip-path: polygon(0% -5%, 0% 105%, 100% 105%, 105% -5%);
+  }
+
+  .clip-path-bg-hidden {
+    clip-path: inset(50% 0 50%);
+  }
+
+  .clip-path-bg-open {
+    clip-path: inset(0 0 0);
   }
 }

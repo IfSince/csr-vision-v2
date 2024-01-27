@@ -27,11 +27,12 @@ const IndexPage = () => {
         <SectionHeading>our mission</SectionHeading>
 
         <SectionText align="right">
-          Bei uns steht im Mittelpunkt, Ihnen zu helfen, Ihre Nachhaltigkeitsziele zu definieren und wirkungsvoll zu kommunizieren. Tauchen Sie ein in unsere Vision,
-          in der wir gemeinsam mit Ihnen eine Brücke zwischen Ihrem Unternehmen und einer nachhaltigen Zukunft schlagen. Erfahren Sie, wie wir Ihr Unternehmen dabei unterstützen,
+          Bei uns steht im Mittelpunkt, Ihnen zu helfen, Ihre Nachhaltigkeitsziele zu definieren und wirkungsvoll zu kommunizieren. Tauchen Sie ein in unsere
+          Vision,
+          in der wir gemeinsam mit Ihnen eine Brücke zwischen Ihrem Unternehmen und einer nachhaltigen Zukunft schlagen. Erfahren Sie, wie wir Ihr Unternehmen
+          dabei unterstützen,
           nicht nur nachhaltig zu handeln, sondern auch dies auf authentische und wirkungsvolle Weise zu präsentieren.
         </SectionText>
-
       </Section>
     </>
   )

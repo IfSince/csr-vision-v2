@@ -17,6 +17,10 @@ const links = [
     title: 'projects',
     href: '/projects',
   },
+  {
+    title: 'services',
+    href: '/services',
+  }
 ]
 
 export const Nav = ({ isActive, toggleActive }) => {

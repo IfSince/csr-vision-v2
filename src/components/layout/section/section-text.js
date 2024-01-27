@@ -11,7 +11,7 @@ const renderText = text => {
             viewport={ { once: true, margin: '0px 0px -100px 0px' } }>
       {
         words.map((word, index) =>
-          <span className="clip-path" key={ index }>
+          <span className="clip-path-overflow" key={ index }>
             <Reveal className="inline-block"
                     initial={ undefined }>
               { word }
@@ -31,7 +31,7 @@ export const SectionText = ({ align = 'left', children }) => {
   }
 
   return (
-    <p className={ `mb-6 lg:mb-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }>
+    <p className={ `mb-6 lg:mb-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-xl 2xl:max-w-2xl ${ alignmentClasses[align] }` }>
       {
         renderText(children)
       }

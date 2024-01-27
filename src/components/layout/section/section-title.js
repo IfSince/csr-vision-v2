@@ -11,7 +11,7 @@ const renderTitle = text => {
             viewport={ { once: true, margin: '0px 0px -100px 0px' } }>
       {
         words.map((word, index) =>
-          <span className="clip-path" key={ index }>
+          <span className="clip-path-overflow" key={ index }>
             <Reveal className="inline-block"
                     initial={ undefined }>
               { word }

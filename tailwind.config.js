@@ -33,23 +33,27 @@ module.exports = {
         'h3': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
         'h4': 'clamp(1.25rem, 2.5vw, 1.75rem)', // 20px - 28px
       },
-      minHeight: {
-        'hero': 'min(100vh, 67.5rem)', // 1080px
-      },
-      padding: {
-        'hero-max': 'max(10rem, 15vh)',
-        'hero-min': 'max(5.75rem, 25vh)',
-      },
       screens: {
         'xs': '520px',
         '4xl': '2200px',
       },
       gridTemplateColumns: {
         'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
+        'footer': 'minmax(650px, 1fr) minmax(0, 768px)'
       },
       gridColumn: {
         'full-width': 'full-width',
         'content': 'content',
+      },
+      minHeight: {
+        'hero': 'min(100vh, 67.5rem)', // 100vh - 1080px
+      },
+      maxWidth: {
+        '2xs': '16rem' // 256px
+      },
+      padding: {
+        'hero-max': 'max(10rem, 15vh)',
+        'hero-min': 'max(5.75rem, 25vh)',
       },
     },
   },
