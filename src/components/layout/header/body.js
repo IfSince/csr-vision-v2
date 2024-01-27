@@ -2,16 +2,17 @@ import { m } from 'framer-motion'
 import { Link } from 'gatsby'
 import { characterHover } from './animation.config.js'
 import { Reveal } from '../../animations/reveal.js'
+import { getPageLinks } from '../../../links.js'
 
-export const Body = ({ isActive, links, selectedLink, setSelectedLink, toggleActive }) =>
+export const Body = ({ isActive, selectedLink, setSelectedLink, toggleActive }) =>
   <ul className="flex flex-wrap gap-x-[0.1em] gap-y-[0.3em] text-heading-2 lg:max-w-7xl 4xl:max-w-[100rem]">
     {
-      links.map(({ title, href }, index) =>
+      getPageLinks().map(({ title, to }, index) =>
         <li key={ `l_${ index }` }>
           <Link activeClassName="text-accent"
-                to={ href }
+                to={ to }
                 onClick={ toggleActive }>
-            <m.span className="flex clip-path-overflow pr-[0.2em]"
+            <m.span className="flex clip-path-overflow pr-[0.2em] lowercase"
                     variants={ characterHover }
                     animate={ selectedLink.isActive && selectedLink.index !== index ? 'others' : 'hovered' }
                     onMouseEnter={ () => setSelectedLink({ isActive: true, index }) }
