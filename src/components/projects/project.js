@@ -2,14 +2,14 @@ import { Link } from 'gatsby'
 import { useIsMobile } from '../../hooks/use-is-mobile.js'
 import { m } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { scrollRevealConfig } from '../../animation.config.js'
+import { scrollRevealAnimation } from '../../animation.config.js'
 
 export const Project = ({ index, project: { category, title, slug, image, image_alt }, setModal }) => {
   const isMobile = useIsMobile()
 
   return (
     <m.li className="w-full border-b border-secondary/20 group first:border-t"
-          { ...scrollRevealConfig(0.15) }>
+          { ...scrollRevealAnimation(0.15) }>
       <Link className="block py-5 horizontal-spacing"
             to={ `/projects/${ slug }` }
             onMouseEnter={ () => setModal(index) }
@@ -18,7 +18,7 @@ export const Project = ({ index, project: { category, title, slug, image, image_
           <div className="row-start-2 h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-3">
             <div className="flex items-center gap-4 mb-2.5">
               <div className="hidden lg:block mb-1 h-4 w-4 rounded-full border transition-colors duration-500 border-secondary/20
-                              group-hover:bg-secondary group-hover:border-secondary dark:border-2"></div>
+                              group-hover:bg-secondary group-hover:border-secondary dark:border-2"/>
               <span className="font-medium">{ category }</span>
             </div>
           </div>

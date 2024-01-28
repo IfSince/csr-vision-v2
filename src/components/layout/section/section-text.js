@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { scrollRevealConfig } from '../../../animation.config.js'
+import { scrollRevealAnimation } from '../../../animation.config.js'
 
 export const SectionText = ({ align = 'left', children }) => {
   const alignmentClasses = {
@@ -9,7 +9,7 @@ export const SectionText = ({ align = 'left', children }) => {
 
   return (
     <m.p className={ `mb-6 lg:mb-8 w-full max-w-sm text-heading-4 md:max-w-lg lg:max-w-xl 2xl:max-w-2xl ${ alignmentClasses[align] }` }
-         { ...scrollRevealConfig(0.3) }>
+         { ...scrollRevealAnimation(0.3) }>
       { children }
     </m.p>
   )

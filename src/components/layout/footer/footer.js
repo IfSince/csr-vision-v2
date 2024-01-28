@@ -1,11 +1,11 @@
 import { LogoWithClaim } from '../../svg/logo/logo-with-claim.js'
 import { Link } from 'gatsby'
 import { DefaultLink } from '../../common/default-link.js'
-import { FooterLink } from './footer-link.js'
 import { getNextPageUrl, getOtherLinks, getPageLinks } from '../../../links.js'
 import { useContext, useEffect, useState } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
 import { ArrowOutward } from '../../svg/arrow-outward.js'
+import { RowHover } from '../../animations/row-hover.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
@@ -13,12 +13,10 @@ export const Footer = ({ currentUrl = '/' }) => {
 
   useEffect(() => setNextPage(getNextPageUrl(currentUrl)), [currentUrl])
 
-  const updateOnLinkHover = () => {
-    updateCursor({
-      props: { width: 125, height: 125, backgroundColor: 'var(--clr-rgb-secondary)' },
-      element: <ArrowOutward className="h-12 w-12 fill-primary"/>,
-    })
-  }
+  const updateOnLinkHover = () => updateCursor({
+    props: { width: 125, height: 125, backgroundColor: 'var(--clr-rgb-secondary)' },
+    element: <ArrowOutward className="h-12 w-12 fill-primary"/>,
+  })
 
   return (
     <footer className="mt-64 grid border-t border-secondary/20 lg:grid-cols-footer lg:mt-80">
@@ -37,10 +35,16 @@ export const Footer = ({ currentUrl = '/' }) => {
 
       <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-heading-4 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
         {
-          getPageLinks().map(link => <FooterLink { ...link } key={ link.title }/>)
+          getPageLinks().map(({ to, title }) =>
+            <RowHover Tag="li" key={ title }>
+              <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
+                    to={ to }>
+                { title }
+              </Link>
+            </RowHover>,
+          )
         }
       </ul>
-
 
       <ul className="mt-24 mb-3 flex grow gap-x-8 horizontal-spacing lg:mt-[10vw] lg:mb-0 lg:pb-8">
         <li>

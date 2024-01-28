@@ -1,14 +1,14 @@
 import { m } from 'framer-motion'
 import { viewport } from '../../../animation.config.js'
 
-const textReveal = {
-  initial: { opacity: 0, x: -15 },
-  inView: { opacity: 1, x: 0 },
-}
-
 const dotReveal = {
   initial: { scale: 0 },
   inView: { scale: 1 },
+}
+
+const textReveal = {
+  initial: { opacity: 0, x: -15 },
+  inView: { opacity: 1, x: 0 },
 }
 
 const transition = { duration: 0.75, delay: 0.25, ease: [.16, .99, .41, .99] }

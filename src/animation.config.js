@@ -1,6 +1,7 @@
 export const viewport = { once: true, margin: '0px 0px -50px 0px' }
 
-const variants = {
+/* ---------- Scroll Reveal ---------- */
+const scrollRevealVariants = {
   initial: delay => ({
     opacity: 0,
     y: 50,
@@ -13,8 +14,8 @@ const variants = {
   }),
 }
 
-export const scrollRevealConfig = (delay = 0) => ({
-  variants,
+export const scrollRevealAnimation = (delay = 0) => ({
+  variants: scrollRevealVariants,
   custom: delay,
   initial: 'initial',
   whileInView: 'inView',
