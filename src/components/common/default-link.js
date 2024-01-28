@@ -25,7 +25,7 @@ const transitionIn = {
 
 const transition = { duration: 0.2, ease: [1, 0, .85, .83] }
 
-export const DefaultLink = ({ to, children }) => {
+export const DefaultLink = ({ to, onClick = void 0, children }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
 
   const updateOnLinkHover = () => {
@@ -42,7 +42,8 @@ export const DefaultLink = ({ to, children }) => {
             variants={ parentVariants }>
       <Link to={ to } className="relative block overflow-hidden group/default-link"
             onMouseEnter={ updateOnLinkHover }
-            onMouseLeave={ resetCursor }>
+            onMouseLeave={ resetCursor }
+            onClick={ onClick }>
         <m.span className={ lineClasses } variants={ transitionOut } transition={ transition }/>
         <m.span className={ lineClasses } variants={ transitionIn } transition={ transition }/>
 

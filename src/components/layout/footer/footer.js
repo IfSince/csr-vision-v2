@@ -7,7 +7,7 @@ import { useContext } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
 import { ArrowOutward } from '../../svg/arrow-outward.js'
 
-export const Footer = () => {
+export const Footer = ({ currentUrl }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
 
   const updateOnLinkHover = () => {
@@ -24,11 +24,11 @@ export const Footer = () => {
           <LogoWithClaim/>
         </Link>
         <Link className="mt-20 flex w-fit flex-wrap py-4 text-heading-2 2xl:mt-[6.5vw]"
-              to="/our-vision"
+              to={ currentUrl.to }
               onMouseEnter={ updateOnLinkHover }
               onMouseLeave={ resetCursor }>
           <p>next/</p>
-          <p>our vision</p>
+          <p>{ currentUrl.title }</p>
         </Link>
       </div>
 

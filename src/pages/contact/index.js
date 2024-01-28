@@ -1,17 +1,18 @@
 import { SeoHead } from '../../components/seo-head.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
 import { Section } from '../../components/layout/section/section.js'
-import { Headline } from '../../components/layout/section/headline.js'
-import { SectionHeading } from '../../components/layout/section/section-heading.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
+import { Headline } from '../../components/layout/section/headline.js'
+import { SectionHeading } from '../../components/layout/section/section-heading.js'
 
-const ServicesPage = () => {
+const ContactPage = () => {
+  
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>services</HeroTextReveal>
+          <HeroTextReveal>contact</HeroTextReveal>
         </h1>
       </section>
 
@@ -20,7 +21,7 @@ const ServicesPage = () => {
         <SectionHeading>TODO</SectionHeading>
 
         <SectionTitle align="center">
-          Hier kommen unsere Services rein.
+          Hier kommt das Kontaktformular etc. rein.
         </SectionTitle>
 
         <SectionText align="right">
@@ -35,6 +36,6 @@ const ServicesPage = () => {
   )
 }
 
-export default ServicesPage
+export default ContactPage
 
-export const Head = () => <SeoHead title="our services"/>
+export const Head = () => <SeoHead title="contact"/>
