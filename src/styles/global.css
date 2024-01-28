@@ -50,12 +50,21 @@
     --clr-primary: var(--black);
     --clr-secondary: var(--white);
     --clr-accent: var(--green-500);
+
+    --clr-rgb-primary: rgb(var(--black));
+    --clr-rgb-secondary: rgb(var(--white));
+    --clr-rgb-accent: rgb(var(--green-500));
   }
 
   html, .light {
     --clr-primary: var(--white);
     --clr-secondary: var(--black);
     --clr-accent: var(--green-800);
+
+
+    --clr-rgb-primary: rgb(var(--white));
+    --clr-rgb-secondary: rgb(var(--black));
+    --clr-rgb-accent: rgb(var(--green-800));
   }
 
   body {

@@ -1,5 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -39,7 +38,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
-        'footer': 'minmax(650px, 1fr) minmax(0, max(768px, 35vw))'
+        'footer': 'minmax(650px, 1fr) minmax(0, max(768px, 35vw))',
       },
       gridColumn: {
         'full-width': 'full-width',
@@ -49,7 +48,7 @@ module.exports = {
         'hero': 'min(100vh, 67.5rem)', // 100vh - 1080px
       },
       maxWidth: {
-        '2xs': '16rem' // 256px
+        '2xs': '16rem', // 256px
       },
       padding: {
         'hero-max': 'max(10rem, 15vh)',
