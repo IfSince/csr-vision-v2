@@ -1,11 +1,18 @@
-import { m, useCycle } from 'framer-motion'
+import { AnimatePresence, m, useCycle } from 'framer-motion'
 import { Logo } from '../../svg/logo/logo.js'
 import { background } from './animation.config.js'
 import { Nav } from './nav.js'
 import { Link } from 'gatsby'
+import { Close } from '../../svg/close.js'
+import { Menu } from '../../svg/menu.js'
+import { Moon } from '../../svg/moon.js'
+import { Sun } from '../../svg/sun.js'
+import { useContext } from 'react'
+import { ThemeContext } from '../../../providers/theme-provider.js'
 
 
 export const Header = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext)
   const [isActive, toggleActive] = useCycle(false, true)
 
   return (
@@ -14,13 +21,26 @@ export const Header = () => {
         <Link to="/">
           <Logo className="pointer-events-auto h-8 sm:h-10 lg:h-10 4xl:h-12"/>
         </Link>
-        <button
-          className="pointer-events-auto flex aspect-square h-14 flex-col items-center justify-center rounded-full gap-1.5 bg-secondary text-primary group sm:h-16 lg:h-16 4xl:h-20
-                     *:w-5 *:transition-transform *:duration-300 *:h-0.5 *:bg-primary"
-          onClick={ toggleActive }>
-          <span className={ `${ isActive ? '-translate-x-[15%]' : 'translate-x-[15%]' } group-hover:-translate-x-[15%]` }></span>
-          <span className={ `${ isActive ? 'translate-x-[15%]' : '-translate-x-[15%]' } -translate-x-[15%] group-hover:translate-x-[15%]` }></span>
-        </button>
+
+        <div className="flex gap-3 md:gap-6">
+          <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
+                  onClick={ toggleTheme }>
+            <AnimatePresence mode="wait">
+              {
+                theme === 'light' ? <Sun className="h-6 fill-primary 4xl:h-7"/> : <Moon className="h-5 fill-primary 4xl:h-6"/>
+              }
+            </AnimatePresence>
+          </button>
+
+          <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
+                  onClick={ toggleActive }>
+            <AnimatePresence mode="wait">
+              {
+                !isActive ? <Menu className="h-[13px] 4xl:h-[15px]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>
+              }
+            </AnimatePresence>
+          </button>
+        </div>
       </div>
 
       <m.div variants={ background }

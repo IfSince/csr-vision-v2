@@ -70,7 +70,7 @@
   body {
     text-rendering: optimizeSpeed;
 
-    @apply font-overpass bg-primary text-secondary;
+    @apply transition-colors duration-700 font-overpass bg-primary text-secondary;
   }
 
   img, picture, svg, video {
@@ -97,7 +97,7 @@
   }
 
   .text-heading-3 {
-    @apply font-medium tracking-tighter text-h3 leading-[1.05em] dark:font-normal;
+    @apply tracking-tighter text-h3 leading-[1.05em];
   }
 
   .text-heading-4 {
