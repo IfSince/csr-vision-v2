@@ -2,13 +2,16 @@ import { LogoWithClaim } from '../../svg/logo/logo-with-claim.js'
 import { Link } from 'gatsby'
 import { DefaultLink } from '../../common/default-link.js'
 import { FooterLink } from './footer-link.js'
-import { getOtherLinks, getPageLinks } from '../../../links.js'
-import { useContext } from 'react'
+import { getNextPageUrl, getOtherLinks, getPageLinks } from '../../../links.js'
+import { useContext, useEffect, useState } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
 import { ArrowOutward } from '../../svg/arrow-outward.js'
 
-export const Footer = ({ currentUrl }) => {
+export const Footer = ({ currentUrl = '/' }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
+  const [nextPage, setNextPage] = useState(getPageLinks()[0])
+
+  useEffect(() => setNextPage(getNextPageUrl(currentUrl)), [currentUrl])
 
   const updateOnLinkHover = () => {
     updateCursor({
@@ -24,11 +27,11 @@ export const Footer = ({ currentUrl }) => {
           <LogoWithClaim/>
         </Link>
         <Link className="mt-20 flex w-fit flex-wrap py-4 text-heading-2 2xl:mt-[6.5vw]"
-              to={ currentUrl.to }
+              to={ nextPage.to }
               onMouseEnter={ updateOnLinkHover }
               onMouseLeave={ resetCursor }>
           <p>next/</p>
-          <p>{ currentUrl.title }</p>
+          <p>{ nextPage.title }</p>
         </Link>
       </div>
 

@@ -7,7 +7,7 @@ export const SubNav = ({ isActive, toggleActive }) =>
     <ul>
       {
         getSocialLinks().map(({ to, title }) =>
-          <li className="clip-path-overflow" key={ title }>
+          <li key={ title }>
             <Reveal animate={ isActive ? 'enter' : 'exit' }
                     custom={ [0.6, 0] }>
               <DefaultLink to={ to } onClick={ toggleActive }>{ title }</DefaultLink>
@@ -18,7 +18,7 @@ export const SubNav = ({ isActive, toggleActive }) =>
     </ul>
 
     <ul className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2 border-secondary/20 lg:gap-x-8">
-      <li className="flex justify-between gap-x-2 clip-path-overflow max-w-2xs">
+      <li className="flex justify-between gap-x-2 max-w-2xs">
         {
           getOtherLinks().map(({ to, title }) =>
             <Reveal key={ title }
@@ -28,7 +28,7 @@ export const SubNav = ({ isActive, toggleActive }) =>
             </Reveal>)
         }
       </li>
-      <li className="clip-path-overflow">
+      <li>
         <Reveal animate={ isActive ? 'enter' : 'exit' }
                 custom={ [0.6, 0] }>
           © 2024 csr vision

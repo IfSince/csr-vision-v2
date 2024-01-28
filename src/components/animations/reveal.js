@@ -17,11 +17,13 @@ const variants = {
   }),
 }
 
-export const Reveal = ({ children, ...attributes }) =>
-  <m.span variants={ variants }
-          className="block"
-          initial="initial"
-          custom={ [0, 0] }
-          { ...attributes }>
-    { children }
-  </m.span>
+export const Reveal = ({ className = '', children, ...attributes }) =>
+  <span className={ `inline-block clip-path-overflow ${ className }` }>
+    <m.span variants={ variants }
+            className="block"
+            initial="initial"
+            custom={ [0, 0] }
+            { ...attributes }>
+      { children }
+    </m.span>
+  </span>

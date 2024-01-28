@@ -1,24 +1,22 @@
 import { Reveal } from './reveal.js'
 
-const renderRow = (text, delay) => {
-  const words = text.split(' ')
+export const HeroTextReveal = ({ children, className, delay = 0 }) => {
+  const words = children.split(' ')
 
-  return words.map((word, index) =>
-    <Reveal className="inline-block"
-            key={ `${ word }${ index }` }
-            custom={ [index * 0.075 + delay, index * 0.01] }
-            animate="enter">
-      { word }
+  return (
+    <span className={ className }>
       {
-        (index + 1 < words.length) && <>&nbsp;</>
+        words.map((word, index) =>
+          <Reveal key={ `${ word }${ index }` }
+                  custom={ [index * 0.075 + delay, index * 0.01] }
+                  animate="enter">
+            { word }
+            {
+              (index + 1 < words.length) && <>&nbsp;</>
+            }
+          </Reveal>,
+        )
       }
-    </Reveal>,
+    </span>
   )
 }
-
-export const HeroTextReveal = ({ children, className= '', delay = 0 }) =>
-  <span className={ `block clip-path-overflow ${ className }` }>
-    {
-      renderRow(children, delay)
-    }
-  </span>
