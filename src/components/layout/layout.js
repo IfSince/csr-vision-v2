@@ -4,7 +4,6 @@ import { Header } from './header/header.js'
 import { PageTransition } from '../common/page-transition/page-transition.js'
 import { CursorProvider } from '../../providers/cursor-provider.js'
 import { Footer } from './footer/footer.js'
-import { getNextPageUrl } from '../../links.js'
 
 export const Layout = ({ children, path, uri }) =>
   <LazyMotion features={ domAnimation } strict>
@@ -16,7 +15,7 @@ export const Layout = ({ children, path, uri }) =>
             <main className="grid grid-cols-layout">
               { children }
             </main>
-            <Footer currentUrl={ getNextPageUrl(uri) }/>
+            <Footer currentUrl={ uri }/>
           </PageTransition>
         </AnimatePresence>
       </SmoothScroll>
