@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, m } from 'framer-motion'
+import { AnimatePresence, m, useMotionTemplate } from 'framer-motion'
 import { useMousePosition } from './use-mouse-position.js'
 
 const DEFAULT_ELEMENT = <></>
-const DEFAULT_SIZE = { width: 16, height: 16 }
+const DEFAULT_SIZE = { width: 100, height: 100 }
 const DEFAULT_STYLES = {
   ...DEFAULT_SIZE,
   backgroundColor: 'rgb(65 124 94)',
@@ -34,9 +34,13 @@ export const useCursor = () => {
 
   const cursorElement =
     <m.div className="pointer-events-none fixed flex origin-center -translate-x-1/2 -translate-y-1/2 flex-row items-center justify-center rounded-full z-[9999]"
+      //           transformTemplate={ template }
            style={ {
              left: mouse.x,
              top: mouse.y,
+             scaleX: mouse.scaleX,
+             scaleY: mouse.scaleY,
+             rotate: useMotionTemplate`${ mouse.rotate }rad`,
            } }
            animate={ styles }
            transition={ transition }>
