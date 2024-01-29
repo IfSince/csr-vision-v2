@@ -6,6 +6,7 @@ module.exports = {
     `./src/pages/**/*.{js,jsx}`,
     `./src/components/**/*.{js,jsx}`,
     './src/hooks/**/*.{js,jsx}',
+    './src/svg/**/*.{js,jsx}',
   ],
   darkMode: 'class',
   theme: {
@@ -39,7 +40,7 @@ module.exports = {
       gridTemplateColumns: {
         'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
         'footer': 'minmax(650px, 1fr) minmax(0, max(768px, 35vw))',
-        'project-list': 'var(--horizontal-spacing) [content-start] repeat(3, minmax(0, 1fr)) [content-end] var(--horizontal-spacing)'
+        'project-list': 'var(--horizontal-spacing) [content-start] repeat(3, minmax(0, 1fr)) [content-end] var(--horizontal-spacing)',
       },
       gridColumn: {
         'full-width': 'full-width',
