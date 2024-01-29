@@ -1,11 +1,11 @@
-import { LogoWithClaim } from '../../svg/logo/logo-with-claim.js'
 import { Link } from 'gatsby'
 import { DefaultLink } from '../../common/default-link.js'
 import { getNextPageUrl, getOtherLinks, getPageLinks } from '../../../links.js'
 import { useContext, useEffect, useState } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
-import { ArrowOutward } from '../../svg/arrow-outward.js'
 import { RowHover } from '../../animations/row-hover.js'
+import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
+import { LogoWithClaim } from '../../../svg/logo/logo-with-claim.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)

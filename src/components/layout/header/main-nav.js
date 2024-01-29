@@ -5,7 +5,7 @@ import { Reveal } from '../../animations/reveal.js'
 import { getPageLinks } from '../../../links.js'
 import { useContext } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
-import { ArrowOutward } from '../../svg/arrow-outward.js'
+import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
 
 export const MainNav = ({ isActive, selectedLink, setSelectedLink, toggleActive }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)

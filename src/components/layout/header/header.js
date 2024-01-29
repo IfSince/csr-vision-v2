@@ -1,14 +1,14 @@
 import { AnimatePresence, m, useCycle } from 'framer-motion'
-import { Logo } from '../../svg/logo/logo.js'
 import { background } from './animation.config.js'
 import { Nav } from './nav.js'
 import { Link } from 'gatsby'
-import { Close } from '../../svg/close.js'
-import { Menu } from '../../svg/menu.js'
-import { Moon } from '../../svg/moon.js'
-import { Sun } from '../../svg/sun.js'
 import { useContext } from 'react'
 import { ThemeContext } from '../../../providers/theme-provider.js'
+import { Logo } from '../../../svg/logo/logo.js'
+import { Sun } from '../../../svg/icons/theme-toggle/sun.js'
+import { Moon } from '../../../svg/icons/theme-toggle/moon.js'
+import { Menu } from '../../../svg/icons/menu/menu.js'
+import { Close } from '../../../svg/icons/menu/close.js'
 
 
 export const Header = () => {
@@ -36,7 +36,7 @@ export const Header = () => {
                   onClick={ toggleActive }>
             <AnimatePresence mode="wait">
               {
-                !isActive ? <Menu className="h-[13px] 4xl:h-[15px]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>
+                !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>
               }
             </AnimatePresence>
           </button>
