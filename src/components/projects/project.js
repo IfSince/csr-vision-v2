@@ -8,36 +8,28 @@ export const Project = ({ index, project: { category, title, slug, image, image_
   const isMobile = useIsMobile()
 
   return (
-    <m.li className="w-full border-b border-secondary/20 group first:border-t"
+    <m.li className="border-b col-full-width border-secondary/20 group first:border-t"
           { ...scrollRevealAnimation(0.15) }>
-      <Link className="block py-5 horizontal-spacing"
+      <Link className="grid pt-4 pb-14 min-h-28 md:py-5 *:col-content grid-cols-project-list"
             to={ `/projects/${ slug }` }
-            onMouseEnter={ () => setModal(index) }
-            onMouseLeave={ () => setModal(index) }>
-        <div className="grid w-full items-start justify-between md:grid-cols-3 lg:grid-cols-10 *:lg:row-start-1 min-h-20">
-          <div className="row-start-2 h-fit md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-3">
-            <div className="flex items-center gap-4 mb-2.5">
-              <div className="hidden lg:block mb-1 h-4 w-4 rounded-full border transition-colors duration-500 border-secondary/20
-                              group-hover:bg-secondary group-hover:border-secondary dark:border-2"/>
-              <span className="font-medium">{ category }</span>
-            </div>
+            onMouseEnter={ () => setModal(index) }>
+        {
+          isMobile &&
+          <div className="mb-6 max-h-80 w-full max-w-sm justify-self-end md:col-start-4">
+            <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
           </div>
-          <div className="row-start-3 md:col-span-2 md:col-start-1 md:row-start-1 lg:col-span-4">
-            <div className="mb-8 max-w-sm md:max-lg:mt-10 md:mr-4 md:mb-0 md:max-w-md lg:ml-10 lg:max-w-lg">
-              <h3 className="transition-transform duration-300 text-heading-4">{ title }</h3>
-            </div>
-          </div>
-          <div className="row-start-1 lg:col-span-3">
-            <div className="mb-6 flex justify-end lg:mb-0">
-              {
-                isMobile &&
-                <div className="max-h-80 max-w-sm">
-                  <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
-                </div>
-              }
-            </div>
-          </div>
+        }
+
+        <div className="flex items-center gap-4 self-start mb-2.5 md:col-end-4 md:row-start-1 lg:col-end-2">
+          <div className="rounded-full border mb-1 h-3.5 w-3.5 border-secondary/20 transition-[border,background-color] duration-500
+                          group-hover:bg-secondary group-hover:border-secondary dark:border-2"/>
+          <p className="font-medium">{ category }</p>
         </div>
+
+        <h3 className="max-w-sm text-heading-4 md:max-lg:mt-10 md:col-end-4 md:row-start-1 md:max-w-lg lg:col-end-[content] lg:col-start-3 lg:max-w-xl
+                       lg:group-hover:-translate-x-4 duration-500 transition-transform">
+          { title }
+        </h3>
       </Link>
     </m.li>
   )

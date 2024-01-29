@@ -23,7 +23,7 @@ const ProjectsPage = ({ data }) => {
           <HeroTextReveal>take a look</HeroTextReveal>
           <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">at our</HeroTextReveal>
 
-          <span className="justify-self-end">
+          <span className="justify-self-end *:block">
             <HeroTextReveal className="text-accent">sustainable</HeroTextReveal>
             <HeroTextReveal className="pl-[1ch]">projects</HeroTextReveal>
           </span>

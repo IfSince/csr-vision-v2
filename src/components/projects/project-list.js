@@ -9,19 +9,18 @@ export const ProjectList = ({ projects }) => {
   const updateModal = (index) => {
     updateCursor({
       props: { width: 400, height: 300, backgroundColor: 'rgba(0,0,0,0)' },
-      element: <ProjectImageModal index={index} projects={ projects } key="image model"/>,
+      element: <ProjectImageModal index={ index } projects={ projects } key="project-image"/>,
       transition: { backgroundColor: { duration: 0 } },
     })
   }
 
   return (
-    <ul className="flex w-full flex-col items-center justify-center col-full-width"
-        role="none"
-        onMouseLeave={ resetCursor }>
+    <ul className="grid grid-cols-layout col-full-width" role="none" onMouseLeave={ resetCursor }>
       {
-        projects.map((project, index) =>
-          <Project index={ index } project={ project } setModal={ updateModal } key={ project.id }/>,
-        )
+        projects.map((project, index) => <Project index={ index }
+                                                  project={ project }
+                                                  setModal={ updateModal }
+                                                  key={ project.id }/>)
       }
     </ul>
   )

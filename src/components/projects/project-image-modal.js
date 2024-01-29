@@ -17,19 +17,14 @@ export const ProjectImageModal = ({ index, projects = [] }) => {
   useEffect(() => motionValue.set(index), [index, motionValue])
 
   return (
-    <m.div className="pointer-events-none relative flex h-full w-full items-center justify-center overflow-hidden rounded-sm bg-secondary"
+    <m.div className="relative h-full w-full overflow-hidden rounded-sm"
            variants={ scaleAnimation }
            initial="initial"
            animate="enter"
            exit="closed">
-      <m.div className="absolute h-full w-full"
-             style={ { top: useMotionTemplate`${ spring }%` } }>
+      <m.div className="absolute h-full w-full" style={ { top: useMotionTemplate`${ spring }%` } }>
         {
-          projects.map(({ id, image, image_alt }) =>
-            <div className="flex h-full w-full items-center justify-center" key={ id }>
-              <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
-            </div>,
-          )
+          projects.map(({ id, image, image_alt }) => <GatsbyImage image={ image } alt={ image_alt } key={ id } className="h-full w-full"/>)
         }
       </m.div>
     </m.div>
