@@ -18,7 +18,7 @@ const variants = {
 }
 
 export const Reveal = ({ className = '', children, ...attributes }) =>
-  <span className={ `inline-block clip-path-overflow ${ className }` }>
+  <span className={ `inline-block [clip-path:polygon(0%_-5%,0%_105%,105%_105%,105%_-5%)] ${ className }` }>
     <m.span variants={ variants }
             className="block"
             initial="initial"

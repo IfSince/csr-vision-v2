@@ -26,7 +26,7 @@ export const MainNav = ({ isActive, selectedLink, setSelectedLink, toggleActive 
                 onClick={ toggleActive }
                 onMouseEnter={ updateOnLinkHover }
                 onMouseLeave={ resetCursor }>
-            <m.span className="flex lowercase clip-path-overflow pr-[0.2em]"
+            <m.span className="flex lowercase pr-[0.2em]"
                     variants={ characterHover }
                     animate={ selectedLink.isActive && selectedLink.index !== index ? 'others' : 'hovered' }
                     onMouseEnter={ () => setSelectedLink({ isActive: true, index }) }
