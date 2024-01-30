@@ -1,4 +1,4 @@
-export const viewport = { once: true, margin: '0px 0px -50px 0px' }
+export const viewport = { once: true, margin: '-50px 0px -50px 0px' }
 
 /* ---------- Scroll Reveal ---------- */
 const scrollRevealVariants = {

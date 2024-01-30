@@ -2,7 +2,7 @@ import { SeoHead } from '../../components/seo-head.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
 import { Section } from '../../components/layout/section/section.js'
 import { Headline } from '../../components/layout/section/headline.js'
-import { SectionHeading } from '../../components/layout/section/section-heading.js'
+import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
 
@@ -17,7 +17,7 @@ const ServicesPage = () => {
 
       <Section>
         <Headline/>
-        <SectionHeading>TODO</SectionHeading>
+        <SectionDotTitle>TODO</SectionDotTitle>
 
         <SectionTitle align="center">
           Hier kommen unsere Services rein.

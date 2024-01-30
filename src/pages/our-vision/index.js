@@ -4,6 +4,7 @@ import { Section } from '../../components/layout/section/section.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
 import { Headline } from '../../components/layout/section/headline.js'
+import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { SectionHeading } from '../../components/layout/section/section-heading.js'
 
 const OurVisionPage = () => {
@@ -18,24 +19,31 @@ const OurVisionPage = () => {
 
       <Section>
         <Headline/>
-        <SectionHeading>our mission</SectionHeading>
+        <SectionDotTitle>our mission</SectionDotTitle>
 
         <SectionTitle align="center">
           Nachhaltiges Handeln ist nicht nur eine Verantwortung, sondern eine einzigartige Chance für Unternehmen.
         </SectionTitle>
 
         <SectionText align="right">
-          Unsere Vision bei csr vision liegt darin, Unternehmen dabei zu unterstützen, ihre Nachhaltigkeitsbemühungen durch hochwertiges Marketing und
+          Unsere Vision liegt darin, Unternehmen dabei zu unterstützen, ihre Nachhaltigkeitsbemühungen durch hochwertiges Marketing und
           Kommunikation effektiv zu präsentieren. Unser Ziel ist es, Unternehmen zu ermächtigen, ihre nachhaltigen Praktiken und Werte auf authentische Weise
           hervorzuheben und ihre Botschaften mit einer breiten Zielgruppe zu teilen.
-          Indem wir die Kraft von Marketing und Kommunikation nutzen, streben wir danach, eine Welt zu schaffen, in der Nachhaltigkeit nicht nur eine Handlung,
-          sondern auch eine Geschichte ist, die erzählt werden muss.
         </SectionText>
 
         <SectionText align="right">
           Indem wir die Kraft von Marketing und Kommunikation nutzen, streben wir danach, eine Welt zu schaffen, in der Nachhaltigkeit nicht nur eine Handlung,
           sondern auch eine Geschichte ist, die erzählt werden muss.
         </SectionText>
+      </Section>
+
+      <Section>
+        <SectionHeading>benefits of csr</SectionHeading>
+        <Headline/>
+        <SectionDotTitle>benefits</SectionDotTitle>
+        <SectionTitle align="right">
+          Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
+        </SectionTitle>
       </Section>
     </>
   )

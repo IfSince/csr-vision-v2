@@ -4,7 +4,7 @@ import { Section } from '../../components/layout/section/section.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
 import { Headline } from '../../components/layout/section/headline.js'
-import { SectionHeading } from '../../components/layout/section/section-heading.js'
+import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 
 const PressPage = () => {
   return (
@@ -17,7 +17,7 @@ const PressPage = () => {
 
       <Section>
         <Headline/>
-        <SectionHeading>TODO</SectionHeading>
+        <SectionDotTitle>TODO</SectionDotTitle>
 
         <SectionTitle align="center">
           Hier kommt der ganze Presse-Stuff rein, noch zu diskutieren was genau da dazu gehört.

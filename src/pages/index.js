@@ -3,7 +3,7 @@ import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 import { Section } from '../components/layout/section/section.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { Headline } from '../components/layout/section/headline.js'
-import { SectionHeading } from '../components/layout/section/section-heading.js'
+import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { SectionText } from '../components/layout/section/section-text.js'
 
 const IndexPage = () => {
@@ -24,7 +24,7 @@ const IndexPage = () => {
         </SectionTitle>
 
         <Headline/>
-        <SectionHeading>our mission</SectionHeading>
+        <SectionDotTitle>our mission</SectionDotTitle>
 
         <SectionText align="right">
           Bei uns steht im Mittelpunkt, Ihnen zu helfen, Ihre Nachhaltigkeitsziele zu definieren und wirkungsvoll zu kommunizieren. Tauchen Sie ein in unsere

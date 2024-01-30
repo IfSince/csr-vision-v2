@@ -78,7 +78,7 @@
     max-width: 100%;
   }
 
-  h1 {
+  h1, .text-heading-1 {
     @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted
   }
 
