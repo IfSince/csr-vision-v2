@@ -12,7 +12,7 @@ const OurVisionPage = () => {
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
           <HeroTextReveal>our vision</HeroTextReveal>
-          <HeroTextReveal className="pl-[1ch]">is to inspire</HeroTextReveal>
+          <HeroTextReveal className="pl-[1ch]">is to <span className="text-accent">inspire</span></HeroTextReveal>
         </h1>
       </section>
 
@@ -21,41 +21,20 @@ const OurVisionPage = () => {
         <SectionHeading>our mission</SectionHeading>
 
         <SectionTitle align="center">
-          Lorem ipsum dolor sit amet, conset sadipscing elitr, sed diam nonumy eirmod tempor.
+          Nachhaltiges Handeln ist nicht nur eine Verantwortung, sondern eine einzigartige Chance für Unternehmen.
         </SectionTitle>
 
         <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
-          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
-          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
-          practices because we believe that the built environment Plays an important role in achieving these goals,
-          and we want to encourage others within our industry to do the same.
+          Unsere Vision bei csr vision liegt darin, Unternehmen dabei zu unterstützen, ihre Nachhaltigkeitsbemühungen durch hochwertiges Marketing und
+          Kommunikation effektiv zu präsentieren. Unser Ziel ist es, Unternehmen zu ermächtigen, ihre nachhaltigen Praktiken und Werte auf authentische Weise
+          hervorzuheben und ihre Botschaften mit einer breiten Zielgruppe zu teilen.
+          Indem wir die Kraft von Marketing und Kommunikation nutzen, streben wir danach, eine Welt zu schaffen, in der Nachhaltigkeit nicht nur eine Handlung,
+          sondern auch eine Geschichte ist, die erzählt werden muss.
         </SectionText>
 
         <SectionText align="right">
-          The Autex Sustainability report details our mission and vision, our sustainability strategy, and our five sustainability pillars.
-        </SectionText>
-      </Section>
-
-
-      <Section>
-        <Headline/>
-        <SectionHeading>our mission</SectionHeading>
-
-        <SectionTitle align="left">
-          Lorem ipsum dolor sit amet, conset sadipscing elitr, sed diam nonumy eirmod tempor.
-        </SectionTitle>
-
-        <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
-          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
-          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
-          practices because we believe that the built environment Plays an important role in achieving these goals,
-          and we want to encourage others within our industry to do the same.
-        </SectionText>
-
-        <SectionText align="right">
-          The Autex Sustainability report details our mission and vision, our sustainability strategy, and our five sustainability pillars.
+          Indem wir die Kraft von Marketing und Kommunikation nutzen, streben wir danach, eine Welt zu schaffen, in der Nachhaltigkeit nicht nur eine Handlung,
+          sondern auch eine Geschichte ist, die erzählt werden muss.
         </SectionText>
       </Section>
     </>

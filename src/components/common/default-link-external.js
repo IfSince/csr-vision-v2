@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import { m } from 'framer-motion'
 import { useContext } from 'react'
 import { CursorContext } from '../../providers/cursor-provider.js'
@@ -39,6 +38,7 @@ export const DefaultLinkExternal = ({ to, onClick = void 0, children }) => {
       <a className="relative block overflow-hidden group/default-link"
          href={ to }
          target="_blank"
+         rel="noreferrer"
          onMouseEnter={ updateOnLinkHover }
          onMouseLeave={ resetCursor }
          onClick={ onClick }>
