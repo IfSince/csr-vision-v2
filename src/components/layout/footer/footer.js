@@ -1,11 +1,12 @@
 import { Link } from 'gatsby'
 import { DefaultLink } from '../../common/default-link.js'
-import { getNextPageUrl, getOtherLinks, getPageLinks } from '../../../links.js'
+import { getNextPageUrl, getOtherLinks, getPageLinks, getSocialLinks } from '../../../links.js'
 import { useContext, useEffect, useState } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
 import { RowHover } from '../../animations/row-hover.js'
 import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
 import { LogoWithClaim } from '../../../svg/logo/logo-with-claim.js'
+import { DefaultLinkExternal } from '../../common/default-link-external.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
@@ -47,9 +48,13 @@ export const Footer = ({ currentUrl = '/' }) => {
       </ul>
 
       <ul className="mt-24 mb-3 flex grow gap-x-8 horizontal-spacing lg:mt-[10vw] lg:mb-0 lg:pb-8">
-        <li>
-          <DefaultLink to="/">LinkedIn</DefaultLink>
-        </li>
+        {
+          getSocialLinks().map(({ to, title }) =>
+            <li key={ title }>
+              <DefaultLinkExternal to={ to }>{ title }</DefaultLinkExternal>
+            </li>,
+          )
+        }
       </ul>
 
       <ul className="flex flex-wrap items-end justify-between gap-x-8 gap-y-16 pb-8 border-secondary/20 horizontal-spacing lg:gap-y-0 lg:border-l lg:pl-8">

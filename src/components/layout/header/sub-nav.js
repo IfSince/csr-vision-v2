@@ -1,6 +1,7 @@
 import { Reveal } from '../../animations/reveal.js'
 import { DefaultLink } from '../../common/default-link.js'
 import { getOtherLinks, getSocialLinks } from '../../../links.js'
+import { DefaultLinkExternal } from '../../common/default-link-external.js'
 
 export const SubNav = ({ isActive, toggleActive }) =>
   <div className="mt-20 flex flex-wrap items-end justify-between gap-x-2 gap-y-6 text-sm md:mt-28 xl:text-base">
@@ -10,7 +11,7 @@ export const SubNav = ({ isActive, toggleActive }) =>
           <li key={ title }>
             <Reveal animate={ isActive ? 'enter' : 'exit' }
                     custom={ [0.6, 0] }>
-              <DefaultLink to={ to } onClick={ toggleActive }>{ title }</DefaultLink>
+              <DefaultLinkExternal to={ to } onClick={ toggleActive }>{ title }</DefaultLinkExternal>
             </Reveal>
           </li>,
         )

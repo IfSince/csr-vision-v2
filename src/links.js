@@ -49,7 +49,7 @@ export const LINKS = [
 
   /* ---------- Socials ---------- */
   {
-    to: '/',
+    to: 'https://www.linkedin.com/in/csr-vision/',
     title: 'LinkedIn',
     type: SOCIAL_LINK,
   },
