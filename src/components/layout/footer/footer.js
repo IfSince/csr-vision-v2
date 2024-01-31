@@ -25,7 +25,7 @@ export const Footer = ({ currentUrl = '/' }) => {
         <Link to="/" className="mt-16 mr-8 max-w-md">
           <LogoWithClaim/>
         </Link>
-        <Link className="mt-20 flex w-fit flex-wrap py-4 text-heading-2 2xl:mt-[6.5vw]"
+        <Link className="mt-20 flex w-fit flex-wrap py-4 text-3xl 2xl:mt-[6.5vw]"
               to={ nextPage.to }
               onMouseEnter={ updateOnLinkHover }
               onMouseLeave={ resetCursor }>
@@ -34,7 +34,7 @@ export const Footer = ({ currentUrl = '/' }) => {
         </Link>
       </div>
 
-      <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-heading-4 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
+      <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-h3 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
         {
           getPageLinks().map(({ to, title }) =>
             <RowHover Tag="li" key={ title }>

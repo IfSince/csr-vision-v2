@@ -9,7 +9,7 @@ export const SectionHeading = ({ align = 'left', children }) => {
   }
 
   return (
-    <m.h2 className={ `mb-[0.4em] mt-[0.75em] text-heading-1 ${ alignmentClasses[align] }` }
+    <m.h2 className={ `mb-[0.4em] mt-[0.75em] ${ alignmentClasses[align] }` }
           initial="initial"
           whileInView="enter"
           viewport={ viewport }>

@@ -62,6 +62,13 @@ module.exports = {
         path: `${ __dirname }/projects`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'benefits',
+        path: `${ __dirname }/benefits`,
+      },
+    },
 
     /* ---------- PWA ---------- */
     {

@@ -67,6 +67,10 @@
     --clr-rgb-accent: rgb(var(--green-800));
   }
 
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     text-rendering: optimizeSpeed;
 
@@ -76,10 +80,6 @@
   img, picture, svg, video {
     display: block;
     max-width: 100%;
-  }
-
-  h1, .text-heading-1 {
-    @apply lowercase leading-[0.9em] text-h1 tracking-[-0.052em] font-undotted
   }
 
   .grid-cols-layout > * {
@@ -92,15 +92,28 @@
     @apply px-[var(--horizontal-spacing)];
   }
 
-  .text-heading-2 {
-    @apply lowercase font-undotted text-h2 leading-[0.9em] tracking-[-0.045em];
+  .card-width {
+    min-width: min(calc(100vw - (var(--horizontal-spacing) * 2) - 25px), 400px);
   }
 
-  .text-heading-3 {
-    @apply tracking-tighter text-h3 leading-[1.05em];
+
+  h1, h2 {
+    @apply lowercase leading-[0.9em] text-heading-1 tracking-[-0.052em] font-undotted;
   }
 
-  .text-heading-4 {
-    @apply tracking-tight text-h4 leading-[1.3em];
+  .text-h3 {
+    @apply tracking-tight text-heading-3 leading-[1.3em];
+  }
+
+  .text-3xl {
+    @apply lowercase font-undotted text-3-extra-large leading-[0.9em] tracking-[-0.045em];
+  }
+
+  .text-2xl {
+    @apply tracking-tighter text-2-extra-large leading-[1.05em];
+  }
+
+  .text-xl {
+    @apply tracking-tight text-extra-large leading-[1.3em];
   }
 }

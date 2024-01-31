@@ -11,11 +11,11 @@ export const Project = ({ index, project: { category, title, slug, image, image_
     <m.li className="border-b col-full-width border-secondary/20 group first:border-t"
           { ...scrollRevealAnimation(0.15) }>
       <Link className="grid pt-4 pb-14 min-h-28 md:py-5 *:col-content grid-cols-project-list"
-            to={ `/projects/${ slug }` }
+            to={ `/projects${ slug }` }
             onMouseEnter={ () => setModal(index) }>
         {
           isMobile &&
-          <div className="mb-6 max-h-80 w-full max-w-sm justify-self-end md:col-start-4">
+          <div className="mb-6 max-h-80 w-full max-w-sm md:justify-self-end md:col-start-4">
             <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
           </div>
         }
@@ -26,7 +26,7 @@ export const Project = ({ index, project: { category, title, slug, image, image_
           <p className="font-medium">{ category }</p>
         </div>
 
-        <h3 className="max-w-sm text-heading-4 md:max-lg:mt-10 md:col-end-4 md:row-start-1 md:max-w-lg lg:col-end-[content] lg:col-start-3 lg:max-w-xl
+        <h3 className="max-w-sm text-h3 md:max-lg:mt-10 md:col-end-4 md:row-start-1 md:max-w-lg lg:col-end-[content] lg:col-start-3 lg:max-w-xl
                        lg:group-hover:-translate-x-4 duration-500 transition-transform">
           { title }
         </h3>

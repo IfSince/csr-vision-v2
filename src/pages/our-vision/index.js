@@ -6,8 +6,17 @@ import { SectionText } from '../../components/layout/section/section-text.js'
 import { Headline } from '../../components/layout/section/headline.js'
 import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { SectionHeading } from '../../components/layout/section/section-heading.js'
+import { BenefitsList } from '../../components/our-vision/benefits-list.js'
+import { graphql } from 'gatsby'
 
-const OurVisionPage = () => {
+const OurVisionPage = ({ data }) => {
+  const benefits = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
+    id,
+    title: frontmatter.title,
+    icon: fields.slug.replace(/\//g, ''),
+    description: frontmatter.description,
+  }))
+
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
@@ -44,10 +53,30 @@ const OurVisionPage = () => {
         <SectionTitle align="right">
           Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
         </SectionTitle>
+
       </Section>
+
+      <BenefitsList benefits={ benefits }/>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(filter: {fields: {sourceName: {eq: "benefits"}}}) {
+      nodes {
+        id
+        frontmatter {
+          title
+          description
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default OurVisionPage
 

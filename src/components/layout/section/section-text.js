@@ -8,7 +8,7 @@ export const SectionText = ({ align = 'left', children }) => {
   }
 
   return (
-    <m.p className={ `mb-6 lg:mb-8 w-full max-w-lg text-heading-4 md:max-w-xl lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }
+    <m.p className={ `mb-6 lg:mb-8 w-full max-w-lg text-xl md:max-w-xl lg:max-w-2xl 2xl:max-w-3xl ${ alignmentClasses[align] }` }
          { ...scrollRevealAnimation(0.3) }>
       { children }
     </m.p>

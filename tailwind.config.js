@@ -28,10 +28,13 @@ module.exports = {
         undotted: ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        'h1': 'clamp(4rem, 11vw, 11.25rem)', // 64px - 180px
-        'h2': 'clamp(3rem, 9vw, 7.5rem)', // 54px - 120px
-        'h3': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
-        'h4': 'clamp(1.25rem, 2.5vw, 1.75rem)', // 20px - 28px
+        'heading-1': 'clamp(4rem, 11vw, 11.25rem)', // 64px - 180px
+        'heading-3': 'clamp(1.5rem, 3.5vw, 2.25rem)', // 24px - 36px
+
+        '3-extra-large': 'clamp(3rem, 9vw, 7.5rem)', // 54px - 120px,
+        '2-extra-large': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
+        'extra-large': 'clamp(1.25rem, 2.5vw, 1.75rem)', // 20px - 28px
+        'lg': '18px', // 20px - 28px
       },
       screens: {
         'xs': '520px',

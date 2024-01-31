@@ -17,7 +17,7 @@ export const MainNav = ({ isActive, selectedLink, setSelectedLink, toggleActive 
     })
   }
 
-  return <ul className="flex flex-wrap gap-x-[0.1em] gap-y-[0.3em] text-heading-2 lg:max-w-7xl 4xl:max-w-[100rem]">
+  return <ul className="flex flex-wrap gap-x-[0.1em] gap-y-[0.3em] text-3xl lg:max-w-7xl 4xl:max-w-[100rem]">
     {
       getPageLinks().map(({ title, to }, index) =>
         <li key={ `l_${ index }` }>

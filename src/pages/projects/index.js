@@ -7,9 +7,9 @@ import { Section } from '../../components/layout/section/section.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 
 const ProjectsPage = ({ data }) => {
-  const projects = data.allMdx.nodes.map(({ id, frontmatter }) => ({
+  const projects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
     id,
-    slug: frontmatter.slug,
+    slug: fields.slug,
     title: frontmatter.title,
     category: frontmatter.category,
     image_alt: frontmatter.image_alt,
@@ -43,11 +43,10 @@ const ProjectsPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+    allMdx(sort: {frontmatter: {date: DESC}} filter: {fields: {sourceName: {eq: "projects"}}}) {
       nodes {
         id
         frontmatter {
-          slug
           title
           category
           image_alt
@@ -56,6 +55,9 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+        }
+        fields {
+          slug
         }
       }
     }
