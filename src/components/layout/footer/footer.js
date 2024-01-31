@@ -28,7 +28,8 @@ export const Footer = ({ currentUrl = '/' }) => {
         <Link className="mt-20 flex w-fit flex-wrap py-4 text-3xl 2xl:mt-[6.5vw]"
               to={ nextPage.to }
               onMouseEnter={ updateOnLinkHover }
-              onMouseLeave={ resetCursor }>
+              onMouseLeave={ resetCursor }
+              onClick={ resetCursor }>
           <p>next/</p>
           <p>{ nextPage.title }</p>
         </Link>

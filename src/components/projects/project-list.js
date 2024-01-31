@@ -20,6 +20,7 @@ export const ProjectList = ({ projects }) => {
         projects.map((project, index) => <Project index={ index }
                                                   project={ project }
                                                   setModal={ updateModal }
+                                                  resetCursor={resetCursor}
                                                   key={ project.id }/>)
       }
     </ul>

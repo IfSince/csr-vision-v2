@@ -4,7 +4,7 @@ import { m } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { scrollRevealAnimation } from '../../animation.config.js'
 
-export const Project = ({ index, project: { category, title, slug, image, image_alt }, setModal }) => {
+export const Project = ({ index, project: { category, title, slug, image, image_alt }, setModal, resetCursor }) => {
   const isMobile = useIsMobile()
 
   return (
@@ -12,10 +12,11 @@ export const Project = ({ index, project: { category, title, slug, image, image_
           { ...scrollRevealAnimation(0.15) }>
       <Link className="grid pt-4 pb-14 min-h-28 md:py-5 *:col-content grid-cols-project-list"
             to={ `/projects${ slug }` }
-            onMouseEnter={ () => setModal(index) }>
+            onMouseEnter={ () => setModal(index) }
+            onClick={ resetCursor }>
         {
           isMobile &&
-          <div className="mb-6 max-h-80 w-full max-w-sm md:justify-self-end md:col-start-4">
+          <div className="mb-6 max-h-80 w-full max-w-sm md:col-start-4 md:justify-self-end">
             <GatsbyImage alt={ image_alt } image={ image } className="h-full w-full"/>
           </div>
         }

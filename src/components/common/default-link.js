@@ -32,6 +32,11 @@ export const DefaultLink = ({ to, onClick = void 0, children }) => {
     props: { width: 70, height: 70, opacity: 0.3 },
   })
 
+  const onClickFn = () => {
+    resetCursor()
+    onClick()
+  }
+
   return (
     <m.span animate="default"
             whileHover="hover"
@@ -40,7 +45,7 @@ export const DefaultLink = ({ to, onClick = void 0, children }) => {
             to={ to }
             onMouseEnter={ updateOnLinkHover }
             onMouseLeave={ resetCursor }
-            onClick={ onClick }>
+            onClick={ onClickFn }>
         <m.span className="absolute bottom-1 left-0 w-full duration-300 h-[1px] bg-secondary" variants={ transitionOut } transition={ transition }/>
         <m.span className="absolute bottom-1 left-0 w-full duration-300 h-[1px] bg-secondary" variants={ transitionIn } transition={ transition }/>
         { children }
