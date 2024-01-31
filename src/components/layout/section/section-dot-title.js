@@ -14,14 +14,14 @@ const textReveal = {
 const transition = { duration: 0.75, delay: 0.25, ease: [.16, .99, .41, .99] }
 
 export const SectionDotTitle = ({ children }) =>
-  <m.div className="mb-8 flex h-fit items-center gap-4 md:mb-10 lg:col-[content-start/span_2] xl:mb-12"
+  <m.div className="mb-12 flex h-fit items-center gap-4 lg:col-[content-start/span_2]"
          initial="initial"
          whileInView="inView"
          viewport={ { ...viewport, once: false } }>
     <m.div className="rounded-full h-3.5 w-3.5 mb-0.5 bg-secondary"
            variants={ dotReveal }
            transition={ transition }/>
-    <m.p className="font-medium lg:text-lg"
-          variants={ textReveal }
-          transition={ transition }>{ children }</m.p>
+    <m.p className="text-base font-medium lg:text-lg"
+         variants={ textReveal }
+         transition={ transition }>{ children }</m.p>
   </m.div>

@@ -25,7 +25,7 @@ const transitionIn = {
 
 const transition = { duration: 0.2, ease: [1, 0, .85, .83] }
 
-export const DefaultLink = ({ to, onClick = void 0, children }) => {
+export const DefaultLink = ({ to, onClick = null, children }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
 
   const updateOnLinkHover = () => updateCursor({
@@ -34,7 +34,7 @@ export const DefaultLink = ({ to, onClick = void 0, children }) => {
 
   const onClickFn = () => {
     resetCursor()
-    onClick()
+    onClick && onClick()
   }
 
   return (
