@@ -5,6 +5,7 @@ module.exports = {
   content: [
     `./src/pages/**/*.{js,jsx}`,
     `./src/components/**/*.{js,jsx}`,
+    `./src/templates/**/*.{js,jsx}`,
     './src/hooks/**/*.{js,jsx}',
     './src/svg/**/*.{js,jsx}',
   ],
@@ -34,7 +35,7 @@ module.exports = {
         '3-extra-large': 'clamp(3rem, 9vw, 7.5rem)', // 54px - 120px,
         '2-extra-large': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
         'extra-large': 'clamp(1.25rem, 2.5vw, 1.75rem)', // 20px - 28px
-        'lg': '18px', // 20px - 28px
+        'lg': '18px',
       },
       screens: {
         'xs': '520px',

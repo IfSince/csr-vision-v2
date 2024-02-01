@@ -5,8 +5,21 @@ import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
 import { Headline } from '../../components/layout/section/headline.js'
 import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
+import { graphql } from 'gatsby'
+import { getImage } from 'gatsby-plugin-image'
 
-const OurTeamPage = () => {
+const OurTeamPage = ({ data }) => {
+  const teamMembers = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
+    id,
+    name: frontmatter.name,
+    role: frontmatter.role,
+    skills: frontmatter.skills,
+    slug: fields.slug,
+    image: getImage(frontmatter.image)
+  }))
+
+  console.log(teamMembers)
+
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
@@ -34,6 +47,29 @@ const OurTeamPage = () => {
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(filter: {fields: {sourceName: {eq: "team-members"}}}) {
+      nodes {
+        id
+        frontmatter {
+          name
+          role
+          skills
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default OurTeamPage
 

@@ -78,6 +78,13 @@ module.exports = {
         path: `${ DATA_FOLDER }/services`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'team-members',
+        path: `${ DATA_FOLDER }/team-members`,
+      },
+    },
 
     /* ---------- PWA ---------- */
     {
@@ -117,7 +124,5 @@ module.exports = {
         },
       },
     },
-
-
   ],
 }

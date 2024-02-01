@@ -21,20 +21,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 const path = require('path')
+const postTemplate = path.resolve(`./src/templates/team-member.js`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
+  /* ---------- Projects ---------- */
   const projectsQuery = await graphql(`
     query {
       allMdx(filter: {fields: {sourceName: {eq: "projects"}}}) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-              sourceName
-            }
+        nodes {
+          id
+          fields {
+            slug
+            sourceName
           }
         }
       }
@@ -42,16 +42,48 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `)
 
   if (projectsQuery.errors) {
-    reporter.panicOnBuild('ERROR: Loading "createPages" query')
+    reporter.panicOnBuild('ERROR: Loading "createPages" projects query')
   }
 
-  const projects = projectsQuery.data.allMdx.edges
+  const projects = projectsQuery.data.allMdx.nodes
 
-  projects.forEach(({ node }, index) => {
+  projects.forEach(project => {
     createPage({
-      path: `${ node.fields.sourceName }${ node.fields.slug }`,
+      path: `${ project.fields.sourceName }${ project.fields.slug }`,
       component: path.resolve('./src/templates/project.js'),
-      context: { id: node.id },
+      context: { id: project.id },
+    })
+  })
+
+  /* ---------- Team Members ---------- */
+  const teamMembersQuery = await graphql(`
+    query {
+      allMdx(filter: {fields: {sourceName: {eq: "team-members"}}}) {
+        nodes {
+          id
+          fields {
+            slug
+            sourceName
+          } 
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+  `)
+
+  if (teamMembersQuery.errors) {
+    reporter.panicOnBuild('ERROR: Loading "createPages" team-members query')
+  }
+
+  const teamMembers = teamMembersQuery.data.allMdx.nodes
+
+  teamMembers.forEach(teamMember => {
+    createPage({
+      path: `our-team${ teamMember.fields.slug }`,
+      component: `${postTemplate}?__contentFilePath=${teamMember.internal.contentFilePath}`,
+      context: { id: teamMember.id },
     })
   })
 
