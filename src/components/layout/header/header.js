@@ -9,11 +9,23 @@ import { Sun } from '../../../svg/icons/theme-toggle/sun.js'
 import { Moon } from '../../../svg/icons/theme-toggle/moon.js'
 import { Menu } from '../../../svg/icons/menu/menu.js'
 import { Close } from '../../../svg/icons/menu/close.js'
-
+import { Magnetic } from '../../animations/magnetic.js'
 
 export const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
   const [isActive, toggleActive] = useCycle(false, true)
+
+  const items = [
+    {
+      onClick: toggleTheme,
+      icon: theme === 'light' ? <Sun className="h-6 fill-primary 4xl:h-7"/> : <Moon className="h-5 fill-primary 4xl:h-6"/>,
+    },
+    {
+      onClick: toggleActive,
+      icon: !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>,
+    },
+  ]
+
 
   return (
     <header className={ `fixed w-full py-5 text-secondary z-[1000] sm:pt-8 md:pt-10 4xl:pt-16 bg-none ${ !isActive && 'pointer-events-none' }` }>
@@ -23,23 +35,23 @@ export const Header = () => {
         </Link>
 
         <div className="flex gap-3 md:gap-6">
-          <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
-                  onClick={ toggleTheme }>
-            <AnimatePresence mode="wait">
-              {
-                theme === 'light' ? <Sun className="h-6 fill-primary 4xl:h-7"/> : <Moon className="h-5 fill-primary 4xl:h-6"/>
-              }
-            </AnimatePresence>
-          </button>
-
-          <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
-                  onClick={ toggleActive }>
-            <AnimatePresence mode="wait">
-              {
-                !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>
-              }
-            </AnimatePresence>
-          </button>
+          {
+            items.map(item =>
+              <Magnetic>
+                {
+                  (position) =>
+                    <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
+                            onClick={ item.onClick }>
+                      <m.div style={ position }>
+                        <AnimatePresence mode="wait">
+                          { item.icon }
+                        </AnimatePresence>
+                      </m.div>
+                    </button>
+                }
+              </Magnetic>,
+            )
+          }
         </div>
       </div>
 
