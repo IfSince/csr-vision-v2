@@ -5,35 +5,78 @@ import { Headline } from '../../components/layout/section/headline.js'
 import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { SectionText } from '../../components/layout/section/section-text.js'
+import { graphql } from 'gatsby'
+import { Service } from '../../components/services/service.js'
 
-const ServicesPage = () => {
+const ServicesPage = ({ data }) => {
+  const services = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
+    id,
+    title: frontmatter.title,
+    icon: fields.slug.replace(/\//g, ''),
+    description: frontmatter.description,
+    slug: fields.slug,
+  }))
+
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>services</HeroTextReveal>
+          <HeroTextReveal>we <span className="text-accent">excel</span> in</HeroTextReveal>
+          <HeroTextReveal className="pl-[2ch] mb-[12vh] lg:mb-[8vh]">what</HeroTextReveal>
+
+          <span className="justify-self-end *:block">
+            <HeroTextReveal>we do</HeroTextReveal>
+            <HeroTextReveal className="pl-[1ch]">the <span className="text-accent">best</span></HeroTextReveal>
+          </span>
         </h1>
       </section>
 
       <Section>
         <Headline/>
-        <SectionDotTitle>TODO</SectionDotTitle>
+        <SectionDotTitle>our services</SectionDotTitle>
 
         <SectionTitle align="center">
-          Hier kommen unsere Services rein.
+          Entdecken Sie unsere Dienstleistungen im Bereich Nachhaltigkeit und CSR-Beratung.
+          Unsere Expertise umfasst Lösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind.
         </SectionTitle>
 
         <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
-          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
-          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
-          practices because we believe that the built environment Plays an important role in achieving these goals,
-          and we want to encourage others within our industry to do the same.
+          Von der Entwicklung umfassender Nachhaltigkeitsstrategien bis hin zur Implementierung konkreter Maßnahmen unterstützen wir Unternehmen dabei, ihre
+          Verantwortung gegenüber der Umwelt und der Gesellschaft zu erfüllen.
         </SectionText>
+
+        <SectionText align="right">
+          Unsere Dienstleistungen umfassen unter anderem die Analyse und Bewertung von CSR-Risiken und -Chancen, die Entwicklung von Nachhaltigkeitsberichten
+          und die Integration von Nachhaltigkeitsaspekten in das Kerngeschäft. Mit einem ganzheitlichen Ansatz wir unseren Kunden, langfristigen Wert zu
+          schaffen und sich als verantwortungsbewusste und zukunftsorientierte Unternehmen zu positionieren.
+        </SectionText>
+      </Section>
+
+      <Section>
+        {
+          services.map(service => <Service { ...service } key={ service.id }/>)
+        }
       </Section>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(filter: {fields: {sourceName: {eq: "services"}}}) {
+      nodes {
+        id
+        frontmatter {
+          title
+          description
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default ServicesPage
 

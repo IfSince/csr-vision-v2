@@ -71,6 +71,13 @@ module.exports = {
         path: `${ DATA_FOLDER }/benefits`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'services',
+        path: `${ DATA_FOLDER }/services`,
+      },
+    },
 
     /* ---------- PWA ---------- */
     {

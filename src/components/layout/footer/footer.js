@@ -21,7 +21,7 @@ export const Footer = ({ currentUrl = '/' }) => {
 
   return (
     <footer className="pt-64 bg-primary lg:pt-80">
-      <div className="grid border-t border-secondary/20 lg:grid-cols-footer">
+      <div className="grid border-t border-secondary/20 lg:grid-cols-[minmax(650px,1fr)_minmax(0,max(768px,35vw))]">
         <div className="flex grow flex-col horizontal-spacing">
           <Link to="/" className="mt-16 mr-8 max-w-md">
             <LogoWithClaim/>

@@ -42,7 +42,6 @@ module.exports = {
       },
       gridTemplateColumns: {
         'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
-        'footer': 'minmax(650px, 1fr) minmax(0, max(768px, 35vw))',
         'project-list': 'var(--horizontal-spacing) [content-start] repeat(3, minmax(0, 1fr)) [content-end] var(--horizontal-spacing)',
       },
       gridColumn: {
