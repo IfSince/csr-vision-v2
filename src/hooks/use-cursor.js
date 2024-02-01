@@ -6,7 +6,7 @@ const DEFAULT_ELEMENT = <></>
 const DEFAULT_SIZE = { width: 16, height: 16 }
 const DEFAULT_STYLES = {
   ...DEFAULT_SIZE,
-  backgroundColor: 'rgb(65 124 94)',
+  backgroundColor: 'var(--clr-rgb-accent)',
 }
 
 export const useCursor = () => {
