@@ -32,8 +32,7 @@ const ProjectsPage = ({ data }) => {
 
       <Section>
         <SectionTitle>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua.
+          Tauchen Sie ein in unsere Welt des Designs die unsere Expertise in den Bereichen Grafikdesign, Webdesign, Branding und mehr demonstrieren.
         </SectionTitle>
         <ProjectList projects={ projects }/>
       </Section>
