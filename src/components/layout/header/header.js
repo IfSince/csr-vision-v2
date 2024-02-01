@@ -17,10 +17,12 @@ export const Header = () => {
 
   const items = [
     {
+      key: 'themeToggle',
       onClick: toggleTheme,
       icon: theme === 'light' ? <Sun className="h-6 fill-primary 4xl:h-7"/> : <Moon className="h-5 fill-primary 4xl:h-6"/>,
     },
     {
+      key: 'menuToggle',
       onClick: toggleActive,
       icon: !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>,
     },
@@ -36,15 +38,15 @@ export const Header = () => {
 
         <div className="flex gap-3 md:gap-6">
           {
-            items.map(item =>
-              <Magnetic>
+            items.map(({ key, onClick, icon }) =>
+              <Magnetic key={ key }>
                 {
                   (position) =>
                     <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
-                            onClick={ item.onClick }>
+                            onClick={ onClick }>
                       <m.div style={ position }>
                         <AnimatePresence mode="wait">
-                          { item.icon }
+                          { icon }
                         </AnimatePresence>
                       </m.div>
                     </button>

@@ -40,7 +40,7 @@ export const Footer = ({ currentUrl = '/' }) => {
           {
             getPageLinks().map(({ to, title }) =>
               <RowHover Tag="li" key={ title }>
-                <Link className="relative z-10 block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
+                <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
                       to={ to }>
                   { title }
                 </Link>

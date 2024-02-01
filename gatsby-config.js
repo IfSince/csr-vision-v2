@@ -16,6 +16,8 @@ const {
 
 const siteUrl = NETLIFY_ENV === 'production' ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
+const DATA_FOLDER = `${ __dirname }/data`
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -59,14 +61,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${ __dirname }/projects`,
+        path: `${ DATA_FOLDER }/projects`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'benefits',
-        path: `${ __dirname }/benefits`,
+        path: `${ DATA_FOLDER }/benefits`,
       },
     },
 

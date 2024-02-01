@@ -1,4 +1,4 @@
-import { useMetadata } from '../hooks/use-metadata.js'
+import { useMetadata } from '../hooks/graphql/use-metadata.js'
 
 export const SeoHead = ({ title, description, pathname }) => {
   const metadata = useMetadata()

@@ -5,10 +5,11 @@ export const useDesktopEventListener = (ref, event, callback) => {
   const isMobile = useIsMobile()
 
   useEffect(() => {
+    const target = ref?.current
     if (!isMobile) {
-      ref?.current?.addEventListener(event, callback)
+      target?.addEventListener(event, callback)
     }
 
-    return () => ref?.current?.removeEventListener(event, callback)
+    return () => target?.removeEventListener(event, callback)
   }, [isMobile, ref, event, callback])
 }
