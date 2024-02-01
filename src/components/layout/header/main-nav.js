@@ -17,7 +17,7 @@ export const MainNav = ({ isActive, selectedLink, setSelectedLink, toggleActive 
     })
   }
 
-  return <ul className="flex flex-wrap gap-x-[0.1em] gap-y-[0.3em] text-3xl lg:max-w-7xl 4xl:max-w-[100rem]">
+  return <ul className="flex flex-wrap text-3xl gap-x-[0.1em] gap-y-[0.3em] lg:max-w-7xl 4xl:max-w-[100rem]">
     {
       getPageLinks().map(({ title, to }, index) =>
         <li key={ `l_${ index }` }>
@@ -31,15 +31,10 @@ export const MainNav = ({ isActive, selectedLink, setSelectedLink, toggleActive 
                     animate={ selectedLink.isActive && selectedLink.index !== index ? 'others' : 'hovered' }
                     onMouseEnter={ () => setSelectedLink({ isActive: true, index }) }
                     onMouseLeave={ () => setSelectedLink({ isActive: false, index }) }>
-              {
-                title.split('').map((char, index) =>
-                  <Reveal custom={ [index * 0.02 + 0.3, (title.length - index) * 0.01] }
-                          animate={ isActive ? 'enter' : 'exit' }
-                          key={ `${ char }${ index }` }>
-                    { char !== ' ' ? char : <>&nbsp;</> }
-                  </Reveal>,
-                )
-              }
+              <Reveal custom={ [0.3, 0] }
+                      animate={ isActive ? 'enter' : 'exit' }>
+                { title }
+              </Reveal>
             </m.span>
           </Link>
         </li>,
