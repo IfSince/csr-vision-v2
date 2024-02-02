@@ -50,7 +50,6 @@ const OurVisionPage = ({ data }) => {
       <Section>
         <SectionHeading>benefits of csr</SectionHeading>
         <Headline/>
-        <SectionDotTitle>benefits</SectionDotTitle>
         <SectionTitle align="right">
           Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
         </SectionTitle>
