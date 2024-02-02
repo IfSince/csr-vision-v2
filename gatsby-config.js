@@ -49,7 +49,6 @@ module.exports = {
       },
     },
     /* ---------- File System ---------- */
-    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -85,6 +84,7 @@ module.exports = {
         path: `${ DATA_FOLDER }/team-members`,
       },
     },
+    'gatsby-plugin-mdx',
 
     /* ---------- PWA ---------- */
     {

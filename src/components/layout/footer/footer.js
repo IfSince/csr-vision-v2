@@ -3,10 +3,10 @@ import { DefaultLink } from '../../common/default-link.js'
 import { getNextPageUrl, getOtherLinks, getPageLinks, getSocialLinks } from '../../../links.js'
 import { useContext, useEffect, useState } from 'react'
 import { CursorContext } from '../../../providers/cursor-provider.js'
-import { RowHover } from '../../animations/row-hover.js'
 import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
 import { LogoWithClaim } from '../../../svg/logo/logo-with-claim.js'
 import { DefaultLinkExternal } from '../../common/default-link-external.js'
+import { RowHover } from '../../animations/row-hover.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
   const { updateCursor, resetCursor } = useContext(CursorContext)
@@ -39,12 +39,14 @@ export const Footer = ({ currentUrl = '/' }) => {
         <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-h3 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
           {
             getPageLinks().map(({ to, title }) =>
-              <RowHover Tag="li" key={ title }>
-                <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
-                      to={ to }>
-                  { title }
-                </Link>
-              </RowHover>,
+              <RowHover Tag="li"
+                        key={ title }
+                        first={
+                          <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
+                                to={ to }>
+                            { title }
+                          </Link>
+                        }/>,
             )
           }
         </ul>
