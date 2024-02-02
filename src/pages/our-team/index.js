@@ -7,6 +7,8 @@ import { Headline } from '../../components/layout/section/headline.js'
 import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
+import { SectionHeading } from '../../components/layout/section/section-heading.js'
+import { TeamMemberList } from '../../components/our-team/team-member-list.js'
 
 const OurTeamPage = ({ data }) => {
   const teamMembers = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -15,34 +17,42 @@ const OurTeamPage = ({ data }) => {
     role: frontmatter.role,
     skills: frontmatter.skills,
     slug: fields.slug,
-    image: getImage(frontmatter.image)
+    image: getImage(frontmatter.image),
+    position: frontmatter.position,
   }))
-
-  console.log(teamMembers)
 
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>our team</HeroTextReveal>
+          <HeroTextReveal>meet our</HeroTextReveal>
+          <HeroTextReveal className="pl-[2ch] mb-[12vh] text-accent lg:mb-[8vh]">creative</HeroTextReveal>
+
+          <HeroTextReveal className="justify-self-end">team of</HeroTextReveal>
+          <HeroTextReveal className="justify-self-end text-accent">specialists</HeroTextReveal>
         </h1>
       </section>
 
       <Section>
         <Headline/>
-        <SectionDotTitle>TODO</SectionDotTitle>
+        <SectionDotTitle>who we are</SectionDotTitle>
 
-        <SectionTitle align="center">
-          Hier kommen alle möglichen Informationen zu unserem Team rein.
+        <SectionTitle align="left">
+          Kreativität, Engagement und Nachhaltigkeit – die treibende Kraft hinter unseren innovativen Lösungen.
         </SectionTitle>
 
         <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
-          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
-          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
-          practices because we believe that the built environment Plays an important role in achieving these goals,
-          and we want to encourage others within our industry to do the same.
+          Unser dynamisches Team bei csr vision ist eine vielfältige Gruppe von kreativen Köpfen und Fachleuten, die sich leidenschaftlich für Nachhaltigkeit
+          und Design engagieren. Jedes Mitglied bringt einzigartige Fähigkeiten und Erfahrungen mit, um unseren Kunden dabei zu helfen, sich durch ansprechendes
+          Design und die Aufarbeitung von CSR-Berichten als nachhaltige Marktführer zu präsentieren. Entdecken Sie die Menschen hinter den innovativen Lösungen,
+          die uns auszeichnen.
         </SectionText>
+      </Section>
+
+      <Section>
+        <SectionHeading>the team</SectionHeading>
+        <Headline/>
+        <TeamMemberList teamMembers={ teamMembers }/>
       </Section>
     </>
   )
@@ -50,7 +60,10 @@ const OurTeamPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(filter: {fields: {sourceName: {eq: "team-members"}}}) {
+    allMdx(
+      filter: {fields: {sourceName: {eq: "team-members"}}}
+      sort: {frontmatter: {position:ASC}}
+    ) {
       nodes {
         id
         frontmatter {
@@ -62,6 +75,7 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+          position
         }
         fields {
           slug
