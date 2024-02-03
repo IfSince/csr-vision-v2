@@ -1,11 +1,23 @@
 import { graphql } from 'gatsby'
 import { SeoHead } from '../components/seo-head.js'
+import { IconButton } from '../components/common/button/icon-button.js'
+import { List } from '../svg/icons/list.js'
+import { useCycle } from 'framer-motion'
+import { Close } from '../svg/icons/menu/close.js'
 
 const BlogTemplate = ({ data, children }) => {
   const blog = { ...data.mdx.frontmatter }
 
+  const [tableOfContentsVisible, toggleTableOfContents] = useCycle(false, true)
+
   return (
     <>
+      <div className="z-[1000] fixed bottom-5 sm:bottom-8 md:bottom-10 4xl:bottom-16 left-[var(--horizontal-spacing)]">
+        <IconButton onClick={ toggleTableOfContents }>
+          { !tableOfContentsVisible ? <List className="h-8 fill-primary"/> : <Close className="h-4 4xl:h-[1.125rem]"/> }
+        </IconButton>
+      </div>
+
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
           <span className="max-w-7xl mb-[10vh] hyphens-auto lg:mb-[14vh]">{ blog.title }</span>

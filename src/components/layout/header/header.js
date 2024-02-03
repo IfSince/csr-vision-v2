@@ -1,4 +1,4 @@
-import { AnimatePresence, m, useCycle } from 'framer-motion'
+import { m, useCycle } from 'framer-motion'
 import { background } from './animation.config.js'
 import { Nav } from './nav.js'
 import { Link } from 'gatsby'
@@ -9,7 +9,7 @@ import { Sun } from '../../../svg/icons/theme-toggle/sun.js'
 import { Moon } from '../../../svg/icons/theme-toggle/moon.js'
 import { Menu } from '../../../svg/icons/menu/menu.js'
 import { Close } from '../../../svg/icons/menu/close.js'
-import { Magnetic } from '../../animations/magnetic.js'
+import { IconButton } from '../../common/button/icon-button.js'
 
 export const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
@@ -38,21 +38,7 @@ export const Header = () => {
 
         <div className="flex gap-3 md:gap-6">
           {
-            items.map(({ key, onClick, icon }) =>
-              <Magnetic key={ key }>
-                {
-                  (position) =>
-                    <button className="pointer-events-auto flex aspect-square h-12 items-center justify-center rounded-full bg-secondary md:h-14 4xl:h-16"
-                            onClick={ onClick }>
-                      <m.div style={ position }>
-                        <AnimatePresence mode="wait">
-                          { icon }
-                        </AnimatePresence>
-                      </m.div>
-                    </button>
-                }
-              </Magnetic>,
-            )
+            items.map(({ key, onClick, icon }) => <IconButton onClick={ onClick } key={ key }>{ icon }</IconButton>)
           }
         </div>
       </div>
