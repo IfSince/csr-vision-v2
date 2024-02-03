@@ -22,6 +22,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 const path = require('path')
 const postTemplate = path.resolve(`./src/templates/team-member.js`)
+const blogTemplate = path.resolve('./src/templates/blog.js')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -64,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fields {
             slug
             sourceName
-          } 
+          }
           internal {
             contentFilePath
           }
@@ -82,8 +83,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   teamMembers.forEach(teamMember => {
     createPage({
       path: `our-team${ teamMember.fields.slug }`,
-      component: `${postTemplate}?__contentFilePath=${teamMember.internal.contentFilePath}`,
+      component: `${ postTemplate }?__contentFilePath=${ teamMember.internal.contentFilePath }`,
       context: { id: teamMember.id },
+    })
+  })
+
+  /* ---------- Blogs ---------- */
+  const blogsQuery = await graphql(`
+    query {
+      allMdx(filter: {fields: {sourceName: {eq: "blogs"}}}) {
+        nodes {
+          id
+          fields {
+            slug
+            sourceName
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+  `)
+
+  if (blogsQuery.errors) {
+    reporter.panicOnBuild('ERROR: Loading "createPages" blogs query')
+  }
+
+  const blogs = blogsQuery.data.allMdx.nodes
+
+  blogs.forEach(blog => {
+    createPage({
+      path: `blog${ blog.fields.slug }`,
+      component: `${ blogTemplate }?__contentFilePath=${ blog.internal.contentFilePath }`,
+      context: { id: blog.id },
     })
   })
 

@@ -84,6 +84,13 @@ module.exports = {
         path: `${ DATA_FOLDER }/team-members`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blogs',
+        path: `${ DATA_FOLDER }/blog`,
+      },
+    },
     'gatsby-plugin-mdx',
 
     /* ---------- PWA ---------- */

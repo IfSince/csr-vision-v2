@@ -36,7 +36,7 @@ const OurVisionPage = ({ data }) => {
         </SectionTitle>
 
         <SectionText align="right">
-          Unsere Vision liegt darin, Unternehmen dabei zu unterstützen, ihre Nachhaltigkeitsbemühungen durch hochwertiges Marketing und
+          Unsere Vision liegt darin, Unternehmen dabei zu unterstützen, ihre Bemühungen in Bereich der Nachhaltigkeit durch hochwertiges Marketing und
           Kommunikation effektiv zu präsentieren. Unser Ziel ist es, Unternehmen zu ermächtigen, ihre nachhaltigen Praktiken und Werte auf authentische Weise
           hervorzuheben und ihre Botschaften mit einer breiten Zielgruppe zu teilen.
         </SectionText>

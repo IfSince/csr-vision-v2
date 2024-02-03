@@ -2,39 +2,57 @@ import { SeoHead } from '../../components/seo-head.js'
 import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
 import { Section } from '../../components/layout/section/section.js'
 import { SectionTitle } from '../../components/layout/section/section-title.js'
-import { SectionText } from '../../components/layout/section/section-text.js'
-import { Headline } from '../../components/layout/section/headline.js'
-import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
+import { graphql } from 'gatsby'
+import { BlogList } from '../../components/blog/blog-list.js'
 
-const BlogPage = () => {
+const BlogPage = ({ data }) => {
+  const blogs = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
+    id,
+    title: frontmatter.title,
+    publicationDate: frontmatter.publicationDate,
+    slug: fields.slug,
+  }))
+
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>blog</HeroTextReveal>
+          <HeroTextReveal>our blog</HeroTextReveal>
         </h1>
       </section>
 
       <Section>
-        <Headline/>
-        <SectionDotTitle>TODO</SectionDotTitle>
-
-        <SectionTitle align="center">
-          Hier kommt die Auflistung aller unserer Blogs rein.
+        <SectionTitle>
+          Wir liefern inspirirende Einblicke in alle Themen rundum Nachhaltigkeit und CSR.
         </SectionTitle>
-
-        <SectionText align="right">
-          Our mission as a responsible and sustainable business is to positively impact our environment, our people,
-          and the next generation. To ensure we are acting on this mission, we have developed a sustainability strategy
-          that aligns with the UN's Sustainable Development Goals. We are commited to developing and uphoalding sustainable
-          practices because we believe that the built environment Plays an important role in achieving these goals,
-          and we want to encourage others within our industry to do the same.
-        </SectionText>
+        
+        <BlogList blogs={ blogs }/>
       </Section>
     </>
   )
 }
 
+export const query = graphql`
+  query {
+    allMdx(
+      filter: {fields: {sourceName: {eq: "blogs"}}}
+      sort: {frontmatter: {publicationDate: DESC}}
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          publicationDate(formatString: "DD.MM.YYYY")
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
+
 export default BlogPage
 
-export const Head = () => <SeoHead title="blog"/>
+export const Head = () => <SeoHead title="blog"
+                                   description="Wir teilen nicht nur Neuigkeiten und Trends, sondern auch Geschichten und Erfahrungen aus der Welt der Nachhaltigkeit, die zum Nachdenken anregen und inspirieren."/>
