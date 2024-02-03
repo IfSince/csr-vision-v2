@@ -1,17 +1,18 @@
-import { SeoHead } from '../../components/seo-head.js'
-import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { Section } from '../../components/layout/section/section.js'
-import { SectionTitle } from '../../components/layout/section/section-title.js'
-import { SectionText } from '../../components/layout/section/section-text.js'
-import { Headline } from '../../components/layout/section/headline.js'
-import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { SeoHead } from '../components/seo-head.js'
+import { SectionText } from '../components/layout/section/section-text.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
+import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
+import { Headline } from '../components/layout/section/headline.js'
+import { Section } from '../components/layout/section/section.js'
 
-const ImprintPage = () => {
+const ContactPage = () => {
+
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>imprint</HeroTextReveal>
+          <HeroTextReveal>contact</HeroTextReveal>
         </h1>
       </section>
 
@@ -20,7 +21,7 @@ const ImprintPage = () => {
         <SectionDotTitle>TODO</SectionDotTitle>
 
         <SectionTitle align="center">
-          Hier kommt unser Impressum rein.
+          Hier kommt das Kontaktformular etc. rein.
         </SectionTitle>
 
         <SectionText align="right">
@@ -35,6 +36,6 @@ const ImprintPage = () => {
   )
 }
 
-export default ImprintPage
+export default ContactPage
 
-export const Head = () => <SeoHead title="imprint"/>
+export const Head = () => <SeoHead title="contact"/>

@@ -1,18 +1,17 @@
-import { SeoHead } from '../../components/seo-head.js'
-import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { Section } from '../../components/layout/section/section.js'
-import { SectionTitle } from '../../components/layout/section/section-title.js'
-import { SectionText } from '../../components/layout/section/section-text.js'
-import { Headline } from '../../components/layout/section/headline.js'
-import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
+import { SeoHead } from '../components/seo-head.js'
+import { SectionText } from '../components/layout/section/section-text.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
+import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
+import { Headline } from '../components/layout/section/headline.js'
+import { Section } from '../components/layout/section/section.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 
-const ContactPage = () => {
-  
+const PressPage = () => {
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
         <h1 className="grid">
-          <HeroTextReveal>contact</HeroTextReveal>
+          <HeroTextReveal>press</HeroTextReveal>
         </h1>
       </section>
 
@@ -21,7 +20,7 @@ const ContactPage = () => {
         <SectionDotTitle>TODO</SectionDotTitle>
 
         <SectionTitle align="center">
-          Hier kommt das Kontaktformular etc. rein.
+          Hier kommt der ganze Presse-Stuff rein, noch zu diskutieren was genau da dazu gehört.
         </SectionTitle>
 
         <SectionText align="right">
@@ -36,6 +35,6 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+export default PressPage
 
-export const Head = () => <SeoHead title="contact"/>
+export const Head = () => <SeoHead title="press"/>

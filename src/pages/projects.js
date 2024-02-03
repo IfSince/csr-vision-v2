@@ -1,10 +1,10 @@
-import { SeoHead } from '../../components/seo-head.js'
-import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { ProjectList } from '../../components/projects/project-list.js'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
-import { Section } from '../../components/layout/section/section.js'
-import { SectionTitle } from '../../components/layout/section/section-title.js'
+import { SeoHead } from '../components/seo-head.js'
+import { ProjectList } from '../components/projects/project-list.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
+import { Section } from '../components/layout/section/section.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({

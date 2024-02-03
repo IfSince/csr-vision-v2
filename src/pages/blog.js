@@ -1,9 +1,9 @@
-import { SeoHead } from '../../components/seo-head.js'
-import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { Section } from '../../components/layout/section/section.js'
-import { SectionTitle } from '../../components/layout/section/section-title.js'
 import { graphql } from 'gatsby'
-import { BlogList } from '../../components/blog/blog-list.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { Section } from '../components/layout/section/section.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
+import { BlogList } from '../components/blog/blog-list.js'
+import { SeoHead } from '../components/seo-head.js'
 
 const BlogPage = ({ data }) => {
   const blogs = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -25,7 +25,7 @@ const BlogPage = ({ data }) => {
         <SectionTitle>
           Wir liefern inspirirende Einblicke in alle Themen rundum Nachhaltigkeit und CSR.
         </SectionTitle>
-        
+
         <BlogList blogs={ blogs }/>
       </Section>
     </>

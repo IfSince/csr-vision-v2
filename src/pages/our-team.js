@@ -1,14 +1,14 @@
-import { SeoHead } from '../../components/seo-head.js'
-import { HeroTextReveal } from '../../components/animations/hero-text-reveal.js'
-import { Section } from '../../components/layout/section/section.js'
-import { SectionTitle } from '../../components/layout/section/section-title.js'
-import { SectionText } from '../../components/layout/section/section-text.js'
-import { Headline } from '../../components/layout/section/headline.js'
-import { SectionDotTitle } from '../../components/layout/section/section-dot-title.js'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
-import { SectionHeading } from '../../components/layout/section/section-heading.js'
-import { TeamMemberList } from '../../components/our-team/team-member-list.js'
+import { SeoHead } from '../components/seo-head.js'
+import { TeamMemberList } from '../components/our-team/team-member-list.js'
+import { Headline } from '../components/layout/section/headline.js'
+import { SectionHeading } from '../components/layout/section/section-heading.js'
+import { Section } from '../components/layout/section/section.js'
+import { SectionText } from '../components/layout/section/section-text.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
+import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
+import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 
 const OurTeamPage = ({ data }) => {
   const teamMembers = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
