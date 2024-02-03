@@ -36,6 +36,7 @@ module.exports = {
         '2-extra-large': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
         'extra-large': 'clamp(1.125rem, 2.5vw, 1.75rem)', // 18px - 28px
         'lg': '18px',
+        'sub-menu': 'clamp(1.75rem, 4vw, 3rem)', // 28px - 48px
       },
       screens: {
         'xs': '520px',
