@@ -1,4 +1,6 @@
 import { m } from 'framer-motion'
+import { useContext, useEffect } from 'react'
+import { CursorContext } from '../../../providers/cursor-provider.js'
 
 const variants = {
   initial: {
@@ -15,10 +17,19 @@ const variants = {
   },
 }
 
-export const PageTransition = ({ children }) =>
-  <m.div variants={ variants }
-         initial="initial"
-         animate="enter"
-         exit="exit">
-    { children }
-  </m.div>
+export const PageTransition = ({ children }) => {
+  const { resetCursor } = useContext(CursorContext)
+
+  useEffect(() => {
+    return () => resetCursor()
+  }, [])
+
+  return (
+    <m.div variants={ variants }
+           initial="initial"
+           animate="enter"
+           exit="exit">
+      { children }
+    </m.div>
+  )
+}

@@ -1,9 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-import { useContext } from 'react'
-import { CursorContext } from '../../providers/cursor-provider.js'
-import { ArrowOutward } from '../../svg/icons/arrow-outward.js'
 import { m } from 'framer-motion'
+import { useLinkCursor } from '../../hooks/cursor-hovers/use-link-cursor.js'
 
 const positionalClassesByPosition = {
   '4': 'lg:col-start-2',
@@ -11,19 +9,11 @@ const positionalClassesByPosition = {
 }
 
 export const TeamMember = ({ name, role, image, slug, position }) => {
-  const { updateCursor, resetCursor } = useContext(CursorContext)
-
-  const updateOnLinkHover = () => updateCursor({
-    props: { width: 125, height: 125, backgroundColor: 'var(--clr-rgb-secondary)' },
-    element: <ArrowOutward className="h-12 w-12 fill-primary"/>,
-  })
+  const linkCursor = useLinkCursor()
 
   return (
     <m.article className={ `w-full max-w-80 sm:max-w-[26rem] ${ positionalClassesByPosition[position] }` }>
-      <Link to={ `/our-team${ slug }` }
-            onMouseEnter={ updateOnLinkHover }
-            onMouseLeave={ resetCursor }
-            onClick={ resetCursor }>
+      <Link to={ `/our-team${ slug }` } { ...linkCursor }>
         <div className="w-full overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
           <m.div className="h-full w-full"
                  variants={ {

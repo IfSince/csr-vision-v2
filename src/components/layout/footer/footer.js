@@ -1,23 +1,18 @@
 import { Link } from 'gatsby'
 import { DefaultLink } from '../../common/default-link.js'
 import { getNextPageUrl, getOtherLinks, getPageLinks, getSocialLinks } from '../../../links.js'
-import { useContext, useEffect, useState } from 'react'
-import { CursorContext } from '../../../providers/cursor-provider.js'
-import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
+import { useEffect, useState } from 'react'
 import { LogoWithClaim } from '../../../svg/logo/logo-with-claim.js'
 import { DefaultLinkExternal } from '../../common/default-link-external.js'
 import { RowHover } from '../../animations/row-hover.js'
+import { useLinkCursor } from '../../../hooks/cursor-hovers/use-link-cursor.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
-  const { updateCursor, resetCursor } = useContext(CursorContext)
+  const linkCursor = useLinkCursor()
+
   const [nextPage, setNextPage] = useState(getPageLinks()[0])
 
   useEffect(() => setNextPage(getNextPageUrl(currentUrl)), [currentUrl])
-
-  const updateOnLinkHover = () => updateCursor({
-    props: { width: 125, height: 125, backgroundColor: 'var(--clr-rgb-secondary)' },
-    element: <ArrowOutward className="h-12 w-12 fill-primary"/>,
-  })
 
   return (
     <footer className="pt-64 bg-primary lg:pt-80">
@@ -28,9 +23,7 @@ export const Footer = ({ currentUrl = '/' }) => {
           </Link>
           <Link className="mt-20 flex w-fit flex-wrap py-4 text-3xl 2xl:mt-[6.5vw]"
                 to={ nextPage.to }
-                onMouseEnter={ updateOnLinkHover }
-                onMouseLeave={ resetCursor }
-                onClick={ resetCursor }>
+                { ...linkCursor }>
             <p>next/</p>
             <p>{ nextPage.title }</p>
           </Link>

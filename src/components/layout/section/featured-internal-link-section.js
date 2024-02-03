@@ -1,21 +1,14 @@
 import { Section } from './section.js'
 import { Link } from 'gatsby'
-import { useContext } from 'react'
-import { CursorContext } from '../../../providers/cursor-provider.js'
-import { ArrowOutward } from '../../../svg/icons/arrow-outward.js'
 import { m } from 'framer-motion'
 import { SectionDotTitle } from './section-dot-title.js'
 import { Headline } from './headline.js'
 import { viewport } from '../../../animation.config.js'
 import { Reveal } from '../../animations/reveal.js'
+import { useLinkCursor } from '../../../hooks/cursor-hovers/use-link-cursor.js'
 
 export const FeaturedInternalLinkSection = ({ to = '/', children }) => {
-  const { updateCursor, resetCursor } = useContext(CursorContext)
-
-  const updateOnLinkHover = () => updateCursor({
-    props: { width: 125, height: 125, backgroundColor: 'var(--clr-rgb-primary)' },
-    element: <ArrowOutward className="h-12 w-12 fill-secondary"/>,
-  })
+  const linkCursor = useLinkCursor()
 
   return (
     <Section>
@@ -23,10 +16,7 @@ export const FeaturedInternalLinkSection = ({ to = '/', children }) => {
              whileHover="hover">
         <Link className="grid grid-cols-layout"
               to={ to }
-              onMouseEnter={ updateOnLinkHover }
-              onMouseLeave={ resetCursor }
-              onClick={ resetCursor }>
-
+              { ...linkCursor }>
           <Headline/>
           <SectionDotTitle>what do we offer</SectionDotTitle>
           <div className="mt-10 mb-[max(4rem,0.5em)] grid grid-cols-layout col-full-width">

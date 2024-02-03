@@ -10,8 +10,10 @@ import { Moon } from '../../../svg/icons/theme-toggle/moon.js'
 import { Menu } from '../../../svg/icons/menu/menu.js'
 import { Close } from '../../../svg/icons/menu/close.js'
 import { IconButton } from '../../common/button/icon-button.js'
+import { useDefaultLinkCursor } from '../../../hooks/cursor-hovers/use-default-link-cursor.js'
 
 export const Header = () => {
+  const defaultLinkCursor = useDefaultLinkCursor()
   const { theme, toggleTheme } = useContext(ThemeContext)
   const [isActive, toggleActive] = useCycle(false, true)
 
@@ -27,12 +29,10 @@ export const Header = () => {
       icon: !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>,
     },
   ]
-
-
   return (
     <header className={ `fixed w-full py-5 text-secondary z-[1000] sm:pt-8 md:pt-10 4xl:pt-16 bg-none ${ !isActive && 'pointer-events-none' }` }>
       <div className="flex items-center justify-between horizontal-spacing">
-        <Link to="/">
+        <Link to="/" { ...defaultLinkCursor }>
           <Logo className="pointer-events-auto h-8 sm:h-10 lg:h-10 4xl:h-12"/>
         </Link>
 
