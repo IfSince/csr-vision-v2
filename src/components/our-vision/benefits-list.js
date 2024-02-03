@@ -16,7 +16,8 @@ export const BenefitsList = ({ benefits }) => {
   return (
     <div className="flex overflow-hidden col-full-width" ref={ containerRef }>
       <m.div drag="x"
-             dragConstraints={ containerRef }>
+             dragConstraints={ containerRef }
+             dragTransition={ { timeConstant: 200, power: 0.3 } }>
         <div className="flex gap-4 mx-[var(--horizontal-spacing)] md:mx-[250px] lg:mx-[500px] 2xl:mx-[1000px] cursor-grab"
              role="none"
              onMouseEnter={ updateOnLinkHover }
