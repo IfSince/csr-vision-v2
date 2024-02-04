@@ -23,7 +23,7 @@ export const Layout = ({ children, path, uri }) => {
   return (
     <LazyMotion features={ domMax } strict>
       <CursorProvider>
-        <Header/>
+        <Header path={ path }/>
         <AnimatePresence mode="wait">
           <PageTransition key={ path }>
             <main className="grid grid-cols-layout">

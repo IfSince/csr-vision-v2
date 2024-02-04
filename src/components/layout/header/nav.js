@@ -12,7 +12,7 @@ export const Nav = ({ isActive, toggleActive }) => {
            initial="initial"
            animate={ isActive ? 'enter' : 'exit' }
            className="absolute top-0 left-0 -z-10 w-full overflow-hidden horizontal-spacing bg-primary">
-      <nav className="mt-32 mb-6 sm:mt-40 sm:mb-10 4xl:mt-48">
+      <nav className="mt-48 mb-6 sm:mb-10">
         <MainNav isActive={ isActive } selectedLink={ selectedLink } setSelectedLink={ setSelectedLink } toggleActive={ toggleActive }/>
         <SubNav isActive={ isActive } toggleActive={ toggleActive }/>
       </nav>

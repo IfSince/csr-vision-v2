@@ -1,4 +1,4 @@
-import { m, useCycle } from 'framer-motion'
+import { AnimatePresence, m, useCycle } from 'framer-motion'
 import { background } from './animation.config.js'
 import { Nav } from './nav.js'
 import { Link } from 'gatsby'
@@ -11,8 +11,9 @@ import { Menu } from '../../../svg/icons/menu/menu.js'
 import { Close } from '../../../svg/icons/menu/close.js'
 import { IconButton } from '../../common/button/icon-button.js'
 import { useDefaultLinkCursor } from '../../../hooks/cursor-hovers/use-default-link-cursor.js'
+import { BreadCrumbs } from './bread-crumbs.js'
 
-export const Header = () => {
+export const Header = ({ path }) => {
   const defaultLinkCursor = useDefaultLinkCursor()
   const { theme, toggleTheme } = useContext(ThemeContext)
   const [isActive, toggleActive] = useCycle(false, true)
@@ -30,13 +31,19 @@ export const Header = () => {
     },
   ]
   return (
-    <header className={ `fixed w-full py-5 text-secondary z-[1000] sm:pt-8 md:pt-10 4xl:pt-16 bg-none ${ !isActive && 'pointer-events-none' }` }>
-      <div className="flex items-center justify-between horizontal-spacing">
-        <Link to="/" { ...defaultLinkCursor }>
-          <Logo className="pointer-events-auto h-8 sm:h-10 lg:h-10 4xl:h-12"/>
-        </Link>
+    <header className={ `fixed w-full pt-5 text-secondary z-[2000] sm:pt-8 md:pt-10 4xl:pt-16 bg-none ${ !isActive && 'pointer-events-none' }` }>
+      <div className="relative horizontal-spacing">
+        <div className="flex flex-col md:flex-row flex-wrap md:items-center gap-y-6 gap-x-[min(50px,5vw)]">
+          <Link to="/" { ...defaultLinkCursor }>
+            <Logo className="pointer-events-auto h-10 xs:h-12 sm:h-12 4xl:h-14"/>
+          </Link>
 
-        <div className="flex gap-3 md:gap-6">
+          <AnimatePresence mode="wait">
+            { isActive && <BreadCrumbs path={ path } toggleActive={ toggleActive }/> }
+          </AnimatePresence>
+        </div>
+
+        <div className="absolute top-0 right-[var(--horizontal-spacing)] flex gap-3 md:gap-6">
           {
             items.map(({ key, onClick, icon }) => <IconButton onClick={ onClick } key={ key }>{ icon }</IconButton>)
           }
