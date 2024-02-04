@@ -78,7 +78,7 @@ const TeamMemberTemplate = ({ data, children }) => {
             sortAlphabetically(teamMember.skills).map(skill =>
               <RowHover
                 key={ skill }
-                className="border-t border-b border-secondary/20"
+                className="first:border-t border-b border-secondary/20"
                 first={
                   <div className="grid grid-cols-1 items-center text-heading-3 horizontal-spacing">
                     <p className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</p>
