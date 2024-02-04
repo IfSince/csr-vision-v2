@@ -87,4 +87,8 @@ export const query = graphql`
 
 export default OurTeamPage
 
-export const Head = () => <SeoHead title="our team"/>
+export const Head = () => <SeoHead title="our team"
+                                   description="Unser dynamisches Team bei csr vision ist eine vielfältige Gruppe von kreativen Köpfen und Fachleuten, die sich
+                                   leidenschaftlich für Nachhaltigkeit und Design engagieren. Jedes Mitglied bringt einzigartige Fähigkeiten und Erfahrungen mit,
+                                   um unseren Kunden dabei zu helfen, sich durch ansprechendes Design und die Aufarbeitung von CSR-Berichten als nachhaltige
+                                   Marktführer zu präsentieren. Entdecken Sie die Menschen hinter den innovativen Lösungen, die uns auszeichnen."/>

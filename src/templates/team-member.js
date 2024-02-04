@@ -117,6 +117,7 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+        metaDescription
       }
     }
   }
@@ -124,4 +125,5 @@ export const query = graphql`
 
 export default TeamMemberTemplate
 
-export const Head = ({ data }) => <SeoHead title={ `${ data.mdx.frontmatter.name.toLowerCase() }` }/>
+export const Head = ({ data }) => <SeoHead title={ `${ data.mdx.frontmatter.name.toLowerCase() }` }
+                                           description={ `${ data.mdx.frontmatter.metaDescription }` }/>

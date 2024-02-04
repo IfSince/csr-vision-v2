@@ -80,4 +80,6 @@ export const query = graphql`
 
 export default ServicesPage
 
-export const Head = () => <SeoHead title="our services"/>
+export const Head = () => <SeoHead title="our services"
+                                   description="Entdecken Sie unsere Dienstleistungen im Bereich Nachhaltigkeit und CSR-Beratung. Unsere Expertise umfasst
+                                   Lösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind."/>

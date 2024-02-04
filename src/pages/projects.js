@@ -65,4 +65,6 @@ export const query = graphql`
 
 export default ProjectsPage
 
-export const Head = () => <SeoHead title="our projects"/>
+export const Head = () => <SeoHead title="our projects"
+                                   description="Tauchen Sie ein in unsere Welt des Designs die unsere Expertise in den Bereichen Grafikdesign, Webdesign,
+                                   Branding und mehr demonstrieren."/>

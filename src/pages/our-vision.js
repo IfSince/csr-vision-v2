@@ -84,4 +84,7 @@ export const query = graphql`
 
 export default OurVisionPage
 
-export const Head = () => <SeoHead title="our vision"/>
+export const Head = () => <SeoHead title="our vision"
+                                   description="Unsere Vision liegt darin, Unternehmen dabei zu unterstützen, ihre Bemühungen in Bereich der Nachhaltigkeit durch
+                                   hochwertiges Marketing und Kommunikation effektiv zu präsentieren. Unser Ziel ist es, Unternehmen zu ermächtigen, ihre
+                                   nachhaltigen Praktiken und Werte auf authentische Weise hervorzuheben und ihre Botschaften mit einer breiten Zielgruppe zu teilen."/>
