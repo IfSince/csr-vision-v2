@@ -21,6 +21,18 @@ export const PageTransition = ({ children }) => {
   const { resetCursor } = useContext(CursorContext)
 
   useEffect(() => {
+    (
+      async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        new LocomotiveScroll({
+          lenisOptions: {
+            smoothWheel: true,
+            smoothTouch: false,
+          },
+        })
+      }
+    )()
+
     return () => resetCursor()
   }, [])
 

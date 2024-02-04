@@ -22,6 +22,7 @@ import { Photography } from '../svg/icons/skills/photography.js'
 import { UiUxDesigner } from '../svg/icons/skills/ui-ux-designer.js'
 import { VfxSpecialist } from '../svg/icons/skills/vfx-specialist.js'
 import { WebDevelopment } from '../svg/icons/skills/web-development.js'
+import { DefaultImage } from '../components/animations/default-image.js'
 
 const TeamMemberTemplate = ({ data, children }) => {
   const teamMember = { ...data.mdx.frontmatter, image: getImage(data.mdx.frontmatter.image) }
@@ -54,9 +55,9 @@ const TeamMemberTemplate = ({ data, children }) => {
 
             <div className="flex grow justify-end lg:justify-around">
               <span></span>
-              <GatsbyImage className="max-w-sm rounded-md min-w-[300px] xs:max-w-[2.25em] 4xl:max-w-[3em]"
-                           alt={ teamMember.name }
-                           image={ teamMember.image }/>
+              <DefaultImage className="max-w-sm rounded-md min-w-[300px] xs:max-w-[2.25em] 4xl:max-w-[3em]">
+                <GatsbyImage alt={ teamMember.name } image={ teamMember.image }/>
+              </DefaultImage>
             </div>
           </div>
 

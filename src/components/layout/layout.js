@@ -3,22 +3,8 @@ import { Header } from './header/header.js'
 import { PageTransition } from '../common/page-transition/page-transition.js'
 import { CursorProvider } from '../../providers/cursor-provider.js'
 import { Footer } from './footer/footer.js'
-import { useEffect } from 'react'
 
 export const Layout = ({ children, path, uri }) => {
-  useEffect(() => {
-    (
-      async () => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default
-        new LocomotiveScroll({
-          lenisOptions: {
-            smoothWheel: true,
-            smoothTouch: false,
-          },
-        })
-      }
-    )()
-  }, [])
 
   return (
     <LazyMotion features={ domMax } strict>
