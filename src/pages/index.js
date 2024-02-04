@@ -32,10 +32,8 @@ const IndexPage = () => {
 
           <SectionText align="right">
             Bei uns steht im Mittelpunkt, Ihnen zu helfen, Ihre Nachhaltigkeitsziele zu definieren und wirkungsvoll zu kommunizieren. Tauchen Sie ein in unsere
-            Vision,
-            in der wir gemeinsam mit Ihnen eine Brücke zwischen Ihrem Unternehmen und einer nachhaltigen Zukunft schlagen. Erfahren Sie, wie wir Ihr Unternehmen
-            dabei unterstützen,
-            nicht nur nachhaltig zu handeln, sondern auch dies auf authentische und wirkungsvolle Weise zu präsentieren.
+            Vision, in der wir gemeinsam mit Ihnen eine Brücke zwischen Ihrem Unternehmen und einer nachhaltigen Zukunft schlagen. Erfahren Sie, wie wir Ihr
+            Unternehmen dabei unterstützen, nicht nur nachhaltig zu handeln, sondern auch dies auf authentische und wirkungsvolle Weise zu präsentieren.
           </SectionText>
         </Section>
       </div>
@@ -45,4 +43,7 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <SeoHead title="designing responsibility"/>
+export const Head = () => <SeoHead title="designing responsibility"
+                                   description="csr vision hilft Unternehmen dabei, CSR als Chance zu begreifen. Durch Reduzierung der Komplexität, Kuratieren
+                                   und crossmediale Aufbereitung verwandeln wir CSR-Berichte, die sonst nur von Analysten und Stakeholdern gelesen werden, in
+                                   echtes Storytelling, das auch ihre Community und Kunden begeistern wird."/>

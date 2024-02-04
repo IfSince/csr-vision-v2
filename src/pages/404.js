@@ -8,6 +8,6 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => <SeoHead title="not found"
+export const Head = () => <SeoHead title="designing responsibility"
                                    description="The site you tried to access could not be found."
                                    pathname="404"/>
