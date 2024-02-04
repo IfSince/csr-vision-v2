@@ -2,9 +2,11 @@ import { graphql } from 'gatsby'
 import { SeoHead } from '../components/seo-head.js'
 import { IconButton } from '../components/common/button/icon-button.js'
 import { List } from '../svg/icons/list.js'
-import { AnimatePresence, useCycle } from 'framer-motion'
+import { AnimatePresence, m, useCycle } from 'framer-motion'
 import { Close } from '../svg/icons/menu/close.js'
 import { TableOfContents } from '../components/blog/table-of-contents.js'
+import { HeroTextRevealHyphens } from '../components/animations/hero-text-reveal-hyphens.js'
+import { scrollRevealAnimation } from '../animation.config.js'
 
 const BlogTemplate = ({ data, children }) => {
   const blog = { ...data.mdx.frontmatter }
@@ -14,23 +16,26 @@ const BlogTemplate = ({ data, children }) => {
   return (
     <>
       <section className="pt-hero-min md:pt-hero-max">
-        <h1 className="grid">
-          <span className="max-w-7xl mb-[10vh] hyphens-auto lg:mb-[14vh]">{ blog.title }</span>
+        <h1 className="max-w-7xl">
+          <HeroTextRevealHyphens className="mb-[10vh] hyphens-auto lg:mb-[14vh]">
+            { blog.title }
+          </HeroTextRevealHyphens>
         </h1>
       </section>
 
       <div className="mb-14 flex flex-wrap-reverse items-center justify-between gap-x-24 gap-y-[8vh] sm:mb-16 md:mb-20">
         <div className="flex grow font-medium lg:justify-evenly lg:text-lg">
-          <div>
+          <m.div { ...scrollRevealAnimation(0.3) }>
             <div className="text-secondary/50">von { blog.author }</div>
             <div>{ blog.publicationDate } | { blog.readingTime } min</div>
-          </div>
+          </m.div>
           <div></div>
         </div>
 
-        <p className="max-w-sm text-2xl hyphens-auto xs:hyphens-none md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl">
+        <m.p className="max-w-sm text-2xl hyphens-auto xs:hyphens-none md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl"
+             { ...scrollRevealAnimation(0.3) }>
           { blog.subTitle }
-        </p>
+        </m.p>
       </div>
 
       <div className="z-[1000] fixed bottom-10 4xl:bottom-16 left-[var(--horizontal-spacing)]">
