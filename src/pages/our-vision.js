@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import { SeoHead } from '../components/seo-head.js'
-import { FeaturedInternalLinkSection } from '../components/layout/section/featured-internal-link-section.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 import { BenefitsList } from '../components/our-vision/benefits-list.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { Headline } from '../components/layout/section/headline.js'
@@ -56,9 +56,11 @@ const OurVisionPage = ({ data }) => {
         <BenefitsList benefits={ benefits }/>
       </Section>
 
-      <FeaturedInternalLinkSection>
-        our services
-      </FeaturedInternalLinkSection>
+
+      <Section>
+        <LinkedSectionHeading to="/services">our services</LinkedSectionHeading>
+        <Headline/>
+      </Section>
     </>
   )
 }

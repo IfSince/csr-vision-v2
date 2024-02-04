@@ -2,7 +2,7 @@ import { m, useMotionValue, useSpring } from 'framer-motion'
 import { useRef } from 'react'
 import { useDesktopEventListener } from '../../hooks/use-desktop-event-listener.js'
 
-export const Magnetic = ({ children }) => {
+export const Magnetic = ({ multiplier = 15, children }) => {
   const ref = useRef(0)
 
   const mapRange = (
@@ -25,8 +25,8 @@ export const Magnetic = ({ children }) => {
     const xRange = mapRange(0, bounds.width, -1, 1)(relativeX)
     const yRange = mapRange(0, bounds.height, -1, 1)(relativeY)
 
-    x.set(xRange * 15)
-    y.set(yRange * 15)
+    x.set(xRange * multiplier)
+    y.set(yRange * multiplier)
   }
 
   const x = useMotionValue(0)
