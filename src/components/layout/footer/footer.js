@@ -21,7 +21,7 @@ export const Footer = ({ currentUrl = '/' }) => {
   return (
     <>
       <Section>
-        <LinkedSectionHeading to="/contact">interested?</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

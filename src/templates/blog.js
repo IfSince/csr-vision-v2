@@ -71,5 +71,5 @@ export const query = graphql`
 
 export default BlogTemplate
 
-export const Head = ({ data }) => <SeoHead title={ `${ data.mdx.frontmatter.title.toLowerCase() }` }
-                                           description={ `${ data.mdx.frontmatter.description }` }/>
+export const Head = ({ data }) => <SeoHead title={ data.mdx.frontmatter.title.toLowerCase() }
+                                           description={ data.mdx.frontmatter.description }/>
