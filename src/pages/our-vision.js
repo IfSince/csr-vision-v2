@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby'
 import { SeoHead } from '../components/seo-head.js'
-import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 import { BenefitsList } from '../components/our-vision/benefits-list.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { Headline } from '../components/layout/section/headline.js'
@@ -54,12 +53,6 @@ const OurVisionPage = ({ data }) => {
           Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
         </SectionTitle>
         <BenefitsList benefits={ benefits }/>
-      </Section>
-
-
-      <Section>
-        <LinkedSectionHeading to="/services">our services</LinkedSectionHeading>
-        <Headline/>
       </Section>
     </>
   )
