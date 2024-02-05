@@ -27,6 +27,15 @@ export const BreadCrumbs = ({ path = '/', toggleActive }) => {
           initial="initial"
           animate="animate"
           exit="exit">
+      <m.li key="Home" variants={ liReveal } className="origin-left space-x-2 md:space-x-3">
+        <div className="inline-block rounded-full mb-[0.15rem] h-1.5 w-1.5 bg-secondary"/>
+        <Link className="text-sm font-medium lowercase lg:text-base"
+              to={ '/' }
+              onClick={ toggleActive }
+              { ...defaultLinkCursor }>
+          home
+        </Link>
+      </m.li>
       {
         getBreadcrumbs(path).map(({ label, to }) =>
           <m.li key={ label } variants={ liReveal } className="origin-left space-x-2 md:space-x-3">
