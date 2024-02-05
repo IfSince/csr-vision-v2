@@ -55,7 +55,7 @@ const TeamMemberTemplate = ({ data, children }) => {
 
             <div className="flex grow justify-end lg:justify-around">
               <span></span>
-              <DefaultImage className="max-w-sm rounded-md min-w-[300px] xs:max-w-[2.25em] 4xl:max-w-[3em]">
+              <DefaultImage className="max-w-sm rounded-sm min-w-[300px] xs:max-w-[2.25em] 4xl:max-w-[3em]">
                 <GatsbyImage alt={ teamMember.name } image={ teamMember.image }/>
               </DefaultImage>
             </div>

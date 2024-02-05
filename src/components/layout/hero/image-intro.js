@@ -9,7 +9,7 @@ export const ImageIntro = ({ children }) => {
   const transform = useTransform(scrollYProgress, [0, 0.5], ['inset(15%)', 'inset(0%)'])
 
   return (
-    <div className="relative -z-10 grid col-full-width h-[140vh] grid-cols-layout" data-scroll data-scroll-speed="-0.7">
+    <div className="relative -z-10 grid col-full-width h-[120vh] grid-cols-layout" data-scroll data-scroll-speed="-0.7">
       <m.div className="absolute w-full h-[140vh] col-full-width"
              initial={ { scale: 0.5 } }
              animate={ { scale: 1 } }

@@ -2,7 +2,7 @@ import { m, useMotionValue, useSpring } from 'framer-motion'
 import { useRef } from 'react'
 import { useDesktopEventListener } from '../../hooks/use-desktop-event-listener.js'
 
-export const Magnetic = ({ multiplier = 15, children }) => {
+export const Magnetic = ({ multiplier = 15, children, className }) => {
   const ref = useRef(0)
 
   const mapRange = (
@@ -46,7 +46,8 @@ export const Magnetic = ({ multiplier = 15, children }) => {
   useDesktopEventListener(ref, 'pointerleave', reset)
 
   return (
-    <m.div ref={ ref }
+    <m.div className={ className }
+           ref={ ref }
            style={ { x: xSpring, y: ySpring } }>
       { children({ x: xSpring, y: ySpring }) }
     </m.div>
