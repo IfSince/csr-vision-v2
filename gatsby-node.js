@@ -94,6 +94,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx(filter: {fields: {sourceName: {eq: "blogs"}}}) {
         nodes {
           id
+          frontmatter {
+            author
+          }
           fields {
             slug
             sourceName
@@ -116,7 +119,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: `blog${ blog.fields.slug }`,
       component: `${ blogTemplate }?__contentFilePath=${ blog.internal.contentFilePath }`,
-      context: { id: blog.id },
+      context: { id: blog.id, author: blog.frontmatter.author },
     })
   })
 

@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useDesktopEventListener } from '../../hooks/use-desktop-event-listener.js'
 
 export const Magnetic = ({ multiplier = 15, children, className }) => {
-  const ref = useRef(0)
+  const ref = useRef()
 
   const mapRange = (
     inputLower,

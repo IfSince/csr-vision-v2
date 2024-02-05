@@ -7,9 +7,20 @@ import { Close } from '../svg/icons/menu/close.js'
 import { TableOfContents } from '../components/blog/table-of-contents.js'
 import { HeroTextRevealHyphens } from '../components/animations/hero-text-reveal-hyphens.js'
 import { scrollRevealAnimation } from '../animation.config.js'
+import { Section } from '../components/layout/section/section.js'
+import { Headline } from '../components/layout/section/headline.js'
+import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
+import { getImage } from 'gatsby-plugin-image'
+import { AuthorBox } from '../components/blog/author-box.js'
 
 const BlogTemplate = ({ data, children }) => {
   const blog = { ...data.mdx.frontmatter }
+
+  const author = {
+    ...{ ...data.allMdx.nodes[0].frontmatter },
+    ...{ ...data.allMdx.nodes[0].fields },
+    image: getImage(data.allMdx.nodes[0].frontmatter.image),
+  }
 
   const [tableOfContentsVisible, toggleTableOfContents] = useCycle(false, true)
 
@@ -49,12 +60,18 @@ const BlogTemplate = ({ data, children }) => {
       </AnimatePresence>
 
       { children }
+
+      <Section>
+        <Headline/>
+        <SectionDotTitle>The author</SectionDotTitle>
+        <AuthorBox { ...author }/>
+      </Section>
     </>
   )
 }
 
 export const query = graphql`
-  query ($id: String) {
+  query ($id: String, $author: String) {
     mdx(id: {eq: $id}) {
       frontmatter {
         title
@@ -64,6 +81,31 @@ export const query = graphql`
         publicationDate(formatString: "DD MMM. YYYY")
         readingTime
         tableOfContents
+      }
+    }
+    allMdx(
+      filter: {
+        fields: {sourceName: {eq: "team-members"}}
+        frontmatter:{name:{eq:$author}}
+      },
+      limit: 1
+    ) {
+      nodes {
+        id
+        frontmatter {
+          name
+          role
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          metaDescription
+        }
+        excerpt
+        fields {
+          slug
+        }
       }
     }
   }
