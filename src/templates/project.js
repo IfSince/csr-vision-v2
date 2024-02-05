@@ -43,20 +43,22 @@ const ProjectTemplate = ({ data }) => {
         </SectionText>
       </Section>
 
-
-      <Section>
-        <Headline/>
-        <SectionDotTitle>some other projects</SectionDotTitle>
-        {
-          nextProjects.map(project =>
-            <>
-              <LinkedSectionHeading to={ `/projects${ project.slug }` }>{ project.client }</LinkedSectionHeading>
-              <Headline/>
-              <SectionTitle align="left">{ project.title }</SectionTitle>
-            </>,
-          )
-        }
-      </Section>
+      {
+        !!nextProjects.length &&
+        <Section>
+          <Headline/>
+          <SectionDotTitle>some other projects</SectionDotTitle>
+          {
+            nextProjects.map(project =>
+              <>
+                <LinkedSectionHeading to={ `/projects${ project.slug }` }>{ project.client }</LinkedSectionHeading>
+                <Headline/>
+                <SectionTitle align="left">{ project.title }</SectionTitle>
+              </>,
+            )
+          }
+        </Section>
+      }
     </>
   )
 }
