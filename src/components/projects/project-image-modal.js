@@ -24,7 +24,7 @@ export const ProjectImageModal = ({ index, projects = [] }) => {
            exit="closed">
       <m.div className="absolute h-full w-full" style={ { top: useMotionTemplate`${ spring }%` } }>
         {
-          projects.map(({ id, image, image_alt }) => <GatsbyImage image={ image } alt={ image_alt } key={ id } className="h-full w-full"/>)
+          projects.map(({ id, image, title }) => <GatsbyImage image={ image } alt={ title } key={ id } className="h-full w-full"/>)
         }
       </m.div>
     </m.div>

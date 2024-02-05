@@ -12,7 +12,6 @@ const ProjectsPage = ({ data }) => {
     slug: fields.slug,
     title: frontmatter.title,
     category: frontmatter.category,
-    image_alt: frontmatter.image_alt,
     image: getImage(frontmatter.image),
   }))
 
@@ -48,7 +47,6 @@ export const query = graphql`
         frontmatter {
           title
           category
-          image_alt
           image {
             childImageSharp {
               gatsbyImageData

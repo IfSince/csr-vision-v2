@@ -8,39 +8,20 @@ import { Headline } from '../components/layout/section/headline.js'
 import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
-import { StaticImage } from 'gatsby-plugin-image'
 import { ImageGallery } from '../components/layout/section/image-gallery.js'
 import { useIsMobile } from '../hooks/use-is-mobile.js'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const referenceProjects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
+    id,
+    client: frontmatter.client,
+    category: frontmatter.category,
+    previewImages: frontmatter.previewImages,
+    slug: fields.slug,
+  }))
+
   const isMobile = useIsMobile()
-
-  // TODO load last x projects and their first two (?) images instead of dummy images
-  const images = [
-    {
-      src: '',
-      image: <StaticImage src="../images/background.png" alt="test" className="h-full w-full"/>,
-      size: 'sm',
-    },
-    {
-      src: '',
-      image: <StaticImage src="../images/background.png" alt="test" className="h-full w-full"/>,
-      size: 'lg',
-    },
-  ]
-
-  const images2 = [
-    {
-      src: '',
-      image: <StaticImage src="../images/background.png" alt="test" className="h-full w-full"/>,
-      size: 'md',
-    },
-    {
-      src: '',
-      image: <StaticImage src="../images/background.png" alt="test" className="h-full w-full"/>,
-      size: 'sm',
-    },
-  ]
 
   return (
     <>
@@ -84,17 +65,17 @@ const IndexPage = () => {
           <Headline/>
           <SectionDotTitle>recent work</SectionDotTitle>
           { !isMobile && <ZoomParallax/> }
-
-          <LinkedSectionHeading to="/projects">Port International</LinkedSectionHeading>
-          <Headline/>
-          <ImageGallery images={ images } align="center"/>
         </Section>
 
-        <Section>
-          <LinkedSectionHeading to="/projects">other project</LinkedSectionHeading>
-          <Headline/>
-          <ImageGallery images={ images2 } align="center"/>
-        </Section>
+        {
+          referenceProjects.map(project =>
+            <Section key={ project.id }>
+              <LinkedSectionHeading to={ `/projects${ project.slug }` }>{ project.client }</LinkedSectionHeading>
+              <Headline/>
+              <ImageGallery images={ project.previewImages } align="center"/>
+            </Section>,
+          )
+        }
 
         <Section>
           <LinkedSectionHeading to="/our-team">who we are</LinkedSectionHeading>
@@ -120,6 +101,34 @@ const IndexPage = () => {
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(
+      filter: {fields: {sourceName: {eq: "projects"}}}
+      sort: {frontmatter: {date: DESC}}
+      limit: 3
+    ) {
+      nodes {
+        id
+        frontmatter {
+          client
+          previewImages {
+            src {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            size
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
 
