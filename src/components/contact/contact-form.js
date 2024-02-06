@@ -1,11 +1,11 @@
 import { LayoutGroup, m } from 'framer-motion'
-import { Magnetic } from '../animations/magnetic.js'
 import { Send } from '../../svg/icons/send.js'
 import { Input } from './input.js'
 import { TextArea } from './text-area.js'
 import { Checkbox } from './checkbox.js'
 import { validateCompany, validateEmail, validateName } from './validations.js'
 import { useState } from 'react'
+import { IconButton } from '../common/button/icon-button.js'
 
 export const ContactForm = () => {
   const [errors, setErrors] = useState({
@@ -90,19 +90,9 @@ export const ContactForm = () => {
       </div>
 
       <div className="p-[var(--horizontal-spacing)] flex xl:items-end justify-end border-b xl:border-t">
-        <Magnetic multiplier={ 35 } className="text-heading-1">
-          {
-            position =>
-              <m.button
-                className="flex items-center justify-center rounded-full border transition-colors duration-300 p-[0.35em] h-[1em] w-[1em] border-secondary/20 group hover:border-secondary/80"
-                type="submit">
-                <m.div style={ position }
-                       className="h-full w-full transition-colors duration-300 fill-secondary group-focus-visible:fill-secondary group-hover:fill-secondary dark:fill-secondary/80">
-                  <Send/>
-                </m.div>
-              </m.button>
-          }
-        </Magnetic>
+        <IconButton theme="dark" size="lg" type="submit" magneticMultiplier={ 35 }>
+          <Send className="h-full w-full p-[0.35em]"/>
+        </IconButton>
       </div>
     </m.form>
   )
