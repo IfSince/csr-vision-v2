@@ -5,7 +5,7 @@ import { TextArea } from './text-area.js'
 import { Checkbox } from './checkbox.js'
 import { validateCompany, validateEmail, validateName } from './validations.js'
 import { useState } from 'react'
-import { IconButton } from '../common/button/icon-button.js'
+import { SubmitIconButton } from '../common/button/submit-icon-button.js'
 
 export const ContactForm = () => {
   const [errors, setErrors] = useState({
@@ -57,7 +57,7 @@ export const ContactForm = () => {
             layout>
       <input type="hidden" name="form-name" value="contact"/>
       <label className="hidden">
-        Don’t fill this out if you’re human: <input name="bot-field"/>
+        Dies ist ein Anti-Spam Feld, hier nichts eintragen: <input name="bot-field"/>
       </label>
 
       <div className="border-t xl:border-r xl:border-b">
@@ -90,9 +90,9 @@ export const ContactForm = () => {
       </div>
 
       <div className="p-[var(--horizontal-spacing)] flex xl:items-end justify-end border-b xl:border-t">
-        <IconButton theme="dark" size="lg" type="submit" magneticMultiplier={ 35 }>
+        <SubmitIconButton hasErrors={ !!errors.email?.length || !!errors.name?.length || !!errors.company?.length }>
           <Send className="h-full w-full p-[0.35em]"/>
-        </IconButton>
+        </SubmitIconButton>
       </div>
     </m.form>
   )

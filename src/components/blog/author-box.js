@@ -1,13 +1,11 @@
 import { SectionTitle } from '../layout/section/section-title.js'
-import { m } from 'framer-motion'
 import { ArrowOutward } from '../../svg/icons/arrow-outward.js'
 import { DefaultImage } from '../animations/default-image.js'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { SectionText } from '../layout/section/section-text.js'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import { IconButton } from '../common/button/icon-button.js'
 
-const MotionLink = m(Link)
 export const AuthorBox = ({ name, role, slug, image, metaDescription }) =>
   <>
     <SectionTitle align="left">
