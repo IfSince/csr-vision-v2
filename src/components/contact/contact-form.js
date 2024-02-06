@@ -30,6 +30,7 @@ export const ContactForm = () => {
           onSubmit={ handleSubmit }
     >
       <div className="border-t border-secondary/20 xl:border-r xl:border-b">
+        <input type="hidden" name="form-name" value="contact"/>
         <Input placeholder="Email..." name="email"/>
         <Input placeholder="Name..." name="name"/>
         <Input placeholder="Unternehmen..." name="company"/>
