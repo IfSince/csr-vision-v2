@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "ajax": "^0.0.4",
     "autoprefixer": "^10.4.16",
     "framer-motion": "^10.17.9",
     "gatsby": "^5.13.1",

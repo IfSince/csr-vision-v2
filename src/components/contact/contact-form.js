@@ -7,16 +7,29 @@ import { TextArea } from './text-area.js'
 import { Checkbox } from './checkbox.js'
 
 export const ContactForm = () => {
+  const handleSubmit = event => {
+    event.preventDefault()
+
+    const form = event.target
+    const formData = new FormData(form)
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log('Form successfully submitted!'))
+      .catch(error => console.log(error))
+  }
+
   return (
     <form className="grid text-xl col-full-width md:grid-cols-1 xl:grid-cols-[repeat(2,minmax(0,1fr))_min-content] *:border-secondary/20"
           name="contact"
           method="POST"
-          netlify-honeypot="bot-field"
-          data-netlify="true">
+          data-netlify="true"
+          onSubmit={ handleSubmit }
+    >
       <div className="border-t border-secondary/20 xl:border-r xl:border-b">
-        <div className="hidden">
-          <label>Dont fill this out: <input name="bot-field"/></label>
-        </div>
         <Input placeholder="Email..." name="email"/>
         <Input placeholder="Name..." name="name"/>
         <Input placeholder="Unternehmen..." name="company"/>
