@@ -22,6 +22,7 @@ module.exports = {
       primary: 'rgb(var(--clr-primary, 250 249 246) / <alpha-value>)',
       secondary: 'rgb(var(--clr-secondary, 31 31 33) / <alpha-value>)',
       accent: 'rgb(var(--clr-accent, 51 86 69) / <alpha-value>)',
+      error: 'rgb(var(--clr-error, 244 67 54) / <alpha-value>)',
     },
     extend: {
       fontFamily: {

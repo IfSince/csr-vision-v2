@@ -50,6 +50,7 @@
     --clr-primary: var(--black);
     --clr-secondary: var(--white);
     --clr-accent: var(--green-500);
+    --clr-error: 136 26 26;
 
     --clr-rgb-primary: rgb(var(--black));
     --clr-rgb-secondary: rgb(var(--white));
@@ -60,6 +61,7 @@
     --clr-primary: var(--white);
     --clr-secondary: var(--black);
     --clr-accent: var(--green-800);
+    --clr-error: 244 67 54;
 
 
     --clr-rgb-primary: rgb(var(--white));

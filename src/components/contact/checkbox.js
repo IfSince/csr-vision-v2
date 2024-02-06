@@ -1,6 +1,8 @@
+import { m } from 'framer-motion'
+
 export const Checkbox = ({ id, children }) => {
   return (
-    <div className="grow">
+    <m.div className="grow" layout>
       <input id={ id } name={ id } type="checkbox" className="sr-only peer"/>
       <label className="block py-4 px-[min(3rem,var(--horizontal-spacing))] text-secondary/20 border-r border-b border-secondary/20 transition-colors duration-300
                         hover:text-secondary/80
@@ -10,6 +12,6 @@ export const Checkbox = ({ id, children }) => {
              htmlFor={ id }>
         { children }
       </label>
-    </div>
+    </m.div>
   )
 }
