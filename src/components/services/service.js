@@ -9,7 +9,7 @@ export const Service = ({ title, description }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
 
   return (
-    <RowHover className="border-b col-full-width border-secondary/20 bg-primary first:border-t hover:cursor-pointer lg:hover:cursor-default"
+    <RowHover className="overflow-hidden border-b col-full-width border-secondary/20 bg-primary first:border-t hover:cursor-pointer lg:hover:cursor-default"
               disableOnMobile={ true }
               onClick={ toggleOpen }
               first={

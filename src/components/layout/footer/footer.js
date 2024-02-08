@@ -30,11 +30,10 @@ export const Footer = ({ currentUrl = '/' }) => {
             </Link>
           </div>
 
-          <ul className="mt-12 flex w-full flex-col justify-self-end border-t text-h3 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
+          <div className="mt-12 flex w-full flex-col justify-self-end border-t text-h3 border-secondary/20 lg:mt-0 lg:border-t-0 lg:border-l">
             {
               getPageLinks().map(({ to, title }) =>
-                <RowHover Tag="li"
-                          key={ title }
+                <RowHover key={ title }
                           animateOnScroll={ false }
                           first={
                             <Link className="block border-b py-4 horizontal-spacing border-secondary/20 lg:px-8"
@@ -44,7 +43,7 @@ export const Footer = ({ currentUrl = '/' }) => {
                           }/>,
               )
             }
-          </ul>
+          </div>
 
           <ul className="mt-24 mb-3 flex grow gap-x-8 horizontal-spacing lg:mt-[10vw] lg:mb-0 lg:pb-8">
             {

@@ -4,8 +4,7 @@ import { PageTransition } from '../common/page-transition/page-transition.js'
 import { CursorProvider } from '../../providers/cursor-provider.js'
 import { Footer } from './footer/footer.js'
 
-export const Layout = ({ children, path, uri, ...data }) => {
-  console.log(data)
+export const Layout = ({ children, path, uri }) => {
   return (
     <LazyMotion features={ domMax } strict>
       <CursorProvider>
