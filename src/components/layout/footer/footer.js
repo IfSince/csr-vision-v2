@@ -6,10 +6,6 @@ import { LogoWithClaim } from '../../../svg/logo/logo-with-claim.js'
 import { DefaultLinkExternal } from '../../common/default-link-external.js'
 import { RowHover } from '../../animations/row-hover.js'
 import { useLinkCursor } from '../../../hooks/cursor-hovers/use-link-cursor.js'
-import { Section } from '../section/section.js'
-import { LinkedSectionHeading } from '../section/linked-section-heading.js'
-import { Headline } from '../section/headline.js'
-import { SectionTitle } from '../section/section-title.js'
 
 export const Footer = ({ currentUrl = '/' }) => {
   const linkCursor = useLinkCursor()
@@ -20,12 +16,6 @@ export const Footer = ({ currentUrl = '/' }) => {
 
   return (
     <>
-      <Section>
-        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
-        <Headline/>
-        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
-      </Section>
-
       <footer className="pt-48 bg-primary md:pt-64 lg:pt-80">
         <div className="grid border-t border-secondary/20 lg:grid-cols-[minmax(650px,1fr)_minmax(0,max(768px,35vw))]">
           <div className="flex grow flex-col horizontal-spacing">

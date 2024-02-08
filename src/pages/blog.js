@@ -4,6 +4,8 @@ import { Section } from '../components/layout/section/section.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { BlogList } from '../components/blog/blog-list.js'
 import { SeoHead } from '../components/seo-head.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
+import { Headline } from '../components/layout/section/headline.js'
 
 const BlogPage = ({ data }) => {
   const blogs = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -27,6 +29,12 @@ const BlogPage = ({ data }) => {
         </SectionTitle>
 
         <BlogList blogs={ blogs }/>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

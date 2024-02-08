@@ -7,6 +7,7 @@ import { SectionTitle } from '../components/layout/section/section-title.js'
 import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { Headline } from '../components/layout/section/headline.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 
 const ServicesPage = ({ data }) => {
   const services = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -56,6 +57,12 @@ const ServicesPage = ({ data }) => {
         {
           services.map(service => <Service { ...service } key={ service.id }/>)
         }
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

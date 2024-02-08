@@ -2,6 +2,9 @@ import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 import { SeoHead } from '../components/seo-head.js'
 import { Section } from '../components/layout/section/section.js'
 import { ContactForm } from '../components/contact/contact-form.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
+import { Headline } from '../components/layout/section/headline.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
 
 const ContactPage = () => {
 

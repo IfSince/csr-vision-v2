@@ -5,6 +5,7 @@ import { SectionDotTitle } from '../components/layout/section/section-dot-title.
 import { Headline } from '../components/layout/section/headline.js'
 import { Section } from '../components/layout/section/section.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 
 const PressPage = () => {
   return (
@@ -30,6 +31,12 @@ const PressPage = () => {
           practices because we believe that the built environment Plays an important role in achieving these goals,
           and we want to encourage others within our industry to do the same.
         </SectionText>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

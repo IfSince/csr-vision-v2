@@ -9,6 +9,7 @@ import { SectionText } from '../components/layout/section/section-text.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 
 const OurTeamPage = ({ data }) => {
   const teamMembers = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -53,6 +54,12 @@ const OurTeamPage = ({ data }) => {
         <SectionHeading>the team</SectionHeading>
         <Headline/>
         <TeamMemberList teamMembers={ teamMembers }/>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

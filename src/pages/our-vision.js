@@ -8,6 +8,7 @@ import { Section } from '../components/layout/section/section.js'
 import { SectionText } from '../components/layout/section/section-text.js'
 import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 
 const OurVisionPage = ({ data }) => {
   const benefits = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -53,6 +54,12 @@ const OurVisionPage = ({ data }) => {
           Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
         </SectionTitle>
         <BenefitsList benefits={ benefits }/>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

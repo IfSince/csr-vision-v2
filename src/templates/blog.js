@@ -12,6 +12,8 @@ import { Headline } from '../components/layout/section/headline.js'
 import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { getImage } from 'gatsby-plugin-image'
 import { AuthorBox } from '../components/blog/author-box.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
 
 const BlogTemplate = ({ data, children }) => {
   const blog = { ...data.mdx.frontmatter }
@@ -65,6 +67,12 @@ const BlogTemplate = ({ data, children }) => {
         <Headline/>
         <SectionDotTitle>The author</SectionDotTitle>
         <AuthorBox { ...author }/>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

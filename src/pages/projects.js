@@ -5,6 +5,8 @@ import { ProjectList } from '../components/projects/project-list.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
 import { Section } from '../components/layout/section/section.js'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
+import { Headline } from '../components/layout/section/headline.js'
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -34,6 +36,12 @@ const ProjectsPage = ({ data }) => {
           Tauchen Sie ein in unsere Welt des Designs die unsere Expertise in den Bereichen Grafikdesign, Webdesign, Branding und mehr demonstrieren.
         </SectionTitle>
         <ProjectList projects={ projects }/>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )

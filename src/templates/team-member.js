@@ -23,6 +23,8 @@ import { UiUxDesigner } from '../svg/icons/skills/ui-ux-designer.js'
 import { VfxSpecialist } from '../svg/icons/skills/vfx-specialist.js'
 import { WebDevelopment } from '../svg/icons/skills/web-development.js'
 import { DefaultImage } from '../components/animations/default-image.js'
+import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
+import { SectionTitle } from '../components/layout/section/section-title.js'
 
 const TeamMemberTemplate = ({ data, children }) => {
   const teamMember = { ...data.mdx.frontmatter, image: getImage(data.mdx.frontmatter.image) }
@@ -99,6 +101,12 @@ const TeamMemberTemplate = ({ data, children }) => {
             )
           }
         </div>
+      </Section>
+
+      <Section>
+        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
     </>
   )
