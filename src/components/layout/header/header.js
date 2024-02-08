@@ -54,7 +54,7 @@ export const Header = ({ path }) => {
              initial="initial"
              animate={ isActive ? 'open' : 'closed' }
              className="absolute top-0 left-0 -z-10 h-full w-full cursor-pointer bg-accent"
-             onClick={ toggleActive }></m.div>
+             onClick={ toggleActive }/>
 
       <Nav isActive={ isActive }
            toggleActive={ toggleActive }/>
