@@ -43,7 +43,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         'layout': '[full-width-start] var(--horizontal-spacing) [content-start] repeat(12, minmax(0, 1fr)) [content-end] var(--horizontal-spacing) [full-width-end]',
-        'project-list': 'var(--horizontal-spacing) [content-start] repeat(3, minmax(0, 1fr)) [content-end] var(--horizontal-spacing)',
+        'content-table': 'var(--horizontal-spacing) [content-start] repeat(3, minmax(0, 1fr)) [content-end] var(--horizontal-spacing)',
       },
       gridColumn: {
         'full-width': 'full-width',

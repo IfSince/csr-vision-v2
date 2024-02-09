@@ -2,10 +2,10 @@ import { graphql } from 'gatsby'
 import { HeroTextReveal } from '../components/animations/hero-text-reveal.js'
 import { Section } from '../components/layout/section/section.js'
 import { SectionTitle } from '../components/layout/section/section-title.js'
-import { BlogList } from '../components/blog/blog-list.js'
 import { SeoHead } from '../components/seo-head.js'
 import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
 import { Headline } from '../components/layout/section/headline.js'
+import { TableRow } from '../components/common/table/table-row.js'
 
 const BlogPage = ({ data }) => {
   const blogs = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -28,7 +28,16 @@ const BlogPage = ({ data }) => {
           Wir liefern inspirirende Einblicke in alle Themen rundum Nachhaltigkeit und CSR.
         </SectionTitle>
 
-        <BlogList blogs={ blogs }/>
+        <ul className="grid grid-cols-layout col-full-width">
+          {
+            blogs.map(({ slug, title, publicationDate, id }) =>
+              <TableRow to={ slug }
+                        title={ title }
+                        addition={ publicationDate }
+                        key={ id }/>,
+            )
+          }
+        </ul>
       </Section>
 
       <Section>
