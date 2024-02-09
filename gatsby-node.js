@@ -66,6 +66,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             slug
             sourceName
           }
+          frontmatter {
+            position
+          }
           internal {
             contentFilePath
           }
@@ -81,10 +84,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const teamMembers = teamMembersQuery.data.allMdx.nodes
 
   teamMembers.forEach(teamMember => {
+    const nextPosition = teamMember.frontmatter.position + 1 > teamMembers.length ? 1 : teamMember.frontmatter.position + 1
     createPage({
       path: `our-team${ teamMember.fields.slug }`,
       component: `${ postTemplate }?__contentFilePath=${ teamMember.internal.contentFilePath }`,
-      context: { id: teamMember.id },
+      context: { id: teamMember.id, nextPosition },
     })
   })
 

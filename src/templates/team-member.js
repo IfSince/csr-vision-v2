@@ -29,6 +29,12 @@ import { SectionTitle } from '../components/layout/section/section-title.js'
 const TeamMemberTemplate = ({ data, children }) => {
   const teamMember = { ...data.mdx.frontmatter, image: getImage(data.mdx.frontmatter.image) }
 
+  const nextMember = {
+    to: `/our-team${ data.allMdx.nodes[0].fields.slug }`,
+    name: data.allMdx.nodes[0].frontmatter.name,
+    role: data.allMdx.nodes[0].frontmatter.role,
+  }
+
   const skillIcons = {
     'advanced-post-production': <AdvancedPostProduction className="stroke-primary"/>,
     'business-development': <BusinessDevelopment className="stroke-primary"/>,
@@ -80,7 +86,7 @@ const TeamMemberTemplate = ({ data, children }) => {
             sortAlphabetically(teamMember.skills).map(skill =>
               <RowHover
                 key={ skill }
-                className="first:border-t border-b border-secondary/20"
+                className="border-b border-secondary/20 first:border-t"
                 first={
                   <div className="grid grid-cols-1 items-center text-heading-3 horizontal-spacing">
                     <h3 className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</h3>
@@ -104,6 +110,12 @@ const TeamMemberTemplate = ({ data, children }) => {
       </Section>
 
       <Section>
+        <LinkedSectionHeading to={ `${ nextMember.to }` } mobileDescription="Ansehen">{ nextMember.name }</LinkedSectionHeading>
+        <Headline/>
+        <SectionTitle align="left">{ nextMember.role }</SectionTitle>
+      </Section>
+
+      <Section>
         <LinkedSectionHeading to="/contact" Type="h2" mobileDescription="Kontakt aufnehmen">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
@@ -113,7 +125,7 @@ const TeamMemberTemplate = ({ data, children }) => {
 }
 
 export const query = graphql`
-  query ($id: String) {
+  query ($id: String, $nextPosition: Int) {
     mdx(id: {eq: $id}) {
       frontmatter {
         name
@@ -127,6 +139,24 @@ export const query = graphql`
           }
         }
         metaDescription
+      }
+    }
+    allMdx(
+      filter: {
+        fields: {sourceName: {eq: "team-members"}}
+        frontmatter:{position:{eq:$nextPosition}}
+      },
+      limit: 1
+    ) {
+      nodes {
+        id
+        frontmatter {
+          name
+          role
+        }
+        fields {
+          slug
+        }
       }
     }
   }
