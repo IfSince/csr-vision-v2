@@ -31,11 +31,10 @@ module.exports = {
       },
       fontSize: {
         'heading-1': 'clamp(4rem, 11vw, 11.25rem)', // 64px - 180px
-        'heading-3': 'clamp(1.5rem, 3.5vw, 2.25rem)', // 24px - 36px
-
         '3-extra-large': 'clamp(3rem, 9vw, 7.5rem)', // 54px - 120px,
-        '2-extra-large': 'clamp(1.75rem, 4vw, 3.375rem)', // 30px - 54px
-        'extra-large': 'clamp(1.125rem, 2.5vw, 1.75rem)', // 18px - 28px
+        '2-extra-large': 'clamp(1.938rem, 4vw, 3.375rem)', // 31px - 54px
+        'heading-3': 'clamp(1.5rem, 3.5vw, 2.25rem)', // 24px - 36px
+        'extra-large': 'clamp(1rem, 2.6vw, 1.75rem)', // 16px - 28px
         'lg': '18px',
       },
       screens: {

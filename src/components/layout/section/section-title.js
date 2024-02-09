@@ -9,7 +9,7 @@ export const SectionTitle = ({ align = 'left', Type = 'p', hyphens = 'off', chil
   }
 
   return (
-    <m.div className={ `mb-[1em] max-w-sm text-2xl md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl
+    <m.div className={ `mb-[1.5em] max-w-sm text-2xl md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl
                       ${ hyphens === 'on' && 'hyphens-auto xs:hyphens-none' } ${ alignmentClasses[align] }` }
          { ...scrollRevealAnimation(0.3) }>
       <Type>{ children }</Type>

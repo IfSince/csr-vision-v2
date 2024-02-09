@@ -19,8 +19,8 @@ export const TeamMember = ({ name, role, image, slug, position }) => {
             <GatsbyImage alt={ name } image={ image } className="h-full w-full"/>
           </DefaultImage>
         </div>
-        <span className="mt-2 block font-medium tracking-tight ml-0.5">{ role }</span>
-        <h3 className="mt-1 ml-0.5 text-h3 sm:mt-2">{ name }</h3>
+        <span className="mt-3 block text-sm font-medium ml-0.5 sm:text-base">{ role }</span>
+        <h3 className="mt-[0.5em] ml-0.5 text-h3 sm:mt-2">{ name }</h3>
       </Link>
     </article>
   )

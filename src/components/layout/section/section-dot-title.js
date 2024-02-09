@@ -18,8 +18,8 @@ export const SectionDotTitle = ({ children, Type = 'h3' }) =>
          initial="initial"
          whileInView="inView"
          viewport={ { ...viewport, once: false } }>
-    <m.div className="block rounded-full h-3.5 w-3.5 mb-0.5 bg-secondary" variants={ dotReveal }/>
+    <m.div className="block rounded-full h-3 w-3 sm:h-3.5 sm:w-3.5 mb-0.5 bg-secondary" variants={ dotReveal }/>
     <m.div variants={ textReveal }>
-      <Type className="text-base font-medium lg:text-lg">{ children }</Type>
+      <Type className="text-sm sm:text-base font-medium lg:text-lg">{ children }</Type>
     </m.div>
   </m.div>

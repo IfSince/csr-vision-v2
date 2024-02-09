@@ -75,7 +75,7 @@ const TeamMemberTemplate = ({ data, children }) => {
 
       <Section>
         <SectionHeading Type="h2">skills</SectionHeading>
-        <div className="mt-20 col-full-width">
+        <div className="text-heading-3 mt-[2em] col-full-width">
           {
             sortAlphabetically(teamMember.skills).map(skill =>
               <RowHover

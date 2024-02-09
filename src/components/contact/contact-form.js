@@ -141,7 +141,7 @@ export const ContactForm = () => {
         </m.form>
       </m.div>
 
-      <m.p className={ `mb-14 max-w-sm text-2xl sm:mb-16 md:mb-20 md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl md:col-start-5` }
+      <m.p className={ `max-w-sm text-2xl md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl md:col-start-5` }
            variants={ message }
            initial="initial"
            animate={ status === 'success' || status === 'apiError' ? 'exit' : 'initial' }>
