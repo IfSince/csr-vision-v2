@@ -123,14 +123,14 @@ export const ContactForm = () => {
             </LayoutGroup>
           </div>
 
-          <div className="p-[var(--horizontal-spacing)] flex xl:items-end justify-end border-b">
+          <div className="px-[var(--horizontal-spacing)] py-[max(2rem,var(--horizontal-spacing))] flex xl:items-end justify-center xl:justify-end border-b">
             <SubmitIconButton hasErrors={ !!errors.email?.length || !!errors.name?.length || !!errors.company?.length }>
               {
                 status === 'default' &&
                 (
                   !!errors.email?.length || !!errors.name?.length || !!errors.company?.length
                     ? <Error className="h-full w-full p-[0.25em]"/>
-                    : <Send className="h-full w-full p-[0.35em]"/>
+                    : <Send className="h-[1em] w-[1em] p-[0.35em]"/>
                 )
               }
               { status === 'success' && <Success className="h-full w-full p-[0.3em]"/> }
