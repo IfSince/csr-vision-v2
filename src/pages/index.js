@@ -16,7 +16,6 @@ const IndexPage = ({ data }) => {
   const referenceProjects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
     id,
     client: frontmatter.client,
-    category: frontmatter.category,
     previewImages: frontmatter.previewImages,
     slug: fields.slug,
   }))
@@ -66,17 +65,17 @@ const IndexPage = ({ data }) => {
           <Headline/>
           <SectionDotTitle Type="h2">recent work</SectionDotTitle>
           { !isMobile && <ZoomParallax/> }
-        </Section>
 
-        {
-          referenceProjects.map(project =>
-            <article className="mb-16 grid text-2xl col-full-width grid-cols-layout">
-              <LinkedSectionHeading to={ `/projects${ project.slug }` } Type="h3">{ project.client }</LinkedSectionHeading>
-              <Headline/>
-              <ImageGallery images={ project.previewImages } align="center"/>
-            </article>,
-          )
-        }
+          {
+            referenceProjects.map(project =>
+              <article className="mb-16 grid text-2xl col-full-width grid-cols-layout" key={ project.client }>
+                <LinkedSectionHeading to={ `/projects${ project.slug }` } Type="h3">{ project.client }</LinkedSectionHeading>
+                <Headline/>
+                <ImageGallery images={ project.previewImages } align="center"/>
+              </article>,
+            )
+          }
+        </Section>
 
         <Section>
           <Headline/>
@@ -86,9 +85,9 @@ const IndexPage = ({ data }) => {
         </Section>
 
         <Section>
-          <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
+          <LinkedSectionHeading to="/contact" Type="h2" mobileDescription="Kontakt aufnehmen">get in touch</LinkedSectionHeading>
           <Headline/>
-          <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
+          <SectionTitle align="center" marginTop={ true }>Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
         </Section>
       </div>
     </>

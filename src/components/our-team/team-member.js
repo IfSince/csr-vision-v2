@@ -12,7 +12,7 @@ export const TeamMember = ({ name, role, image, slug, position }) => {
   const linkCursor = useLinkCursor()
 
   return (
-    <article className={ `w-full max-w-80 sm:max-w-[26rem] ${ positionalClassesByPosition[position] }` }>
+    <article className={ `w-full max-w-[400px] sm:max-w-[26rem] ${ positionalClassesByPosition[position] }` }>
       <Link to={ `/our-team${ slug }` } { ...linkCursor }>
         <div className="w-full overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
           <DefaultImage className="h-full w-full">

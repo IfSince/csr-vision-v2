@@ -9,7 +9,6 @@ import { HeroTextRevealHyphens } from '../components/animations/hero-text-reveal
 import { scrollRevealAnimation } from '../animation.config.js'
 import { Section } from '../components/layout/section/section.js'
 import { Headline } from '../components/layout/section/headline.js'
-import { SectionDotTitle } from '../components/layout/section/section-dot-title.js'
 import { getImage } from 'gatsby-plugin-image'
 import { AuthorBox } from '../components/blog/author-box.js'
 import { LinkedSectionHeading } from '../components/layout/section/linked-section-heading.js'
@@ -70,7 +69,7 @@ const BlogTemplate = ({ data, children }) => {
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2" mobileDescription="Kontakt aufnehmen">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

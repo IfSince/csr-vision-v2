@@ -104,7 +104,7 @@ const TeamMemberTemplate = ({ data, children }) => {
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2" mobileDescription="Kontakt aufnehmen">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>
