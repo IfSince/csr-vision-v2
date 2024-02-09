@@ -15,17 +15,19 @@ export const BenefitsList = ({ benefits }) => {
 
   return (
     <div className="flex overflow-hidden col-full-width" ref={ containerRef }>
-      <m.div drag="x"
+      <m.div className="origin-bottom" drag="x"
              dragConstraints={ containerRef }
-             dragTransition={ { timeConstant: 200, power: 0.3 } }>
-        <div className="flex gap-4 mx-[var(--horizontal-spacing)] md:mx-[250px] lg:mx-[500px] 2xl:mx-[1000px] cursor-grab"
-             role="none"
-             onMouseEnter={ updateOnLinkHover }
-             onMouseLeave={ resetCursor }>
+             dragTransition={ { timeConstant: 200, power: 0.3 } }
+             whileDrag={ { scale: 0.93 } }
+             transition={{ duration: 0.75, ease: [.3, .67, .32, .96] }}>
+        <m.div className="flex gap-4 mx-[var(--horizontal-spacing)] md:mx-[250px] lg:mx-[500px] 2xl:mx-[1000px] cursor-grab"
+               role="none"
+               onMouseEnter={ updateOnLinkHover }
+               onMouseLeave={ resetCursor }>
           {
             benefits.map(benefit => <Benefit { ...benefit } key={ benefit.id }/>)
           }
-        </div>
+        </m.div>
       </m.div>
     </div>
   )
