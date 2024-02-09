@@ -15,7 +15,7 @@ export const Service = ({ title, description }) => {
               first={
                 <div className="my-10 grid items-center gap-x-32 text-3-extra-large horizontal-spacing lg:my-[0.35em] lg:grid-cols-2">
                   <div className="flex items-center justify-between">
-                    <p className="text-3xl lg:text-nowrap">{ title }</p>
+                    <h3 className="text-3xl lg:text-nowrap">{ title }</h3>
                     <Add className={ `fill-secondary h-[1em] aspect-square lg:hidden transition-transform duration-[400ms] ease-[cubic-bezier(.16, .99, .41, .99)]
                             ${ isOpen ? 'rotate-[135deg]' : '' }` }/>
                   </div>
@@ -40,7 +40,7 @@ export const Service = ({ title, description }) => {
               second={
                 <div className="my-10 grid items-center gap-x-32 text-3-extra-large horizontal-spacing lg:my-[0.35em] lg:grid-cols-2">
                   <div className="flex items-center justify-between">
-                    <p className="text-3xl lg:text-nowrap">{ title }</p>
+                    <h3 className="text-3xl lg:text-nowrap">{ title }</h3>
                   </div>
                   {
                     !isMobile && <p className="text-base font-medium sm:max-w-lg lg:max-w-xl lg:justify-self-end lg:text-lg">{ description }</p>

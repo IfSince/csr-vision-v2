@@ -69,12 +69,12 @@ const TeamMemberTemplate = ({ data, children }) => {
 
       <Section>
         <Headline/>
-        <SectionDotTitle>About</SectionDotTitle>
+        <SectionDotTitle Type="h2">About</SectionDotTitle>
         { children }
       </Section>
 
       <Section>
-        <SectionHeading>skills</SectionHeading>
+        <SectionHeading Type="h2">skills</SectionHeading>
         <div className="mt-20 col-full-width">
           {
             sortAlphabetically(teamMember.skills).map(skill =>
@@ -83,12 +83,12 @@ const TeamMemberTemplate = ({ data, children }) => {
                 className="first:border-t border-b border-secondary/20"
                 first={
                   <div className="grid grid-cols-1 items-center text-heading-3 horizontal-spacing">
-                    <p className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</p>
+                    <h3 className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</h3>
                   </div>
                 }
                 second={
                   <div className="grid grid-cols-1 items-center text-heading-3 horizontal-spacing">
-                    <p className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</p>
+                    <h3 className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</h3>
                     <div className="col-start-1 row-start-1 justify-self-end bg-white py-2 pl-24">
                       <div className="flex aspect-square items-center justify-center bg-white w-[3.5em] text-heading-3">
                         {
@@ -104,7 +104,7 @@ const TeamMemberTemplate = ({ data, children }) => {
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

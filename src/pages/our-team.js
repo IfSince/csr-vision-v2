@@ -36,7 +36,7 @@ const OurTeamPage = ({ data }) => {
 
       <Section>
         <Headline/>
-        <SectionDotTitle>who we are</SectionDotTitle>
+        <SectionDotTitle Type="h2">who we are</SectionDotTitle>
 
         <SectionTitle align="left">
           Kreativität, Engagement und Nachhaltigkeit – die treibende Kraft hinter unseren innovativen Lösungen.
@@ -51,13 +51,13 @@ const OurTeamPage = ({ data }) => {
       </Section>
 
       <Section>
-        <SectionHeading>the team</SectionHeading>
+        <SectionHeading Type="h2">the team</SectionHeading>
         <Headline/>
         <TeamMemberList teamMembers={ teamMembers }/>
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

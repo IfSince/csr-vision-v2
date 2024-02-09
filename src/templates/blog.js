@@ -45,10 +45,10 @@ const BlogTemplate = ({ data, children }) => {
           <div></div>
         </div>
 
-        <m.p className="max-w-sm text-2xl hyphens-auto xs:hyphens-none md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl"
-             { ...scrollRevealAnimation(0.3) }>
+        <m.h2 className="max-w-sm text-2xl hyphens-auto xs:hyphens-none md:max-w-lg lg:max-w-2xl 2xl:max-w-4xl"
+              { ...scrollRevealAnimation(0.3) }>
           { blog.subTitle }
-        </m.p>
+        </m.h2>
       </div>
 
       <div className="z-[1000] fixed bottom-10 4xl:bottom-16 left-[var(--horizontal-spacing)]">
@@ -64,13 +64,13 @@ const BlogTemplate = ({ data, children }) => {
       { children }
 
       <Section>
+        <LinkedSectionHeading Type="h2" to={ `/our-team${ author.slug }` }>the author</LinkedSectionHeading>
         <Headline/>
-        <SectionDotTitle>The author</SectionDotTitle>
         <AuthorBox { ...author }/>
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

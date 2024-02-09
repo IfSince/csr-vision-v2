@@ -29,7 +29,7 @@ const OurVisionPage = ({ data }) => {
 
       <Section>
         <Headline/>
-        <SectionDotTitle>our mission</SectionDotTitle>
+        <SectionDotTitle Type="h2">our mission</SectionDotTitle>
 
         <SectionTitle align="center">
           Nachhaltiges Handeln ist nicht nur eine Verantwortung, sondern eine einzigartige Chance für Unternehmen.
@@ -48,7 +48,7 @@ const OurVisionPage = ({ data }) => {
       </Section>
 
       <Section>
-        <SectionHeading>benefits of csr</SectionHeading>
+        <SectionHeading Type="h2">benefits of csr</SectionHeading>
         <Headline/>
         <SectionTitle align="right">
           Durch die Integration von CSR in die DNA ihrer Kommunikation eröffnen sich diverse neue Möglichkeiten.
@@ -57,7 +57,7 @@ const OurVisionPage = ({ data }) => {
       </Section>
 
       <Section>
-        <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+        <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
         <Headline/>
         <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
       </Section>

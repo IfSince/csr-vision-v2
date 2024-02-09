@@ -99,7 +99,11 @@
   }
 
 
-  h1, h2 {
+  h1 {
+    @apply lowercase leading-[0.9em] text-heading-1 tracking-[-0.052em] font-undotted;
+  }
+
+  .text-h2 {
     @apply lowercase leading-[0.9em] text-heading-1 tracking-[-0.052em] font-undotted;
   }
 
@@ -113,10 +117,6 @@
 
   .text-2xl {
     @apply tracking-tighter text-2-extra-large leading-[1.05em];
-  }
-
-  .text-table-of-contents {
-    @apply tracking-tight text-sub-menu leading-[1.05em];
   }
 
   .text-xl {

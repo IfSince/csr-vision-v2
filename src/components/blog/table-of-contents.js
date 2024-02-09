@@ -27,7 +27,7 @@ export const TableOfContents = ({ tableOfContents, toggleTableOfContents }) =>
       <div className="mt-20 flex flex-col gap-y-[clamp(2em,5vw,3em)] max-w-sm md:max-w-lg lg:max-w-2xl 2xl:max-w-2xl">
         {
           tableOfContents.map((title, index) =>
-            <m.span className="relative flex w-fit items-center text-table-of-contents"
+            <m.span className="relative flex w-fit items-center tracking-tight text-[clamp(1.75rem,_4vw,_3rem)] leading-[1.05em]"
                    key={ title }
                    custom={ index }
                    variants={ slide }

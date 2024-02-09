@@ -47,8 +47,9 @@ const IndexPage = ({ data }) => {
 
         <Section>
           <Headline/>
-          <SectionDotTitle>our vision</SectionDotTitle>
-          <SectionTitle align="center">CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren</SectionTitle>
+          <SectionDotTitle Type="h2">our vision</SectionDotTitle>
+
+          <SectionTitle align="center" Type="h3">CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren.</SectionTitle>
           <SectionText align="right">
             Our mission as a responsible and sustainable business is to positively impact our environment, our people, and the next generation. To ensure we are
             acting on this mission, we have developed a sustainability strategy that aligns with the UN's Sustainable Development Goals. We are commited to
@@ -63,14 +64,14 @@ const IndexPage = ({ data }) => {
 
         <Section>
           <Headline/>
-          <SectionDotTitle>recent work</SectionDotTitle>
+          <SectionDotTitle Type="h2">recent work</SectionDotTitle>
           { !isMobile && <ZoomParallax/> }
         </Section>
 
         {
           referenceProjects.map(project =>
             <Section key={ project.id }>
-              <LinkedSectionHeading to={ `/projects${ project.slug }` }>{ project.client }</LinkedSectionHeading>
+              <LinkedSectionHeading to={ `/projects${ project.slug }` } Type="h3">{ project.client }</LinkedSectionHeading>
               <Headline/>
               <ImageGallery images={ project.previewImages } align="center"/>
             </Section>,
@@ -78,16 +79,14 @@ const IndexPage = ({ data }) => {
         }
 
         <Section>
-          <LinkedSectionHeading to="/our-team">who we are</LinkedSectionHeading>
           <Headline/>
-          <SectionTitle align="center">
-            Ein interdisziplinäres Team von Medienprofis aus den Generationen X bis Z.
-          </SectionTitle>
+          <SectionDotTitle Type="h2">who we are</SectionDotTitle>
+          <SectionTitle align="center" Type="h3">Ein interdisziplinäres Team von Medienprofis aus den Generationen X bis Z.</SectionTitle>
           <video className="w-full col-full-width bg-accent"></video>
         </Section>
 
         <Section>
-          <LinkedSectionHeading to="/contact">get in touch</LinkedSectionHeading>
+          <LinkedSectionHeading to="/contact" Type="h2">get in touch</LinkedSectionHeading>
           <Headline/>
           <SectionTitle align="center">Mit deinem Report gestalten wir gemeinsam den Weg zur Nachhaltigkeit.</SectionTitle>
         </Section>
