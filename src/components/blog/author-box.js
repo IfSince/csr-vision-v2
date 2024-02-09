@@ -13,7 +13,7 @@ export const AuthorBox = ({ name, role, image, metaDescription }) =>
     </SectionTitle>
 
     <div className="flex flex-wrap gap-x-6 gap-y-10 md:gap-x-16">
-      <DefaultImage className="max-w-sm rounded-sm min-w-[400px] xs:max-w-[2.25em] 4xl:max-w-[3em]">
+      <DefaultImage className="max-w-sm rounded-sm xs:min-w-[400px] xs:max-w-[2.25em] 4xl:max-w-[3em]">
         <GatsbyImage alt={ name } image={ image }/>
       </DefaultImage>
       <SectionText align="right">{ metaDescription }</SectionText>

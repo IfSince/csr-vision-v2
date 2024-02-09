@@ -120,6 +120,6 @@
   }
 
   .text-xl {
-    @apply tracking-tight text-extra-large leading-[1.3em];
+    @apply text-extra-large leading-[1.3em] tracking-[-0.02em];
   }
 }

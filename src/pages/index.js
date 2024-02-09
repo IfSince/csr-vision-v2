@@ -70,11 +70,11 @@ const IndexPage = ({ data }) => {
 
         {
           referenceProjects.map(project =>
-            <Section key={ project.id }>
+            <article className="mb-16 grid text-2xl col-full-width grid-cols-layout">
               <LinkedSectionHeading to={ `/projects${ project.slug }` } Type="h3">{ project.client }</LinkedSectionHeading>
               <Headline/>
               <ImageGallery images={ project.previewImages } align="center"/>
-            </Section>,
+            </article>,
           )
         }
 
