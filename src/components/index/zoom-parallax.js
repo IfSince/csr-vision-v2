@@ -59,7 +59,7 @@ export const ZoomParallax = () => {
   }
 
   return (
-    <div ref={ container } className="relative h-[300vh] col-full-width">
+    <div ref={ container } className="relative h-[270vh] col-full-width">
       <div className="sticky top-0 overflow-hidden h-[100vh]">
         {
           pictures.map(({ image, scale }, index) =>

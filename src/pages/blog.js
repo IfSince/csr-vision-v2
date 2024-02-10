@@ -31,7 +31,7 @@ const BlogPage = ({ data }) => {
         <ul className="grid grid-cols-layout col-full-width">
           {
             blogs.map(({ slug, title, publicationDate, id }) =>
-              <TableRow to={ slug }
+              <TableRow to={ `/blog${ slug }` }
                         title={ title }
                         addition={ publicationDate }
                         key={ id }/>,

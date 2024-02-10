@@ -11,6 +11,8 @@ import { LinkedSectionHeading } from '../components/layout/section/linked-sectio
 import { ImageGallery } from '../components/layout/section/image-gallery.js'
 import { useIsMobile } from '../hooks/use-is-mobile.js'
 import { graphql } from 'gatsby'
+import { CustomVideo } from '../components/index/Video.js'
+import DummyVideo from '../videos/video.mp4'
 
 const IndexPage = ({ data }) => {
   const referenceProjects = data.allMdx.nodes.map(({ id, frontmatter, fields }) => ({
@@ -81,7 +83,9 @@ const IndexPage = ({ data }) => {
           <Headline/>
           <SectionDotTitle Type="h2">who we are</SectionDotTitle>
           <SectionTitle align="center" Type="h3">Ein interdisziplinäres Team von Medienprofis aus den Generationen X bis Z.</SectionTitle>
-          <video className="w-full col-full-width bg-accent"></video>
+          <CustomVideo>
+            <source src={DummyVideo} type="video/mp4"/>
+          </CustomVideo>
         </Section>
 
         <Section>
