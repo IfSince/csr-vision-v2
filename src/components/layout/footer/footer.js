@@ -21,6 +21,7 @@ export const Footer = ({ currentUrl = '/' }) => {
           <div className="flex grow flex-col horizontal-spacing">
             <Link to="/" className="mt-16 mr-8 max-w-md">
               <LogoWithClaim/>
+              <span className="sr-only">Home</span>
             </Link>
             <Link className="mt-20 flex w-fit flex-wrap py-4 text-3xl 2xl:mt-[6.5vw]"
                   to={ nextPage.to }
