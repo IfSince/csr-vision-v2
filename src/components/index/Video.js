@@ -52,7 +52,8 @@ export const CustomVideo = ({ children }) => {
              onContextMenu={ e => e.preventDefault() }
              onMouseEnter={ updateOnEnter }
              onMouseLeave={ resetCursor }
-             onClick={ toggleVideoPlaying }>
+             onClick={ toggleVideoPlaying }
+             preload="none">
         { children }
       </video>
 
