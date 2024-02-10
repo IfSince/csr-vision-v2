@@ -20,7 +20,7 @@ export const ImageIntro = ({ children }) => {
                  clipPath: transform,
                  borderRadius: transform,
                } }>
-          <StaticImage src="../../../images/background.png" alt="background image" className="pointer-events-none h-full w-full [filter:brightness(60%)]"/>
+          <StaticImage loading="eager" src="../../../images/background.png" alt="background image" className="pointer-events-none h-full w-full [filter:brightness(60%)]"/>
         </m.div>
       </m.div>
 
