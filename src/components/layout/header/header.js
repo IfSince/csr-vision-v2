@@ -23,11 +23,13 @@ export const Header = ({ path }) => {
       key: 'themeToggle',
       onClick: toggleTheme,
       icon: theme === 'light' ? <Sun className="h-6 fill-primary 4xl:h-7"/> : <Moon className="h-5 fill-primary 4xl:h-6"/>,
+      description: theme === 'light' ? 'Auf light mode wechseln' : 'Auf dark mode wechseln',
     },
     {
       key: 'menuToggle',
       onClick: toggleActive,
       icon: !isActive ? <Menu className="h-[0.813rem] 4xl:h-[0.938rem]"/> : <Close className="h-4 4xl:h-[1.125rem]"/>,
+      description: !isActive ? 'Navigationsmenü öffnen' : 'Navigationsmenü schließen',
     },
   ]
   return (
@@ -36,6 +38,7 @@ export const Header = ({ path }) => {
         <div className="flex flex-col md:flex-row flex-wrap md:items-center gap-y-6 gap-x-[min(50px,5vw)]">
           <Link to="/" { ...defaultLinkCursor }>
             <Logo className="pointer-events-auto h-10 xs:h-12 sm:h-12 4xl:h-14"/>
+            <span className="sr-only">Home</span>
           </Link>
 
           <AnimatePresence mode="wait">
@@ -45,7 +48,11 @@ export const Header = ({ path }) => {
 
         <div className="absolute top-0 right-[var(--horizontal-spacing)] flex gap-3 md:gap-6">
           {
-            items.map(({ key, onClick, icon }) => <IconButton onClick={ onClick } key={ key }>{ icon }</IconButton>)
+            items.map(({ key, onClick, icon, description }) =>
+              <IconButton onClick={ onClick } key={ key } description={ description }>
+                { icon }
+              </IconButton>,
+            )
           }
         </div>
       </div>

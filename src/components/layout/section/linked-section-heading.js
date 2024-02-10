@@ -20,7 +20,8 @@ export const LinkedSectionHeading = ({ to = '/', Type = 'h2', mobileDescription 
                 size="lg"
                 theme="dark"
                 magneticMultiplier={ 35 }
-                onClick={ () => navigate(to) } scrollAnimation={ true }>
+                onClick={ () => navigate(to) } scrollAnimation={ true }
+                description={ `Navigiere zu ${ to }` }>
       <ArrowOutward className="h-full w-full p-[0.25em]"/>
     </IconButton>
 

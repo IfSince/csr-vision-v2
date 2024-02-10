@@ -51,7 +51,7 @@ const BlogTemplate = ({ data, children }) => {
       </div>
 
       <div className="z-[1000] fixed bottom-10 4xl:bottom-16 left-[var(--horizontal-spacing)]">
-        <IconButton onClick={ toggleTableOfContents }>
+        <IconButton onClick={ toggleTableOfContents } description={ !tableOfContentsVisible ? 'Inhaltsverzeichnis anzeigen' : 'Inhaltsverzeichnis ausblenden' }>
           { !tableOfContentsVisible ? <List className="h-8 fill-primary"/> : <Close className="h-4 4xl:h-[1.125rem]"/> }
         </IconButton>
       </div>

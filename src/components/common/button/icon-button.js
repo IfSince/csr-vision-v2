@@ -12,6 +12,7 @@ export const IconButton = ({
   onClick,
   children,
   className,
+  description,
 }) => {
   const scrollRevealConfig = {
     ...(scrollAnimation && { ...scrollRevealAnimation(0.3) }),
@@ -46,6 +47,7 @@ export const IconButton = ({
             <m.div style={ position } className={ iconThemeClasses[theme] }>
               <AnimatePresence mode="wait">
                 { children }
+                <span className="sr-only">{ description }</span>
               </AnimatePresence>
             </m.div>
           </m.button>

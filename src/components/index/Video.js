@@ -70,7 +70,8 @@ export const CustomVideo = ({ children }) => {
                         onClick={ openFullscreen }
                         size="custom"
                         theme="custom"
-                        themeClassName="bg-secondary/30 hover:bg-secondary text-heading-1 h-[0.75em] w-[0.75em] fill-primary/70 hover:fill-primary">
+                        themeClassName="bg-secondary/30 hover:bg-secondary text-heading-1 h-[0.75em] w-[0.75em] fill-primary/70 hover:fill-primary"
+                        description="In Vollbild wechseln">
               <Fullscreen className="h-[min(2.7rem,0.3em)] w-[min(2.7rem,0.3em)] "/>
             </IconButton>
           </m.div>
@@ -91,7 +92,8 @@ export const CustomVideo = ({ children }) => {
                         onClick={ toggleVideoPlaying }
                         size="custom"
                         theme="custom"
-                        themeClassName="bg-secondary/80 hover:bg-secondary text-heading-1 h-[1.25em] w-[1.25em] fill-primary/70 hover:fill-primary">
+                        themeClassName="bg-secondary/80 hover:bg-secondary text-heading-1 h-[1.25em] w-[1.25em] fill-primary/70 hover:fill-primary"
+                        description="Video abspielen">
               <Play className="h-[min(3rem,0.6em)] w-[min(3rem,0.6em)]"/>
             </IconButton>
           </m.div>
