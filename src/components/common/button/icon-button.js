@@ -47,8 +47,8 @@ export const IconButton = ({
             <m.div style={ position } className={ iconThemeClasses[theme] }>
               <AnimatePresence mode="wait">
                 { children }
-                <span className="sr-only">{ description }</span>
               </AnimatePresence>
+              <span className="sr-only">{ description }</span>
             </m.div>
           </m.button>
       }
