@@ -28,10 +28,10 @@ const IndexPage = ({ data }) => {
     <>
       <ImageIntro>
         <section className="pt-hero-min md:pt-hero-max">
-          <h1 className="grid" data-scroll data-scroll-speed="0.7">
+          <h1 className="grid" data-scroll data-scroll-speed="1">
             <HeroTextReveal className="mb-[12vh] lg:mb-[8vh]">csr vision</HeroTextReveal>
 
-            <HeroTextReveal className="justify-self-end text-accent">designing</HeroTextReveal>
+            <HeroTextReveal className="justify-self-end">designing</HeroTextReveal>
             <HeroTextReveal className="justify-self-end">responsibility</HeroTextReveal>
           </h1>
         </section>
@@ -84,7 +84,7 @@ const IndexPage = ({ data }) => {
           <SectionDotTitle Type="h2">who we are</SectionDotTitle>
           <SectionTitle align="center" Type="h3">Ein interdisziplinäres Team von Medienprofis aus den Generationen X bis Z.</SectionTitle>
           <CustomVideo>
-            <source src={DummyVideo} type="video/mp4"/>
+            <source src={ DummyVideo } type="video/mp4"/>
           </CustomVideo>
         </Section>
 
