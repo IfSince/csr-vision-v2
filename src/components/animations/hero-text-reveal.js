@@ -1,6 +1,6 @@
 import { Reveal } from './reveal.js'
 
-export const HeroTextReveal = ({ children, className, delay = 0 }) => {
+export const HeroTextReveal = ({ children, className }) => {
   // map child string and elements to array
   const words = (
     Array.isArray(children)
