@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
     <>
       <ImageIntro>
         <section className="pt-hero-min md:pt-hero-max">
-          <h1 className="grid" data-scroll data-scroll-speed="1">
+          <h1 className="grid" data-scroll data-scroll-speed="0.7">
             <HeroTextReveal className="mb-[12vh] lg:mb-[8vh]">csr vision</HeroTextReveal>
 
             <HeroTextReveal className="justify-self-end">designing</HeroTextReveal>
