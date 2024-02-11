@@ -11,7 +11,7 @@ import { LinkedSectionHeading } from '../components/layout/section/linked-sectio
 import { ImageGallery } from '../components/layout/section/image-gallery.js'
 import { useIsMobile } from '../hooks/use-is-mobile.js'
 import { graphql } from 'gatsby'
-import { CustomVideo } from '../components/index/Video.js'
+import { CustomVideo } from '../components/index/custom-video.js'
 import DummyVideo from '../videos/video.mp4'
 
 const IndexPage = ({ data }) => {
