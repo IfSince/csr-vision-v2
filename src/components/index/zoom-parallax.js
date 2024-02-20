@@ -16,34 +16,33 @@ export const ZoomParallax = () => {
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8])
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9])
 
-  // TODO use different images in here
   const pictures = [
     {
       image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
       scale: scale4,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_1.png" alt="project" className="h-full w-full"/>,
       scale: scale5,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_2.png" alt="project" className="h-full w-full"/>,
       scale: scale6,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_3.png" alt="project" className="h-full w-full"/>,
       scale: scale5,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_4.png" alt="project" className="h-full w-full"/>,
       scale: scale6,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_5.png" alt="project" className="h-full w-full"/>,
       scale: scale8,
     },
     {
-      image: <StaticImage src="../../images/background.png" alt="project" className="h-full w-full"/>,
+      image: <StaticImage src="../../images/background_6.png" alt="project" className="h-full w-full"/>,
       scale: scale9,
     },
   ]
