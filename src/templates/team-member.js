@@ -95,8 +95,8 @@ const TeamMemberTemplate = ({ data, children }) => {
                 second={
                   <div className="grid grid-cols-1 items-center text-heading-3 horizontal-spacing">
                     <h3 className="col-start-1 row-start-1 py-10 text-3xl">{ skill }</h3>
-                    <div className="col-start-1 row-start-1 justify-self-end bg-white py-2 pl-24">
-                      <div className="flex aspect-square items-center justify-center bg-white w-[3.5em] text-heading-3">
+                    <div className="col-start-1 row-start-1 justify-self-end py-2 pl-24">
+                      <div className="flex aspect-square items-center justify-center w-[3.5em] text-heading-3">
                         {
                           skillIcons[slugify(skill)]
                         }
